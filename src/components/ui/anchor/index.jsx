@@ -62,6 +62,7 @@ Anchor.defaultProps = {
     rel: "noopener noreferrer",
 };
 
+/* eslint-disable react/forbid-foreign-prop-types */
 Anchor.propTypes = {
     children: PropTypes.node.isRequired,
     path: PropTypes.string.isRequired,
