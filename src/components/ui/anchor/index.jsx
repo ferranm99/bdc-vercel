@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 
+/* eslint-disable react/forbid-foreign-prop-types */
 const Anchor = ({
     path,
     children,
@@ -62,7 +63,6 @@ Anchor.defaultProps = {
     rel: "noopener noreferrer",
 };
 
-/* eslint-disable react/forbid-foreign-prop-types */
 Anchor.propTypes = {
     children: PropTypes.node.isRequired,
     path: PropTypes.string.isRequired,
