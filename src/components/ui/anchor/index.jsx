@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-/* eslint-disable react/forbid-foreign-prop-types */
+/* eslint-disable react/forbid-prop-types */
 const Anchor = ({
     path,
     children,
