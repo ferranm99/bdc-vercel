@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const LogoWidget = ({ data }) => (
     <div className="footer-left">
-        {/*<Logo logo={data.logo} />*/ }
         <Image
             src="/images/bdc/logo/bdc-logo-400px.png"
             alt="Nft_Profile"
