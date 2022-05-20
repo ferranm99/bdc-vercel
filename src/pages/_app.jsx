@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
-import { MoralisProvider } from "react-moralis";
+// import { MoralisProvider } from "react-moralis";
 import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
 import SSRProvider from "react-bootstrap/SSRProvider";
