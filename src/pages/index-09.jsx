@@ -196,11 +196,11 @@ const Home09 = () => {
                     </div>
                 </div>
                 <div className="row py-5">
-                    <div className="parallax col-12" />
+                    <div className="parallax-2 col-12" />
                 </div>
 
                 {/* <AboutArea data={content["about-section"]} /> */}
-                <div className="container">
+                <div className="container mt--60">
                     <div className="row">
                         <div className="col-12">
                             <div className="about-wrapper text-center">
@@ -225,35 +225,28 @@ const Home09 = () => {
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-monster-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                         <SwiperSlide className="merchandise-img">
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-red-circle-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                         <SwiperSlide className="merchandise-img">
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-blue-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                         <SwiperSlide className="merchandise-img">
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
-                                            />
-                                        </SwiperSlide>
-                                        <SwiperSlide className="merchandise-img">
-                                            <Image
-                                                width={250}
-                                                height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-red-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                     </Swiper>
