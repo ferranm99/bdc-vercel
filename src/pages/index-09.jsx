@@ -5,10 +5,10 @@ import Footer from "@layout/footer/footer-bdc";
 import HeroArea from "@containers/hero/layout-bdc1";
 import HeroAreaBDC from "@containers/hero/layout-bdc2";
 import Image from "next/image";
-import Anchor from "@ui/anchor";
+// import Anchor from "@ui/anchor";
 
 import { normalizedData } from "@utils/methods";
-import CTAArea from "@containers/cta";
+// import CTAArea from "@containers/cta";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +20,7 @@ import homepageData from "../data/homepages/home-09.json";
 import homepageDataBdc from "../data/homepages/home-bdc.json";
 import productData from "../data/products-02.json";
 import aboutData from "../data/innerpages/about.json";
-import placeholderImg from "../../public/images/client/testimonial-2.jpg";
+// import placeholderImg from "../../public/images/client/testimonial-2.jpg";
 
 // Import Swiper React components
 // Import Swiper styles
@@ -34,11 +34,11 @@ export async function getStaticProps() {
 const Home09 = () => {
     const content = normalizedData(homepageData?.content || []);
     const content4 = normalizedData(homepageDataBdc?.content || []);
-    const content2 = normalizedData(aboutData?.content || []);
-    const liveAuctionData = productData.filter(
-        (prod) =>
-            prod?.auction_date && new Date() <= new Date(prod?.auction_date)
-    );
+    // const content2 = normalizedData(aboutData?.content || []);
+    // const liveAuctionData = productData.filter(
+    //     (prod) =>
+    //         prod?.auction_date && new Date() <= new Date(prod?.auction_date)
+    // );
 
     return (
         <Wrapper>
@@ -90,8 +90,10 @@ const Home09 = () => {
 
                     <div className="col-6 text-center">
                         <Image
-                            src={placeholderImg}
+                            src="/images/client/testimonial-2.jpg"
                             className="card-img-center h-50"
+                            width={400}
+                            height={400}
                             alt="..."
                         />
                     </div>
@@ -110,16 +112,16 @@ const Home09 = () => {
                             <h3>INFO</h3>
                             <ul className="dogs-info">
                                 <li className="dogs-info-link">
-                                    Bad Dogs <a href="#">Opensea</a>
+                                    Bad Dogs <a href="#opensea">Opensea</a>
                                 </li>
                                 <li className="dogs-info-link">
-                                    Bad Dogs <a href="#">LooksRare</a>
+                                    Bad Dogs <a href="#looksrare">LooksRare</a>
                                 </li>
                                 <li className="dogs-info-link">
-                                    Bad Dogs <a href="#">Rarity</a>
+                                    Bad Dogs <a href="#rarity">Rarity</a>
                                 </li>
                                 <li className="dogs-info-link">
-                                    Bad Dogs <a href="#">Analytics</a>
+                                    Bad Dogs <a href="#analytics">Analytics</a>
                                 </li>
                             </ul>
                             <h3>OVERVIEW</h3>
@@ -168,8 +170,10 @@ const Home09 = () => {
 
                         <div className="col-lg-6 col-sm-12 dog-container text-center">
                             <Image
-                                src={placeholderImg}
+                                src="/images/client/testimonial-2.jpg"
                                 className="card-img-center"
+                                width={400}
+                                height={400}
                                 alt="..."
                             />
                         </div>
@@ -181,20 +185,22 @@ const Home09 = () => {
                         </h3>
                     </div>
                     <div className="row">
-                        <button className="offset-4 col-2 btn-a">
+                        <button type="button" className="offset-4 col-2 btn-a">
                             BUY NOW
                         </button>
                         <hr className="horizontal" />
-                        <button className="col-2 btn-b">CLAIM</button>
+                        <button type="button" className="col-2 btn-b">
+                            CLAIM
+                        </button>
                         <div className="col-4" />
                     </div>
                 </div>
                 <div className="row py-5">
-                    <div className="parallax col-12" />
+                    <div className="parallax-2 col-12" />
                 </div>
 
                 {/* <AboutArea data={content["about-section"]} /> */}
-                <div className="container">
+                <div className="container mt--60">
                     <div className="row">
                         <div className="col-12">
                             <div className="about-wrapper text-center">
@@ -208,7 +214,6 @@ const Home09 = () => {
                                         spaceBetween={50}
                                         loop
                                         freeMode
-                                        autoplayStart
                                         speed={5000}
                                         autoplay={{ delay: 0 }}
                                         pagination={{
@@ -220,35 +225,28 @@ const Home09 = () => {
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-monster-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                         <SwiperSlide className="merchandise-img">
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-red-circle-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                         <SwiperSlide className="merchandise-img">
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-blue-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                         <SwiperSlide className="merchandise-img">
                                             <Image
                                                 width={250}
                                                 height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
-                                            />
-                                        </SwiperSlide>
-                                        <SwiperSlide className="merchandise-img">
-                                            <Image
-                                                width={250}
-                                                height={250}
-                                                src="/images/banner/banner-sm-01.jpg"
+                                                src="/images/bdc/merch/hat/bdc-red-hat-235px.jpg"
                                             />
                                         </SwiperSlide>
                                     </Swiper>

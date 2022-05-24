@@ -19,6 +19,21 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.parallax-2 {
+    /* The image used */
+    background-image: url("/images/bdc/background/cyborg-background.jpg");
+
+    /* Set a specific height */
+    min-height: 40vh;
+    display: block;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .section-container {
     width: 100vw;
     height: 70vh;
@@ -93,9 +108,9 @@
 
 .inner {
     display: inline-block;
-    letter-spacing: -4px;
+    /* letter-spacing: -4px; */
     vertical-align: top;
-    margin: 30px 110px;
+    /* margin: 30px 110px; */
     line-height: 60px;
     color: skyblue;
     font-size: 0;
@@ -144,4 +159,39 @@
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
+}
+
+.footer-title {
+    font-weight: 500;
+}
+
+.centerblock {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* feather icon sizes */
+.icon-sm {
+    font-size: 15px;
+}
+@media only screen and (min-width: 2400px) {
+    .icon-md {
+        font-size: 25px;
+        padding-top: 15px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .icon-md {
+        font-size: 25px;
+        padding-top: 5px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .icon-md {
+        font-size: 25px;
+        padding-top: 15px;
+    }
+}
+.icon-lg {
+    font-size: 35px;
 }

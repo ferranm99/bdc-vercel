@@ -19,7 +19,7 @@ const HeroArea = ({ data }) => (
     <div className="banner-style-4 rn-section-gapTop rn-section-gapBottom">
         <div className="container">
             <div className="row align-items-center">
-                <div className="col-xl-6 col-lg-6 col-md-12 order-2 order-lg-1 mt_md--40 mt_sm--40">
+                <div className="col-xl-6 col-lg-6 col-md-12 order-2 order-lg-1 mt_md--40 mt_sm--40 pl_md--25 pl_sm--25">
                     <div className="sldier-content">
                         {/*data?.badge && (
                             <span

@@ -99,9 +99,9 @@ const Header = ({ className }) => {
                             </div>
                             */}
 
-                            
+
                             <SocialWidget socials={contactData.socials} />
-                            
+
                             <div className="setting-option mobile-menu-bar d-block d-xl-none">
                                 <div className="hamberger">
                                     <BurgerButton onClick={offcanvasHandler} />

@@ -3,15 +3,14 @@ import Image from "next/image";
 // import Logo from "@components/logo";
 
 const LogoWidget = ({ data }) => (
-    <div className="footer-left">
-        {/*<Logo logo={data.logo} />*/ }
+    <div className="text-center">
         <Image
-            src="/images/bdc/logo/bdc-logo-400px.png"
+            src="/images/bdc/logo/bdc-yellow-circle-180px.png"
             alt="Nft_Profile"
-            width={333}
-            height={187}
+            width={180}
+            height={180}
         />
-        {data?.text && <p className="rn-footer-describe">{data.text}</p>}
+        {data?.text && <h2 className="footer-title">{data.text}</h2>}
     </div>
 );
 

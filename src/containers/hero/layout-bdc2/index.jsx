@@ -4,8 +4,8 @@ import { IDType, ImageType } from "@utils/types";
 import Image from "next/image";
 import { useState } from "react";
 import Anchor from "@ui/anchor";
-import SingleSlide from "./slide";
-import placeholderImg from "../../../../public/images/banner/banner-sm-01.jpg";
+// import SingleSlide from "./slide";
+// import placeholderImg from "../../../../public/images/banner/banner-sm-01.jpg";
 import data from "./dogs.json";
 
 const HeroAreaBDC = () => {
@@ -28,7 +28,7 @@ const HeroAreaBDC = () => {
     return (
         <div className="container-fluid pb-5" id="bannerImg">
             <div className="row d-flex align-items-center mx-5 px-5">
-                <div className="offset-lg-2 col-lg-8 col-sm-12 text-center ">
+                <div className="offset-lg-2 col-lg-8 col-sm-12 text-center">
                     <h3
                         data-title={data.title}
                         className="title theme-gradient my-5 pt-5 customTitleFont justify-content-center col-12 "
@@ -43,7 +43,7 @@ const HeroAreaBDC = () => {
 
             <div className="row d-flex align-items-center px-5 mx-5">
                 {data?.collections.map((dog) => (
-                    <div className="col-lg-6 col-md-12 col-sm-12 text-left">
+                    <div className="col-lg-6 col-md-12 col-sm-12 text-left" key={dog.id}>
                         <div className="card bg-dark mb-3">
                             <div className="row no-gutters">
                                 <div className="col-lg-4 col-md-4 col-sm-12 text-center">

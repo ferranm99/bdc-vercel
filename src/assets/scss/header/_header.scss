@@ -314,8 +314,24 @@
         justify-content: space-between;
         position: relative;
         @media #{$small-mobile} {
-            display: block;
-            padding-top: 18px;
+            // display: block;
+            // padding-top: 18px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        /* iPads (portrait and landscape) ----------- */
+        @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        /* catch all (portrait and landscape) ----------- */
+        @media only screen 
+        and (min-device-width : 1025px) 
+        and (max-device-width : 1200px) {
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
     .header-left {
@@ -324,7 +340,9 @@
         justify-content: flex-start;
         flex-basis: 55%;
         @media #{$small-mobile} {
-            justify-content: center;
+            // justify-content: center;
+            justify-content: left;
+            padding-left: 15px;
             flex-basis: 100%;
         }
     }
@@ -334,7 +352,9 @@
         flex-basis: 45%;
         align-items: center;
         @media #{$small-mobile} {
-            justify-content: center;
+            // justify-content: center;
+            justify-content: right;
+            padding-right: 10px;
             flex-basis: 100%;
         }
         .setting-option {
