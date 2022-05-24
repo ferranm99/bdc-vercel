@@ -4,7 +4,8 @@ import Header from "@layout/header/header-bdc";
 import Footer from "@layout/footer/footer-bdc";
 import Breadcrumb from "@components/breadcrumb";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+// import 'react-vertical-timeline-component/style.min.css';
+
 // import ContactTopArea from "@containers/contact-top";
 
 export async function getStaticProps() {
@@ -107,11 +108,11 @@ const Roadmap = () => (
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    contentStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(16, 204, 82)' }}
+                    contentStyle={{ background: '#191925', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  #191925' }}
                     date="2002 - 2006"
-                    iconStyle={{ background: 'rgb(16, 204, 82)', textAlign: 'center', color: '#fff', paddingTop: '5px' }}
-                    icon={<i className="feather-home icon-md" />}
+                    iconStyle={{ background: '#ffdf0b', textAlign: 'center', color: '#fff', paddingTop: '5px' }}
+                // icon={<i className="feather-home icon-md" />}
                 >
                     <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
                     <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
@@ -120,8 +121,8 @@ const Roadmap = () => (
                     </p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
-                    iconStyle={{ background: 'rgb(16, 204, 82)', textAlign: 'center', color: '#fff', marginTop: '50px' }}
-                    icon={<i className="feather-home icon-md" />}
+                    iconStyle={{ background: '#ffdf0b', textAlign: 'center', color: '#fff', marginTop: '50px' }}
+                // icon={<i className="feather-home icon-md" />}
                 />
             </VerticalTimeline>
         </main>

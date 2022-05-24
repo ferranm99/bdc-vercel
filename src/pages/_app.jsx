@@ -10,6 +10,7 @@ import "../assets/css/feather.css";
 import "../assets/scss/style.scss";
 import "../assets/css/custom.css";
 import "../assets/css/carousel.css";
+import "../assets/css/timeline.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
 // const moralisAppId = "RthQq8e4P7aK65qA9AxkrUhs1r2l4LbVBvJ6L71v";

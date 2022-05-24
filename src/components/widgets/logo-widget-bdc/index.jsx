@@ -10,7 +10,8 @@ const LogoWidget = ({ data }) => (
             width={180}
             height={180}
         />
-        {data?.text && <h2 className="footer-title">{data.text}</h2>}
+        {/* {data?.text && <h2 className="footer-title">{data.text}</h2>} */}
+        <h2><span className="customTitleFont">Bad Dogs Company</span> will bring out the <span className="customTitleFont">FIGHT</span> in you!</h2>
     </div>
 );
 
