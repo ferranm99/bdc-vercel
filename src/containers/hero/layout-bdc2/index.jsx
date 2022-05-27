@@ -8,13 +8,15 @@ import Anchor from "@ui/anchor";
 // import placeholderImg from "../../../../public/images/banner/banner-sm-01.jpg";
 import data from "./dogs.json";
 
-const HeroAreaBDC = () => {
+const HeroAreaBDC2 = () => {
     const showMoreInfo = (e) => {
         const ele = document.getElementById(
             `banner-desc-${e.currentTarget.id}`
         );
         if (ele) {
-            ele.classList.remove("hidden");
+            // ele.classList.remove("hidden");
+            // ele.style.transition = '3s ease-in';
+            ele.style.display = 'block';
         }
     };
     const showLessInfo = (e) => {
@@ -22,7 +24,8 @@ const HeroAreaBDC = () => {
             `banner-desc-${e.currentTarget.id}`
         );
         if (ele) {
-            ele.classList.add("hidden");
+            // ele.classList.add("hidden");
+            ele.style.display = 'none';
         }
     };
     return (
@@ -44,14 +47,14 @@ const HeroAreaBDC = () => {
             <div className="row d-flex align-items-center px-5 mx-5">
                 {data?.collections.map((dog) => (
                     <div className="col-lg-6 col-md-12 col-sm-12 text-left" key={dog.id}>
-                        <div className="card bg-dark mb-3">
+                        <div className="card bg-dark-opacity-75 mb-3">
                             <div className="row no-gutters">
-                                <div className="col-lg-4 col-md-4 col-sm-12 text-center">
+                                <div className="col-lg-4 col-md-4 col-sm-12 text-center img-valign-bottom">
                                     <Image
                                         width={235}
                                         height={235}
                                         src={dog.image.src}
-                                        className="card-img-center "
+                                        className="card-img-center"
                                         alt="..."
                                     />
                                 </div>
@@ -66,18 +69,19 @@ const HeroAreaBDC = () => {
                                     }}
                                 >
                                     <div className="card-body">
-                                        <h5 className="card-title customTitleFont customTitleStyle">
+                                        {/* <h5 className="card-title customTitleFont customTitleStyle"> */}
+                                        <h3 className="card-title">
                                             {dog.title}
-                                        </h5>
+                                        </h3>
                                         <p
                                             id={`banner-desc-${dog.id}`}
-                                            className="card-text hidden banner-desc"
+                                            className="card-text hidden banner-desc sal-animate" data-sal="slide-down" data-sal-delay="200" data-sal-duration="800"
                                         >
                                             {dog.description}
                                         </p>
                                         <Anchor
                                             path="#"
-                                            className="border-bottom-4 "
+                                            className="border-bottom-4"
                                             style={{
                                                 fontSize: "2rem",
                                                 borderBottom:
@@ -96,4 +100,4 @@ const HeroAreaBDC = () => {
         </div>
     );
 };
-export default HeroAreaBDC;
+export default HeroAreaBDC2;

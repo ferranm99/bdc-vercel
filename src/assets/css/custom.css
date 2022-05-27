@@ -4,13 +4,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Permanent+Marker&display=swap");
 
 #bannerImg {
-    background-image: url("/images/bg/bg-image-21.jpg");
+    /* background-image: url("/images/bg/bg-image-21.jpg"); */
+    background-image: url("/images/bdc/background/gutter1-bg.jpg");
     background-image: fill;
+    background-position: center;
     object-fit: cover;
 }
 .parallax {
     /* The image used */
-    background-image: url("/images/bg/bg-image-1.jpg");
+    /* background-image: url("/images/bg/bg-image-1.jpg"); */
+    background-image: url("/images/bdc/background/sewer-min-scaled.jpeg");
 
     /* Set a specific height */
     min-height: 40vh;
@@ -67,12 +70,13 @@
 .customTitleFont {
     /* font-family: "Permanent Marker", cursive; */
     font-family: "Nosifer";
+    color: #ffdf0b;
     text-transform: uppercase;
-    text-shadow: -1px 2px 2px black;
+    text-shadow: -1px 4px 4px black;
 }
 .customTitleStyle {
     font-family: "Permanent Marker", cursive;
-    text-shadow: -1px 2px 0px yellow;
+    text-shadow: -2px 2px 0px yellow;
     font-size: 3.5rem;
 }
 .btn-a,
@@ -199,4 +203,20 @@
 }
 .icon-lg {
     font-size: 35px;
+}
+.img-valign-bottom {
+    vertical-align: bottom;
+}
+.bg-dark-opacity-75 {
+    background: rgba(33, 37, 41, 0.9)
+}
+.fade-animation {
+    transition-delay: 3s;
+    transition-timing-function: ease-in;
+}
+.text-success {
+    color: #26b170;
+}
+.text-warning {
+    color: #ffdf0b;
 }

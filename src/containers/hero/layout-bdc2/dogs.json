@@ -3,7 +3,7 @@
     "collections": [
         {
             "id": 1,
-            "title": "Bad Dogs",
+            "title": "Genesis Collection",
             "description": "The naughtiest collection of them all.",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
@@ -11,7 +11,7 @@
         },
         {
             "id": 2,
-            "title": "Wild Dogs",
+            "title": "Premium Dogs",
             "description": "You wouldn't want to mess with these fellas",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
@@ -19,7 +19,7 @@
         },
         {
             "id": 3,
-            "title": "Okay Dogs",
+            "title": "Custom Dogs",
             "description": "Pet them if you'd like, see what happens.",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
@@ -27,7 +27,7 @@
         },
         {
             "id": 4,
-            "title": "Foul Dogs",
+            "title": "4K Collection",
             "description": "Eek! they reek!",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
@@ -35,7 +35,7 @@
         },
         {
             "id": 5,
-            "title": "Fat Dogs",
+            "title": "Serum",
             "description": "A little too much, a little too late.",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
@@ -43,7 +43,7 @@
         },
         {
             "id": 6,
-            "title": "Wheezing Dogs",
+            "title": "Heaven",
             "description": "Don't catch em or you know..",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
