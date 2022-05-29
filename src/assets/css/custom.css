@@ -208,7 +208,7 @@
     vertical-align: bottom;
 }
 .bg-dark-opacity-75 {
-    background: rgba(33, 37, 41, 0.9)
+    background: rgba(33, 37, 41, 0.9) !important;
 }
 .fade-animation {
     transition-delay: 3s;
