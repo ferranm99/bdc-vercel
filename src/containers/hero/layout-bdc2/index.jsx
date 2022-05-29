@@ -47,7 +47,7 @@ const HeroAreaBDC2 = () => {
             <div className="row d-flex align-items-center px-5 mx-5">
                 {data?.collections.map((dog) => (
                     <div className="col-lg-6 col-md-12 col-sm-12 text-left" key={dog.id}>
-                        <div className="card bg-dark-opacity-75 mb-3">
+                        <div className="bg-dark-opacity-75 card mb-3">
                             <div className="row no-gutters">
                                 <div className="col-lg-4 col-md-4 col-sm-12 text-center img-valign-bottom">
                                     <Image

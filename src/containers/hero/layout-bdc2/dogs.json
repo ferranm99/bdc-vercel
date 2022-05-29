@@ -4,49 +4,49 @@
         {
             "id": 1,
             "title": "Genesis Collection",
-            "description": "The naughtiest collection of them all.",
+            "description": "Only 888 tokens all 1/1 hand-drawn...",
             "image": {
-                "src": "/images/bdc/nft/bdc188-235px.png"
+                "src": "/images/bdc/nft/bdc169-235px.png"
             }
         },
         {
             "id": 2,
-            "title": "Premium Dogs",
-            "description": "You wouldn't want to mess with these fellas",
+            "title": "Custom Dogs",
+            "description": "The most prestigious dogs you can own...",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
             }
         },
         {
             "id": 3,
-            "title": "Custom Dogs",
-            "description": "Pet them if you'd like, see what happens.",
+            "title": "4K Collection",
+            "description": "Generative collection using traits from the Genesis collect...",
             "image": {
-                "src": "/images/bdc/nft/bdc188-235px.png"
+                "src": "/images/bdc/nft/bdc235-235px.png"
             }
         },
         {
             "id": 4,
-            "title": "4K Collection",
-            "description": "Eek! they reek!",
+            "title": "Energy Pack",
+            "description": "Mutation is happening...",
             "image": {
-                "src": "/images/bdc/nft/bdc188-235px.png"
+                "src": "/images/bdc/nft/energy-pack-235px.png"
             }
         },
         {
             "id": 5,
-            "title": "Serum",
-            "description": "A little too much, a little too late.",
+            "title": "CyberPunk",
+            "description": "In the year 2100..",
             "image": {
-                "src": "/images/bdc/nft/bdc188-235px.png"
+                "src": "/images/bdc/nft/cyborg-235px.png"
             }
         },
         {
             "id": 6,
             "title": "Heaven",
-            "description": "Don't catch em or you know..",
+            "description": "Because Bad Dogs go to heaven...",
             "image": {
-                "src": "/images/bdc/nft/bdc188-235px.png"
+                "src": "/images/bdc/nft/heaven-235px.png"
             }
         }
     ]

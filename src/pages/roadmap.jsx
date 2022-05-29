@@ -146,7 +146,7 @@ const Roadmap = () => (
                     <h3 className="vertical-timeline-element-title">
                         Establish partnership with ARC marketplace.
                     </h3>
-                    <p className="text-warning">Pending</p>
+                    <p className="text-warning">In Progress</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     iconStyle={{

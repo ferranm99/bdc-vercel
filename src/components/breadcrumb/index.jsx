@@ -13,9 +13,9 @@ const Breadcrumb = ({ pageTitle, currentPage, className, space }) => (
         <div className="container">
             <div className="row align-items-center">
                 <div className="col-lg-6 col-md-6 col-12">
-                    <h5 className="pageTitle text-center text-md-start">
+                    <h4 className="customTitleFont pageTitle text-center text-md-start">
                         {pageTitle}
-                    </h5>
+                    </h4>
                 </div>
                 <div className="col-lg-6 col-md-6 col-12">
                     <ul className="breadcrumb-list">
