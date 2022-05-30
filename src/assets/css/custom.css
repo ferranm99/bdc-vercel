@@ -73,11 +73,16 @@
     color: #ffdf0b;
     text-transform: uppercase;
     text-shadow: -1px 4px 4px black;
+    /* margin-top: 0px !important;
+    margin-bottom: 0px !important; */
 }
 .customTitleStyle {
     font-family: "Permanent Marker", cursive;
     text-shadow: -2px 2px 0px yellow;
     font-size: 3.5rem;
+}
+.customTitleFont-bottom-20 {
+    margin-bottom: 20px;
 }
 .btn-a,
 .btn-b {

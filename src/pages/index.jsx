@@ -7,6 +7,7 @@ import HeroArea from "@containers/hero/layout-bdc1";
 import HeroAreaBDC2 from "@containers/hero/layout-bdc2";
 import HeroAreaBDC3 from "@containers/hero/layout-bdc3";
 import Image from "next/image";
+import { Tweet } from "react-twitter-widgets";
 // import Anchor from "@ui/anchor";
 
 import { normalizedData } from "@utils/methods";
@@ -268,6 +269,28 @@ const Home09 = () => {
                                     and sweatpants.{" "}
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="container mt--60">
+                    <div className="row">
+                        <div className="col-lg-4 col-sm-12">
+                            <Tweet
+                                tweetId="1531135537989427201"
+                                options={{ theme: "dark" }}
+                            />
+                        </div>
+                        <div className="col-lg-4 col-sm-12">
+                            <Tweet
+                                tweetId="1530423784641019904"
+                                options={{ theme: "dark" }}
+                            />
+                        </div>
+                        <div className="col-lg-4 col-sm-12">
+                            <Tweet
+                                tweetId="1531268412974026753"
+                                options={{ theme: "dark" }}
+                            />
                         </div>
                     </div>
                 </div>

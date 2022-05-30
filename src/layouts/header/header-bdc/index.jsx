@@ -40,12 +40,14 @@ const Header = ({ className }) => {
                     <div className="header-inner">
                         <div className="header-left">
                             {/* <Logo logo={headerData.logo} /> */}
-                            <Image
-                                src="/images/bdc/logo/bdc-logo-50px.png"
-                                alt="Bad Dogs Company Circle Logo"
-                                width={50}
-                                height={50}
-                            />
+                            <a href="/">
+                                <Image
+                                    src="/images/bdc/logo/bdc-yellow-logo-50px.png"
+                                    alt="Bad Dogs Company Circle Logo"
+                                    width={50}
+                                    height={50}
+                                />
+                            </a>
                             <div className="mainmenu-wrapper">
                                 <nav
                                     id="sideNav"
