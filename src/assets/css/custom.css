@@ -63,7 +63,6 @@
     align-content: flex-end;
     align-items: flex-end;
 }
-
 .customFont {
     font-family: "Koulen", cursive;
 }
@@ -119,7 +118,6 @@
     left: 400px;
     z-index: -1;
 }
-
 .inner {
     display: inline-block;
     /* letter-spacing: -4px; */
@@ -129,7 +127,6 @@
     color: skyblue;
     font-size: 0;
 }
-
 .inner span:first-child {
     color: pink;
 }
@@ -163,6 +160,8 @@
 }
 .dogs-info-link {
     font-size: 2rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
 }
 .float-l {
     float: left !important;
@@ -223,5 +222,13 @@
     color: #26b170;
 }
 .text-warning {
+    color: #ffdf0b;
+}
+.icon-green {
+    color:#26b170;
+    padding-right:12px;
+}
+mark.arrow {
+    background: transparent;
     color: #ffdf0b;
 }
