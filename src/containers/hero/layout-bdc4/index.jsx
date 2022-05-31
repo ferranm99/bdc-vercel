@@ -98,13 +98,34 @@ const HeroAreaBDC4 = ({ data }) => (
                 </div>
             </div>
             <div className="row text-center pt-5">
-                <button type="button" className="offset-4 col-2 btn-a">
+                <div className="button-group">
+                    <Button
+                        data-sal="slide-up"
+                        data-sal-delay="300"
+                        data-sal-duration="800"
+                        className="btn-mr-3"
+                        path="/"
+                    >
+                        BUY NOW
+                    </Button>
+                    <Button
+                        key="btn1"
+                        data-sal="slide-up"
+                        data-sal-delay="300"
+                        data-sal-duration="800"
+                        path="/mint"
+                        color="primary-alta"
+                    >
+                        CLAIM
+                    </Button>
+                </div>
+                {/* <button type="button" className="offset-4 col-2 btn-a">
                     BUY NOW
                 </button>
                 <hr className="horizontal" />
                 <button type="button" className="col-2 btn-b">
                     CLAIM
-                </button>
+                </button> */}
                 <div className="col-4" />
             </div>
         </div>

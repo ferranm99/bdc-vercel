@@ -228,6 +228,9 @@
     color:#26b170;
     padding-right:12px;
 }
+a.btn-mr-3 {
+    margin-right: 3rem;
+}
 mark.arrow {
     background: transparent;
     color: #ffdf0b;
