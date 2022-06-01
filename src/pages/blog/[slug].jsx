@@ -20,19 +20,19 @@ const BlogDetails = ({ post, categories, recentPosts, tags, relatedPosts }) => (
             <div className="rn-blog-area rn-blog-details-default rn-section-gapTop">
                 <div className="container">
                     <div className="row g-6">
-                        <div className="col-xl-8 col-lg-8">
+                        <div className="col-xl-12 col-lg-12 mt_md--40 mt_sm--40">
                             <BlogDetailsArea post={post} />
                             {/* <CommentsArea />
                             <CommentForm /> */}
                             <RelatedPostsArea relatedPosts={relatedPosts} />
                         </div>
-                        <div className="col-xl-4 col-lg-4 mt_md--40 mt_sm--40">
+                        {/* <div className="col-xl-4 col-lg-4 mt_md--40 mt_sm--40">
                             <BlogSidebar
                                 categories={categories}
                                 recentPosts={recentPosts}
                                 tags={tags}
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
