@@ -32,15 +32,12 @@ const HeroAreaBDC2 = () => {
         <div className="container-fluid pb-5" id="bannerImg">
             <div className="row d-flex align-items-center mx-5 px-5">
                 <div className="offset-lg-2 col-lg-8 col-sm-12 text-center">
-                    <h3
+                    <h1
                         data-title={data.title}
                         className="title theme-gradient my-5 pt-5 customTitleFont justify-content-center col-12 "
-                        style={{
-                            fontSize: "7.5rem",
-                        }}
                     >
                         {data.title}
-                    </h3>
+                    </h1>
                 </div>
             </div>
 

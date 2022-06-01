@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
-import Header from "@layout/header/header-01";
-import Footer from "@layout/footer/footer-01";
+import Header from "@layout/header/header-bdc";
+import Footer from "@layout/footer/footer-bdc";
 import Breadcrumb from "@components/breadcrumb";
 import BlogDetailsArea from "@containers/blog-details";
-import CommentsArea from "@containers/comments-area";
-import CommentForm from "@components/comment-form";
+// import CommentsArea from "@containers/comments-area";
+// import CommentForm from "@components/comment-form";
 import RelatedPostsArea from "@containers/related-posts";
 import BlogSidebar from "@containers/blog-sidebar";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
@@ -22,8 +22,8 @@ const BlogDetails = ({ post, categories, recentPosts, tags, relatedPosts }) => (
                     <div className="row g-6">
                         <div className="col-xl-8 col-lg-8">
                             <BlogDetailsArea post={post} />
-                            <CommentsArea />
-                            <CommentForm />
+                            {/* <CommentsArea />
+                            <CommentForm /> */}
                             <RelatedPostsArea relatedPosts={relatedPosts} />
                         </div>
                         <div className="col-xl-4 col-lg-4 mt_md--40 mt_sm--40">

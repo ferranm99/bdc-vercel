@@ -72,16 +72,16 @@ const HeroAreaBDC4 = ({ data }) => (
                                 alignContent: "stretch",
                             }}
                         >
-                            <li className="float-l flex-item icon-md">
-                                <i className="feather-check-circle icon-md icon-green" />
+                            <li className="float-l flex-item icon-sm">
+                                <i className="feather-check-circle icon-sm icon-green" />
                                 OG Membership
                             </li>
-                            <li className="float-l ml-5 flex-item px-2 icon-md">
-                                <i className="feather-check-circle icon-md icon-green" />
+                            <li className="float-l ml-5 flex-item px-2 icon-sm">
+                                <i className="feather-check-circle icon-sm icon-green" />
                                 Premium Utility
                             </li>
-                            <li className="float-l icon-md">
-                                <i className="feather-check-circle icon-md icon-green" />
+                            <li className="float-l icon-sm">
+                                <i className="feather-check-circle icon-sm icon-green" />
                                 3,000 Supply
                             </li>
                         </ul>

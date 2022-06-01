@@ -12,12 +12,12 @@ const Breadcrumb = ({ pageTitle, currentPage, className, space }) => (
     >
         <div className="container">
             <div className="row align-items-center">
-                <div className="col-lg-6 col-md-6 col-12">
-                    <h4 className="customTitleFont pageTitle text-center text-md-start">
+                <div className="col-lg-8 col-md-8 col-12">
+                    <h2 className="customTitleFont pageTitle text-center text-md-start">
                         {pageTitle}
-                    </h4>
+                    </h2>
                 </div>
-                <div className="col-lg-6 col-md-6 col-12">
+                <div className="col-lg-4 col-md-4 col-12">
                     <ul className="breadcrumb-list">
                         <li className="item">
                             <Anchor path="/">Home</Anchor>

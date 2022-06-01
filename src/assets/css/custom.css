@@ -75,6 +75,16 @@
     /* margin-top: 0px !important;
     margin-bottom: 0px !important; */
 }
+/* @media only screen and (min-width: 768px) {
+    .customTitleFont {
+        font-size: 5rem;
+    }
+} */
+/* @media only screen and (min-width: 1200px) {
+    .customTitleFont {
+        font-size: 7rem;
+    }
+} */
 .customTitleStyle {
     font-family: "Permanent Marker", cursive;
     text-shadow: -2px 2px 0px yellow;
@@ -184,8 +194,23 @@
     margin-right: auto;
 }
 /* feather icon sizes */
-.icon-sm {
-    font-size: 15px;
+@media only screen and (min-width: 2400px) {
+    .icon-sm {
+        font-size: 18px;
+        padding-top: 15px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .icon-sm {
+        font-size: 18px;
+        padding-top: 5px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .icon-sm {
+        font-size: 18px;
+        padding-top: 15px;
+    }
 }
 @media only screen and (min-width: 2400px) {
     .icon-md {
