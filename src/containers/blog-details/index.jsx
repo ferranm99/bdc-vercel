@@ -11,8 +11,8 @@ const BlogDetailsArea = ({ className, post }) => {
             <div className="blog-content-top">
                 <h2 className="title pl_sm--20 pr_sm--20">{post.title}</h2>
                 <p className="date pl_sm--20 pr_sm--20">
-                    {getMonth(date).toString().toUpperCase()}{" "}{date.getDate().toString().padStart(2, "0")}
-                    , {date.getFullYear()}
+                    {/* {getMonth(date).toLocaleString("default", { month: "long" })}{" "}{date.getDate().toString().padStart(2, "0")}
+                    , {date.getFullYear()} */}
                 </p>
             </div>
             <div className="bd-thumbnail pl_sm--20 pr_sm--20">

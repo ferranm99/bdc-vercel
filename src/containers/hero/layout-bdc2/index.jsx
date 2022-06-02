@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import Slider, { SliderItem } from "@ui/slider";
 import { IDType, ImageType } from "@utils/types";
+// import * as Scroll from "react-scroll";
+import { Link, Element } from "react-scroll";
 import Image from "next/image";
 import { useState } from "react";
 import Anchor from "@ui/anchor";
@@ -76,7 +78,7 @@ const HeroAreaBDC2 = () => {
                                         >
                                             {dog.description}
                                         </p>
-                                        <Anchor
+                                        {/* <Anchor
                                             path="#"
                                             className="border-bottom-4"
                                             style={{
@@ -86,7 +88,21 @@ const HeroAreaBDC2 = () => {
                                             }}
                                         >
                                             MORE INFO
-                                        </Anchor>
+                                        </Anchor> */}
+                                        <Link
+                                            to={dog.element}
+                                            className="border-bottom-4"
+                                            spy={true}
+                                            smooth={true}
+                                            duration={500}
+                                            style={{
+                                                fontSize: "2rem",
+                                                borderBottom:
+                                                    "2px solid yellow",
+                                            }}
+                                        >
+                                            MORE INFO
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

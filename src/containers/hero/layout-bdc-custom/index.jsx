@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import Button from "@ui/button";
 import Image from "next/image";
-import Slider, { SliderItem } from "@ui/slider";
-import Portfolio from "@components/portfolio/layout-02";
 import { ButtonType, IDType, ImageType } from "@utils/types";
 
 const SliderOptions = {
@@ -15,19 +13,10 @@ const SliderOptions = {
     adaptiveHeight: true,
 };
 
-const HeroAreaBDC4 = ({ data }) => (
+const HeroAreaBdcCustom = ({ data }) => (
     <div className="banner-style-4 rn-section-gapTop rn-section-gapBottom">
-        <div className="container">
+        <div className="container element" id="bdc-custom">
             <div className="row align-items-center">
-                <h1
-                    className="title text-center"
-                    data-sal="slide-up"
-                    data-sal-delay="200"
-                    data-sal-duration="800"
-                // dangerouslySetInnerHTML={{ __html: "Bad Dogs go to Heaven" }}
-                >
-                    <span className="customTitleFont">Bad Dogs</span> go to HEAVEN
-                </h1>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-2 order-lg-1 mt_md--40 mt_sm--40 pl_md--25 pl_sm--25">
                     <div className="sldier-content">
                         {/*data?.badge && (
@@ -41,7 +30,15 @@ const HeroAreaBDC4 = ({ data }) => (
                             </span>
                         )*/}
 
-                        <h3>ABOUT</h3>
+                        <h1
+                            className="title"
+                            data-sal="slide-up"
+                            data-sal-delay="200"
+                            data-sal-duration="800"
+                        // dangerouslySetInnerHTML={{ __html: "Bad Dogs go to Heaven" }}
+                        >
+                            <span className="customTitleFont">Bad Dogs</span> Custom 1/1
+                        </h1>
                         <p>
                             Welcome to the Dog Pound, the underground web3
                             social club where your NFT doubles as your
@@ -132,7 +129,7 @@ const HeroAreaBDC4 = ({ data }) => (
     </div>
 );
 
-HeroAreaBDC4.propTypes = {
+HeroAreaBdcCustom.propTypes = {
     data: PropTypes.shape({
         badge: PropTypes.string,
         title: PropTypes.string.isRequired,
@@ -150,4 +147,4 @@ HeroAreaBDC4.propTypes = {
     }),
 };
 
-export default HeroAreaBDC4;
+export default HeroAreaBdcCustom;

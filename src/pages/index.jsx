@@ -6,7 +6,12 @@ import Particles from "@ui/particles";
 import HeroArea from "@containers/hero/layout-bdc1";
 import HeroAreaBDC2 from "@containers/hero/layout-bdc2";
 import HeroAreaBDC3 from "@containers/hero/layout-bdc3";
-import HeroAreaBDC4 from "@containers/hero/layout-bdc4";
+import HeroAreaBdcHeaven from "@containers/hero/layout-heaven";
+import HeroAreaBdcGenesis from "@containers/hero/layout-bdc-genesis";
+import HeroAreaBdc4k from "@containers/hero/layout-bdc-4k";
+import HeroAreaBdcCustom from "@containers/hero/layout-bdc-custom";
+import HeroAreaBdcCyber from "@containers/hero/layout-bdc-cyber";
+import HeroAreaBdcSerum from "@containers/hero/layout-bdc-serum";
 import Image from "next/image";
 import { Tweet } from "react-twitter-widgets";
 // import Anchor from "@ui/anchor";
@@ -76,40 +81,23 @@ const Home09 = () => {
                     />
                 </div>
 
-                {/* <CTAArea data={content2["cta-section"]} /> */}
-                {/* <div className="section-container customFont">
-                    <div className="col-6">
-                        <h4>WELCOME TO</h4>
-                        <h3 className="customTitleFont">THE DOGHOUSE</h3>
-                        <p>
-                            Welcome to the Gutter, the underground web3 social
-                            club where your NFT doubles as your membership token
-                            to the Gutter Cat Gang.
-                        </p>
-                        <p>
-                            Welcome to the Gutter, the underground web3 social
-                            club where your NFT doubles as your membership token
-                            to the Gutter Cat Gang.
-                        </p>
+                <div className="parallax-2 col-12" />
+                <HeroAreaBdcGenesis data={content4["hero-section"]} />
 
-                        <Button className="btn btn-primary-alta">
-                            JOIN DISCORD
-                        </Button>
-                    </div>
+                <div className="parallax-2 col-12" />
+                <HeroAreaBdcCustom data={content4["hero-section"]} />
 
-                    <div className="col-6 text-center">
-                        <Image
-                            src="/images/client/testimonial-2.jpg"
-                            className="card-img-center h-50"
-                            width={400}
-                            height={400}
-                            alt="..."
-                        />
-                    </div>
-                </div> */}
+                <div className="parallax-2 col-12" />
+                <HeroAreaBdc4k data={content4["hero-section"]} />
+
+                <div className="parallax-2 col-12" />
+                <HeroAreaBdcSerum data={content4["hero-section"]} />
+
+                <div className="parallax-2 col-12" />
+                <HeroAreaBdcCyber data={content4["hero-section"]} />
+
                 <div className="parallax col-12" />
-
-                <HeroAreaBDC4 data={content4["hero-section"]} />
+                <HeroAreaBdcHeaven data={content4["hero-section"]} />
 
                 <div className="row py-5">
                     <div className="parallax-2 col-12" />
