@@ -29,10 +29,12 @@ button {
 
         &.btn-primary {
             background: var(--color-primary);
+            color: var(--color-dark);
 
             &:hover {
                 background: var(--color-primary-alta);
-                color: var(--color-white);
+                // color: var(--color-white);
+                color: var(--color-primary);
             }
 
             &.active {
@@ -49,7 +51,8 @@ button {
 
             &:hover {
                 background: var(--color-primary);
-                color: var(--color-white) !important;
+                // color: var(--color-white) !important;
+                color: var(--color-dark) !important;
             }
         }
 

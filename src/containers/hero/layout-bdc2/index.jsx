@@ -45,7 +45,9 @@ const HeroAreaBDC2 = () => {
 
             <div className="row d-flex align-items-center px-5 mx-5">
                 {data?.collections.map((dog) => (
-                    <div className="col-lg-6 col-md-12 col-sm-12 text-left" key={dog.id}>
+                    <div className="col-lg-6 col-md-12 col-sm-12 text-left" key={dog.id} data-sal="slide-up"
+                        data-sal-delay="300"
+                        data-sal-duration="800">
                         <div className="bg-dark-opacity-75 card mb-3">
                             <div className="row no-gutters">
                                 <div className="col-lg-4 col-md-4 col-sm-12 text-center img-valign-bottom">
@@ -61,10 +63,10 @@ const HeroAreaBDC2 = () => {
                                     className="col-lg-8 col-md-8 col-sm-12"
                                     id={dog.id}
                                     onMouseEnter={(e) => {
-                                        showMoreInfo(e);
+                                        // showMoreInfo(e);
                                     }}
                                     onMouseLeave={(e) => {
-                                        showLessInfo(e);
+                                        // showLessInfo(e);
                                     }}
                                 >
                                     <div className="card-body">
@@ -74,7 +76,7 @@ const HeroAreaBDC2 = () => {
                                         </h3>
                                         <p
                                             id={`banner-desc-${dog.id}`}
-                                            className="card-text hidden banner-desc sal-animate" data-sal="slide-down" data-sal-delay="200" data-sal-duration="800"
+                                            className="card-text pt--20"
                                         >
                                             {dog.description}
                                         </p>
@@ -97,11 +99,9 @@ const HeroAreaBDC2 = () => {
                                             duration={500}
                                             style={{
                                                 fontSize: "2rem",
-                                                borderBottom:
-                                                    "2px solid yellow",
                                             }}
                                         >
-                                            MORE INFO
+                                            <mark className="arrow">MORE INFO →</mark>
                                         </Link>
                                     </div>
                                 </div>

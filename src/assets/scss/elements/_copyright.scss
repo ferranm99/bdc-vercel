@@ -144,7 +144,8 @@
                     }
                     
                     &:hover {
-                        color: var(--color-white) !important;
+                        // color: var(--color-white) !important;
+                        color: #acacac !important;
                         background: var(--color-primary) !important;
                         svg {
                             color: var(--color-white);

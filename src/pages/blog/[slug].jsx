@@ -8,10 +8,11 @@ import BlogDetailsArea from "@containers/blog-details";
 // import CommentsArea from "@containers/comments-area";
 // import CommentForm from "@components/comment-form";
 import RelatedPostsArea from "@containers/related-posts";
-import BlogSidebar from "@containers/blog-sidebar";
+// import BlogSidebar from "@containers/blog-sidebar";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 
-const BlogDetails = ({ post, categories, recentPosts, tags, relatedPosts }) => (
+// const BlogDetails = ({ post, categories, recentPosts, tags, relatedPosts }) => (
+const BlogDetails = ({ post, relatedPosts }) => (
     <Wrapper>
         <SEO pageTitle="Blog Details" />
         <Header />
@@ -97,9 +98,9 @@ export async function getStaticProps({ params }) {
 
 BlogDetails.propTypes = {
     post: PropTypes.shape({}),
-    categories: PropTypes.arrayOf(PropTypes.shape({})),
-    recentPosts: PropTypes.arrayOf(PropTypes.shape({})),
-    tags: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape({}))),
+    // categories: PropTypes.arrayOf(PropTypes.shape({})),
+    // recentPosts: PropTypes.arrayOf(PropTypes.shape({})),
+    // tags: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape({}))),
     relatedPosts: PropTypes.arrayOf(PropTypes.shape({})),
 };
 

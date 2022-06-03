@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Image from "next/image";
 
 const SocialWidget = ({ socials }) => (
     <div className="d-none d-lg-block d-xl-block">
@@ -15,6 +16,55 @@ const SocialWidget = ({ socials }) => (
                     </a>
                 </div>
             ))}
+            {/* Custom Icons */}
+            <div className="col icon-box" key="discord">
+                <a
+                    href="https://discord.gg/pf98svgC7N"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Discord"
+                >
+                    <Image
+                        className="customIcon"
+                        alt="Discord"
+                        src="/images/icons/discord.svg"
+                        width={22}
+                        height={22}
+                    />
+                </a>
+            </div>
+            <div className="col icon-box" key="opensea">
+                <a
+                    href="https://opensea.io/collection/baddogscompany"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Opensea"
+                >
+                    <Image
+                        className="customIcon"
+                        alt="OpenSea"
+                        src="/images/icons/opensea.svg"
+                        width={22}
+                        height={22}
+                    />
+                </a>
+            </div>
+            <div className="col icon-box" key="wallet">
+                <a
+                    href="#nothing"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Wallet"
+                >
+                    <Image
+                        className="customIcon"
+                        alt="Wallet"
+                        src="/images/icons/wallet.svg"
+                        width={22}
+                        height={22}
+                    />
+                </a>
+            </div>
         </div>
     </div>
 );

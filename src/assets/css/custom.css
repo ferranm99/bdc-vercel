@@ -260,3 +260,12 @@ mark.arrow {
     background: transparent;
     color: #ffdf0b;
 }
+.customIcon {
+    height: 22px !important;
+    width: 22px !important;
+}
+.customIconFooter {
+    height: 22px !important;
+    width: 22px !important;
+    margin-top: 5px !important;
+}
