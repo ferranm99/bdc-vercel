@@ -50,13 +50,6 @@ const SupportArea = ({ className, space }) => (
                             <h4>How do I buy a Dog from the Genesis Collection?</h4>
                             <div className="content">
                                 <p>
-                                    All the Lorem Ipsum generators on the
-                                    Internet tend to repeat predefined chunks as
-                                    necessary, making this the first true
-                                    generator on the Internet. Various versions
-                                    have evolved over the years, sometimes by
-                                    accident, sometimes on purpose (injected
-                                    humour and the like).
                                     Due to the limited supply in the Genesis
                                     collection, there are several ways to buy
                                     a dog at the moment:
