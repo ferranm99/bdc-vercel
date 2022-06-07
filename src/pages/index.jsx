@@ -5,7 +5,7 @@ import Footer from "@layout/footer/footer-bdc";
 import Particles from "@ui/particles";
 import HeroArea from "@containers/hero/layout-bdc1";
 import HeroAreaBDC2 from "@containers/hero/layout-bdc2";
-import HeroAreaBDC3 from "@containers/hero/layout-bdc3";
+// import HeroAreaBDC3 from "@containers/hero/layout-bdc3";
 import HeroAreaBdcHeaven from "@containers/hero/layout-heaven";
 import HeroAreaBdcGenesis from "@containers/hero/layout-bdc-genesis";
 import HeroAreaBdc4k from "@containers/hero/layout-bdc-4k";
@@ -60,7 +60,7 @@ const Home09 = () => {
                 <Particles />
                 <HeroArea data={content4["hero-section"]} />
                 <HeroAreaBDC2 data={content["hero-section"]} />
-                <HeroAreaBDC3 data={content4["hero-section"]} />
+                {/* <HeroAreaBDC3 data={content4["hero-section"]} /> */}
 
                 <div
                     className="container"

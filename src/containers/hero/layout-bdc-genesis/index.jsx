@@ -71,15 +71,15 @@ const HeroAreaBdcGenesis = ({ data }) => (
                         >
                             <li className="float-l flex-item icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                OG Membership
+                                Genesis Membership
                             </li>
                             <li className="float-l ml-5 flex-item px-2 icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                Premium Utility
+                                Highest Utility
                             </li>
                             <li className="float-l icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                3,000 Supply
+                                888 Supply
                             </li>
                         </ul>
                     </div>

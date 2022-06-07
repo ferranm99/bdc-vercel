@@ -74,22 +74,22 @@ const HeroAreaBdcHeaven = ({ data }) => (
                         >
                             <li className="float-l flex-item icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                OG Membership
+                                Play-to-Earn
                             </li>
                             <li className="float-l ml-5 flex-item px-2 icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                Premium Utility
+                                Redeem Prizes
                             </li>
                             <li className="float-l icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                3,000 Supply
+                                Metaverse
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-2">
                     <Image
-                        src="/images/bdc/nft/bdc169-667px.png"
+                        src="/images/bdc/nft/heaven-667px.png"
                         className="card-img-center"
                         width={667}
                         height={667}

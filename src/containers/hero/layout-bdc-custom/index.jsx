@@ -59,7 +59,7 @@ const HeroAreaBdcCustom = ({ data }) => (
                                 Bad Dogs <a href="#rarity"><mark className="arrow">Rarity →</mark></a>
                             </li>
                         </ul>
-                        <h3>OVERVIEW</h3>
+                        <h3>AVAILABLE FOR</h3>
                         <ul
                             className="m-0 p-0"
                             style={{
@@ -71,22 +71,22 @@ const HeroAreaBdcCustom = ({ data }) => (
                         >
                             <li className="float-l flex-item icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                OG Membership
+                                BDC OG
                             </li>
                             <li className="float-l ml-5 flex-item px-2 icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                Premium Utility
+                                BDC Whale
                             </li>
                             <li className="float-l icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                3,000 Supply
+                                Contest Winner
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-2">
                     <Image
-                        src="/images/bdc/nft/bdc169-667px.png"
+                        src="/images/bdc/nft/bdc216-667px.png"
                         className="card-img-center"
                         width={667}
                         height={667}

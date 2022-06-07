@@ -7,7 +7,7 @@
             "description": "Only 888 tokens all 1/1 hand-drawn...",
             "element": "bdc-genesis",
             "image": {
-                "src": "/images/bdc/nft/bdc169-235px.png"
+                "src": "/images/bdc/nft/bdc027-235px.png"
             }
         },
         {
@@ -39,11 +39,11 @@
         },
         {
             "id": 5,
-            "title": "CyberDog",
-            "description": "In the year 2100..",
+            "title": "CyberDog 3077",
+            "description": "In the year 3077...",
             "element": "bdc-cyberdog",
             "image": {
-                "src": "/images/bdc/nft/cyborg-235px.png"
+                "src": "/images/bdc/nft/bdc126-235px.png"
             }
         },
         {
@@ -52,7 +52,7 @@
             "description": "Because Bad Dogs go to heaven...",
             "element": "bdc-heaven",
             "image": {
-                "src": "/images/bdc/nft/heaven-235px.png"
+                "src": "/images/bdc/nft/bdc137-235px.png"
             }
         }
     ]

@@ -71,7 +71,7 @@ const HeroAreaBdc4k = ({ data }) => (
                         >
                             <li className="float-l flex-item icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                OG Membership
+                                BDC Membership
                             </li>
                             <li className="float-l ml-5 flex-item px-2 icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
@@ -79,14 +79,14 @@ const HeroAreaBdc4k = ({ data }) => (
                             </li>
                             <li className="float-l icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                3,000 Supply
+                                4,000 Supply
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-2">
                     <Image
-                        src="/images/bdc/nft/bdc169-667px.png"
+                        src="/images/bdc/nft/bdc091-667px.png"
                         className="card-img-center"
                         width={667}
                         height={667}

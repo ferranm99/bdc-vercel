@@ -37,7 +37,7 @@ const HeroAreaBdcCyber = ({ data }) => (
                             data-sal-duration="800"
                         // dangerouslySetInnerHTML={{ __html: "Bad Dogs go to Heaven" }}
                         >
-                            <span className="customTitleFont">Bad Dogs</span> CyberDog
+                            <span className="customTitleFont">Bad Dogs</span> CyberDog 3077
                         </h1>
                         <p>
                             Welcome to the Dog Pound, the underground web3
@@ -71,15 +71,15 @@ const HeroAreaBdcCyber = ({ data }) => (
                         >
                             <li className="float-l flex-item icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                OG Membership
+                                BDC Membership
                             </li>
                             <li className="float-l ml-5 flex-item px-2 icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                Premium Utility
+                                Metaverse Utility
                             </li>
                             <li className="float-l icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                3,000 Supply
+                                4,888 Supply
                             </li>
                         </ul>
                     </div>
