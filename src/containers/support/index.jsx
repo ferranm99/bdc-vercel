@@ -160,7 +160,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 4,
                                     title: "What is the Diamond Club?",
                                     description:
-                                        "<p>The Dimaond Club was created to allow our biggest BDC supporter to have a direct line of communication with the Core team. The core team will listen and assess all feedback from the Diamonds and execute accordingly if and when it is appropriate. </p>",
+                                        "<p>The Diamond Club was created to allow our biggest BDC supporter to have a direct line of communication with the Core team. The core team will listen and assess all feedback from the Diamonds and execute accordingly if and when it is appropriate. </p>",
                                 },
                                 {
                                     id: 5,
