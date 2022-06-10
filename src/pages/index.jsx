@@ -83,7 +83,9 @@ const Home09 = () => {
                 </div>
 
                 {isSafari ? (
-                    <div className="parallax-2 col-12" />
+                    <div className="row py-5">
+                        <div className="parallax-2 col-12" />
+                    </div>
                 ) : (
                     <div className="parallax-2 parallax-fix col-12" />
                 )}

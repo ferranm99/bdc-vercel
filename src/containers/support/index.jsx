@@ -110,7 +110,7 @@ const SupportArea = ({ className, space }) => (
                                 <p>
                                     We will reinvest a significant portion of
                                     the profit back into BDC. This includes
-                                    securing our IP properties, continual build
+                                    securing our IP assets, continual build
                                     of our brand as well as locating
                                     opportunities for collaboration,
                                     partnership, or acquisition with other
