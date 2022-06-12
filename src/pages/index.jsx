@@ -3,7 +3,7 @@ import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
 import Footer from "@layout/footer/footer-bdc";
 import Particles from "@ui/particles";
-import { isSafari } from "react-device-detect";
+import { isSafari, isMobile } from "react-device-detect";
 import HeroArea from "@containers/hero/layout-bdc1";
 import HeroAreaBDC2 from "@containers/hero/layout-bdc2";
 // import HeroAreaBDC3 from "@containers/hero/layout-bdc3";
@@ -82,7 +82,7 @@ const Home09 = () => {
                     />
                 </div> */}
 
-                {isSafari ? (
+                {isSafari || isMobile ? (
                     <div className="row py-5">
                         <div className="parallax-3 col-12" />
                     </div>
@@ -91,36 +91,46 @@ const Home09 = () => {
                 )}
                 <HeroAreaBdcGenesis data={content4["hero-section"]} />
 
-                {isSafari ? (
-                    <div className="parallax-2 col-12" />
+                {isSafari || isMobile ? (
+                    <div className="row py-5">
+                        <div className="parallax-2 col-12" />
+                    </div>
                 ) : (
                     <div className="parallax-2 parallax-fix col-12" />
                 )}
                 <HeroAreaBdcCustom data={content4["hero-section"]} />
 
-                {isSafari ? (
-                    <div className="parallax-2 col-12" />
+                {isSafari || isMobile ? (
+                    <div className="row py-5">
+                        <div className="parallax-2 col-12" />
+                    </div>
                 ) : (
                     <div className="parallax-2 parallax-fix col-12" />
                 )}
                 <HeroAreaBdc4k data={content4["hero-section"]} />
 
-                {isSafari ? (
-                    <div className="parallax-2 col-12" />
+                {isSafari || isMobile ? (
+                    <div className="row py-5">
+                        <div className="parallax-2 col-12" />
+                    </div>
                 ) : (
                     <div className="parallax-2 parallax-fix col-12" />
                 )}
                 <HeroAreaBdcSerum data={content4["hero-section"]} />
 
-                {isSafari ? (
-                    <div className="parallax-2 col-12" />
+                {isSafari || isMobile ? (
+                    <div className="row py-5">
+                        <div className="parallax-2 col-12" />
+                    </div>
                 ) : (
                     <div className="parallax-2 parallax-fix col-12" />
                 )}
                 <HeroAreaBdcCyber data={content4["hero-section"]} />
 
-                {isSafari ? (
-                    <div className="parallax col-12" />
+                {isSafari || isMobile ? (
+                    <div className="row py-5">
+                        <div className="parallax col-12" />
+                    </div>
                 ) : (
                     <div className="parallax parallax-fix col-12" />
                 )}
