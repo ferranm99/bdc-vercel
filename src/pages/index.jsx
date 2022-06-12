@@ -63,7 +63,7 @@ const Home09 = () => {
                 <HeroAreaBDC2 data={content["hero-section"]} />
                 {/* <HeroAreaBDC3 data={content4["hero-section"]} /> */}
 
-                <div
+                {/* <div
                     className="container"
                     style={{
                         width: "100%",
@@ -80,14 +80,14 @@ const Home09 = () => {
                         priority
                         className="fullscreen_image-banner"
                     />
-                </div>
+                </div> */}
 
                 {isSafari ? (
                     <div className="row py-5">
-                        <div className="parallax-2 col-12" />
+                        <div className="parallax-3 col-12" />
                     </div>
                 ) : (
-                    <div className="parallax-2 parallax-fix col-12" />
+                    <div className="parallax-3 parallax-fix col-12" />
                 )}
                 <HeroAreaBdcGenesis data={content4["hero-section"]} />
 

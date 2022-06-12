@@ -1,21 +1,19 @@
 ---
-title: More important feature for designer
-date: "2021-06-02 11:10:00"
-category: Design
+title: Auction for Ukraine Donation
+date: "2022-03-04 11:10:00"
+category: Drops
 image: {
-	src: "/images/blog/2.jpg"
+	src: "/images/blog/bg2.jpg"
 }
-tags: ["design", "minimal", "company"]
+tags: ["drop", "auction", "ukraine", "genesis", "donation"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+#### BDC Auction to assist Ukraine
 
-#### Nobis eleifend option conguenes.
+With our current release at #109, we are getting very close to our very first special edition dog!!  @13six | Founder  had decided that every triple number (e.g. #111, #222, etc) will be a special dog that will go to the auction. Since this will be our first auction, we want to make it extra memorable.
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
+As you are aware, Russia has launched a devastating attack on Ukraine and its people. The conflict between the two countries continues to escalate and the impact on civilians is tremendous.  For the auction of #111, the team had agreed to dedicate this Bad dog to aid in the emergency relief efforts of the Ukrainian people. All proceeds from the auction will go towards a donation that will help protect those most in need, ensuring they have a safe refuge and necessities for their survival.
 
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
+The **[auction](https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/40721341926649942604524054295385484712682943270694199897760179861390901641217)** will start tomorrow at 11pm UTC on OpenSea. We will appreciate it very much if you can help spread the word and increase participation in this auction and our effort to help relieve the pain of this massive crisis.
 
-#### Mauris tempor, orci id pellentesque.
-
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+Thank you so very much!

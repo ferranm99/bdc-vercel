@@ -40,9 +40,8 @@ const HeroAreaBdcCyber = ({ data }) => (
                             <span className="customTitleFont">Bad Dogs</span> CyberDog 3077
                         </h1>
                         <p>
-                            Welcome to the Dog Pound, the underground web3
-                            social club where your NFT doubles as your
-                            membership token to the Bad Dogs Company.
+                            What do cyber dogs dream about in the year 3077
+                            ...
                         </p>
                         <h3>INFO</h3>
                         <ul className="dogs-info">
@@ -52,12 +51,12 @@ const HeroAreaBdcCyber = ({ data }) => (
                             <li className="dogs-info-link">
                                 Bad Dogs <a href="#opensea"><mark className="arrow">OpenSea →</mark></a>
                             </li>
-                            <li className="dogs-info-link">
+                            {/* <li className="dogs-info-link">
                                 Bad Dogs <a href="#looksrare"><mark className="arrow">LooksRare →</mark></a>
                             </li>
                             <li className="dogs-info-link">
                                 Bad Dogs <a href="#rarity"><mark className="arrow">Rarity →</mark></a>
-                            </li>
+                            </li> */}
                         </ul>
                         <h3>OVERVIEW</h3>
                         <ul

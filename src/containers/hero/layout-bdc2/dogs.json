@@ -4,7 +4,7 @@
         {
             "id": 1,
             "title": "Genesis Collection",
-            "description": "Only 888 tokens all 1/1 hand-drawn...",
+            "description": "Only 888 tokens ever. Every line drawn by hand.  Legit AF.",
             "element": "bdc-genesis",
             "image": {
                 "src": "/images/bdc/nft/bdc027-235px.png"
@@ -13,7 +13,7 @@
         {
             "id": 2,
             "title": "Custom Dogs",
-            "description": "The most prestigious dogs you can own...",
+            "description": "The most prestigious dogs money can’t buy.",
             "element": "bdc-custom",
             "image": {
                 "src": "/images/bdc/nft/bdc188-235px.png"
@@ -22,7 +22,7 @@
         {
             "id": 3,
             "title": "4K Collection",
-            "description": "Generative collection using traits from the Genesis collect...",
+            "description": "Generated from traits of the Genesis collection.",
             "element": "bdc-4k",
             "image": {
                 "src": "/images/bdc/nft/bdc235-235px.png"
@@ -31,7 +31,7 @@
         {
             "id": 4,
             "title": "Energy Pack",
-            "description": "Mutation is happening...",
+            "description": "100% pure rocket fuel for Bad Dogs. It's better than serum!",
             "element": "bdc-serum",
             "image": {
                 "src": "/images/bdc/nft/energy-pack-235px.png"
@@ -40,7 +40,7 @@
         {
             "id": 5,
             "title": "CyberDog 3077",
-            "description": "In the year 3077...",
+            "description": "What do cyber dogs dream about in the year 3077...",
             "element": "bdc-cyberdog",
             "image": {
                 "src": "/images/bdc/nft/bdc126-235px.png"
@@ -49,7 +49,7 @@
         {
             "id": 6,
             "title": "Heaven",
-            "description": "Because Bad Dogs go to heaven...",
+            "description": "Because All Bad Dogs Go to Heaven.",
             "element": "bdc-heaven",
             "image": {
                 "src": "/images/bdc/nft/bdc137-235px.png"

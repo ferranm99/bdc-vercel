@@ -40,9 +40,9 @@ const HeroAreaBdc4k = ({ data }) => (
                             <span className="customTitleFont">Bad Dogs</span> 4k Collection
                         </h1>
                         <p>
-                            Welcome to the Dog Pound, the underground web3
-                            social club where your NFT doubles as your
-                            membership token to the Bad Dogs Company.
+                            Generated from traits of the Genesis collection.
+                            Not your basic dog, only the best in breed for
+                            this showcase.
                         </p>
                         <h3>INFO</h3>
                         <ul className="dogs-info">
@@ -52,12 +52,12 @@ const HeroAreaBdc4k = ({ data }) => (
                             <li className="dogs-info-link">
                                 Bad Dogs <a href="#opensea"><mark className="arrow">OpenSea →</mark></a>
                             </li>
-                            <li className="dogs-info-link">
+                            {/* <li className="dogs-info-link">
                                 Bad Dogs <a href="#looksrare"><mark className="arrow">LooksRare →</mark></a>
                             </li>
                             <li className="dogs-info-link">
                                 Bad Dogs <a href="#rarity"><mark className="arrow">Rarity →</mark></a>
-                            </li>
+                            </li> */}
                         </ul>
                         <h3>OVERVIEW</h3>
                         <ul

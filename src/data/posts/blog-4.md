@@ -1,11 +1,11 @@
 ---
-title: Canada is a great fact for NFT's
-date: "2021-05-04 11:10:00"
-category: NFT's
+title: GMG Inspired BDC Contest
+date: "2022-03-27 11:10:00"
+category: Contest
 image: {
-	src: "/images/blog/4.jpg"
+	src: "/images/blog/bg4.jpg"
 }
-tags: ["corporate", "agency", "creative"]
+tags: ["contest", "GMG", "genesis"]
 ---
 
 Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
