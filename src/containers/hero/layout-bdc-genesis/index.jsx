@@ -49,7 +49,7 @@ const HeroAreaBdcGenesis = ({ data }) => (
                                 Bad Dogs <a href="#arc"><mark className="arrow">ARC →</mark></a>
                             </li>
                             <li className="dogs-info-link">
-                                Bad Dogs <a href="#opensea"><mark className="arrow">OpenSea →</mark></a>
+                                Bad Dogs <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
                             </li>
                             {/* <li className="dogs-info-link">
                                 Bad Dogs <a href="#looksrare"><mark className="arrow">LooksRare →</mark></a>
