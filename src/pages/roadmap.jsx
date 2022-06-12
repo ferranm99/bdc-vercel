@@ -58,7 +58,41 @@ const Roadmap = () => (
                     }}
                 >
                     <h3 className="vertical-timeline-element-title">
-                        Special BDC#111 Auction for Ukraine
+                        Fully Custom BadDogs for our first 25 unique holders
+                    </h3>
+                    <p className="text-success">Completed</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#ffdf0b",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Building a strong core community
+                    </h3>
+                    <p className="text-warning">In Progress</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q2 2022"
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Diamond Club was born.
                     </h3>
                     <p className="text-success">Completed</p>
                 </VerticalTimelineElement>
@@ -75,7 +109,7 @@ const Roadmap = () => (
                     }}
                 >
                     <h3 className="vertical-timeline-element-title">
-                        Established BDC Diamond Club for passionate BDC holders.
+                        Purchase Otherside land for community
                     </h3>
                     <p className="text-success">Completed</p>
                 </VerticalTimelineElement>
@@ -85,14 +119,14 @@ const Roadmap = () => (
                     contentArrowStyle={{ borderRight: "7px solid  #191925" }}
                     date="Q2 2022"
                     iconStyle={{
-                        background: "#ffdf0b",
+                        background: "#fff",
                         textAlign: "center",
                         color: "#fff",
                         paddingTop: "5px",
                     }}
                 >
                     <h3 className="vertical-timeline-element-title">
-                        Produced v1 of BDC Merchandise - hats
+                        Limited Merch v1.0 giveaways to holders
                     </h3>
                     <p className="text-success">Completed</p>
                 </VerticalTimelineElement>
@@ -102,15 +136,14 @@ const Roadmap = () => (
                     contentArrowStyle={{ borderRight: "7px solid  #191925" }}
                     date="Q2 2022"
                     iconStyle={{
-                        background: "#ffdf0b",
+                        background: "#fff",
                         textAlign: "center",
                         color: "#fff",
                         paddingTop: "5px",
                     }}
                 >
                     <h3 className="vertical-timeline-element-title">
-                        Deployed ERC721 contract to migrate away from OpenSea
-                        ERC1155 contract.
+                        Website launch
                     </h3>
                     <p className="text-success">Completed</p>
                 </VerticalTimelineElement>
@@ -118,7 +151,7 @@ const Roadmap = () => (
                     className="vertical-timeline-element--education"
                     contentStyle={{ background: "#191925", color: "#fff" }}
                     contentArrowStyle={{ borderRight: "7px solid  #191925" }}
-                    date="Q2 2022"
+                    date="Q3 2022"
                     iconStyle={{
                         background: "#ffdf0b",
                         textAlign: "center",
@@ -127,26 +160,162 @@ const Roadmap = () => (
                     }}
                 >
                     <h3 className="vertical-timeline-element-title">
-                        Launched v1 of BDC Website with Migration function.
-                    </h3>
-                    <p className="text-success">Completed</p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--education"
-                    contentStyle={{ background: "#191925", color: "#fff" }}
-                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
-                    date="Q2 2022"
-                    iconStyle={{
-                        background: "#ffdf0b",
-                        textAlign: "center",
-                        color: "#fff",
-                        paddingTop: "5px",
-                    }}
-                >
-                    <h3 className="vertical-timeline-element-title">
-                        Establish partnership with ARC marketplace.
+                        Migrate Genesis contract away from OpenSea contract.
                     </h3>
                     <p className="text-warning">In Progress</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q3 2022"
+                    iconStyle={{
+                        background: "#ffdf0b",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Partner with new NFT marketplaces or projects
+                    </h3>
+                    <p className="text-warning">In Progress</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        The BadDog story written by our holders via website
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#ffdf0b",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Special auctions of 333, 444, 555, etc.
+                    </h3>
+                    <p className="text-warning">In Progress</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Free Merch v2.0 drop for all genesis holders
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Merch Shop added to website for purchase
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Launch 4K collection
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Mutation of Genesis and 4K Collection
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Launch $BONES token for holders
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Develop CyberCity Metaverse or Heaven (Arcade)
+                    </h3>
+                    <p className="text-pending">Pending</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     iconStyle={{
