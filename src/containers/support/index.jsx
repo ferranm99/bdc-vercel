@@ -148,7 +148,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 2,
                                     title: "Will Genesis holders get WL?",
                                     description:
-                                        "<p>Yes, Geensis holders will get a certain amount of whitelist allocated to them with a discounted mint price (TBD).</p>",
+                                        "<p>Yes, Genesis holders will get a certain amount of whitelist allocated to them with a discounted mint price (TBD).</p>",
                                 },
                                 {
                                     id: 3,
@@ -166,7 +166,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 5,
                                     title: "How do I get a Custom Dog?",
                                     description:
-                                        "<p>Custom dogs are Genesis tokens that is drawn by @13six specifically with the input from the holder. This is one of the highest proud dog you can get from this collection and initially was reserved for OGs. However, we have options for Diamond Club or Whale members to obtain one.</p>",
+                                        "<p>Custom dogs are Genesis tokens that are drawn by @13six specifically with the input from the holder. This is one of the highest proud dog you can get from this collection and initially was reserved for OGs. However, we have options for Diamond Club or Whale members to obtain one.</p>",
                                 },
                                 {
                                     id: 6,
@@ -178,7 +178,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 7,
                                     title: "How can I reach the team?",
                                     description:
-                                        "<p>The team is best reached through our <a href='https://discord.gg/pf98svgC7N'>Discord</a>. If you need to contact the team privately, please open a support ticket in the server. For serious inquiries, we are also available through DM on Twitter or let us know in #support you want to connect and we will accept your friend request.</p>",
+                                        "<p>The team is best reached through our <a href='https://discord.gg/pf98svgC7N'>Discord</a>. If you need to contact the team privately, please open a support ticket in the server. For serious inquiries, we are also available through DM on Twitter or let us know in #support if you want to connect and we will accept your friend request.</p>",
                                 },
                             ]}
                         />
