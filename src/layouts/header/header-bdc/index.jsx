@@ -3,6 +3,8 @@ import clsx from "clsx";
 // import { useMoralis } from "react-moralis";
 // import Logo from "@components/logo";
 import Image from "next/image";
+import { ConnectWallet } from "@3rdweb/react";
+import { useWeb3 } from "@3rdweb/hooks";
 import MainMenu from "@components/menu/main-menu";
 import MobileMenu from "@components/menu/mobile-menu";
 // import SearchForm from "@components/search-form/layout-01";
@@ -23,6 +25,7 @@ import contactData from "../../../data/general/contact.json";
 
 const Header = ({ className }) => {
     const sticky = useSticky();
+    const { address, chainId, provider } = useWeb3();
     const { offcanvas, offcanvasHandler } = useOffcanvas();
     const { search, searchHandler } = useFlyoutSearch();
     // const { authenticate, isAuthenticated } = useMoralis();
@@ -104,6 +107,12 @@ const Header = ({ className }) => {
 
 
                             <SocialWidget socials={contactData.socials} />
+
+                            <div className="setting-option header-btn">
+                                <div className="icon-box">
+                                    <ConnectWallet />
+                                </div>
+                            </div>
 
                             <div className="setting-option mobile-menu-bar d-block d-xl-none">
                                 <div className="hamberger">

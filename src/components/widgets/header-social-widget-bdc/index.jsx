@@ -49,7 +49,7 @@ const SocialWidget = ({ socials }) => (
                     />
                 </a>
             </div>
-            <div className="col icon-box" key="wallet">
+            {/* <div className="col icon-box" key="wallet">
                 <a
                     href="#nothing"
                     target="_blank"
@@ -64,7 +64,7 @@ const SocialWidget = ({ socials }) => (
                         height={22}
                     />
                 </a>
-            </div>
+            </div> */}
         </div>
     </div>
 );
