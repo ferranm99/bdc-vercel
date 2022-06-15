@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { ThirdwebProvider } from "@3rdweb/react";
+// import { ThirdwebProvider } from "@3rdweb/react";
+import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 // import { MoralisProvider } from "react-moralis";
@@ -12,6 +13,7 @@ import "../assets/scss/style.scss";
 import "../assets/css/custom.css";
 import "../assets/css/carousel.css";
 import "../assets/css/timeline.min.css";
+import "../assets/css/thirdweb.chakra.css";
 import "react-toastify/dist/ReactToastify.css";
 
 // const moralisAppId = "RthQq8e4P7aK65qA9AxkrUhs1r2l4LbVBvJ6L71v";
@@ -41,7 +43,11 @@ const MyApp = ({ Component, pageProps }) => {
         document.body.className = `${pageProps.className}`;
     });
     return (
-        <ThirdwebProvider
+        // <ThirdwebProvider
+        //     connectors={connectors}
+        //     supportedChainIds={supportedChainIds}
+        // >
+        <ThirdwebWeb3Provider
             connectors={connectors}
             supportedChainIds={supportedChainIds}
         >
@@ -52,7 +58,8 @@ const MyApp = ({ Component, pageProps }) => {
                 </ThemeProvider>
                 {/* </MoralisProvider> */}
             </SSRProvider>
-        </ThirdwebProvider>
+            {/* </ThirdwebProvider> */}
+        </ThirdwebWeb3Provider>
     );
 };
 

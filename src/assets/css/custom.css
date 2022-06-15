@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&JosefinSansy=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Permanent+Marker&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Permanent+Marker&display=swap"); */
 
 #bannerImg {
     /* background-image: url("/images/bg/bg-image-21.jpg"); */
@@ -122,7 +122,7 @@
     }
 } */
 .customTitleStyle {
-    font-family: "Permanent Marker", cursive;
+    /* font-family: "Permanent Marker", cursive; */
     text-shadow: -2px 2px 0px yellow;
     font-size: 3.5rem;
 }
@@ -284,6 +284,9 @@
 }
 .text-warning {
     color: #ffdf0b;
+}
+.text-pending {
+    color: #808080;
 }
 .icon-green {
     color:#26b170;
