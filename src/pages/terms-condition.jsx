@@ -1,7 +1,7 @@
 import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
-import Header from "@layout/header/header-01";
-import Footer from "@layout/footer/footer-01";
+import Header from "@layout/header/header-bdc";
+import Footer from "@layout/footer/footer-bdc";
 import Breadcrumb from "@components/breadcrumb";
 import TermsAndConditionsArea from "@containers/terms-condition";
 
@@ -11,12 +11,12 @@ export async function getStaticProps() {
 
 const TermsAndConditions = () => (
     <Wrapper>
-        <SEO pageTitle="Terms & Condition" />
+        <SEO pageTitle="Terms & Conditions" />
         <Header />
         <main id="main-content">
             <Breadcrumb
-                pageTitle="Terms & Condition"
-                currentPage="Terms & Condition"
+                pageTitle="Terms & Conditions"
+                currentPage="Terms & Conditions"
             />
             <TermsAndConditionsArea />
         </main>

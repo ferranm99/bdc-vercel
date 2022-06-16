@@ -353,7 +353,7 @@
     .sldier-content {
         .title {
             color: var(--color-white);
-            font-size: 70px;
+            font-size: 70px !important;
             margin-bottom: 15px;
 
             @media #{$lg-layout} {

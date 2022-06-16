@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "text": "Home",
+        "path": "/"
+    },
+    {
+        "id": 2,
+        "text": "Roadmap",
+        "path": "/roadmap"
+    },
+    {
+        "id": 3,
+        "text": "Mint",
+        "path": "/mint"
+    },
+    {
+        "id": 4,
+        "text": "Blog",
+        "path": "/blog"
+    },
+    {
+        "id": 5,
+        "text": "FAQ",
+        "path": "/faq"
+    },
+    {
+        "id": 6,
+        "text": "Official Links",
+        "path": "#!",
+        "submenu": [
+            {
+                "id": 11,
+                "text": "Discord",
+                "path": "https://discord.gg/pf98svgC7N"
+            },
+            {
+                "id": 31,
+                "text": "OpenSea Collection",
+                "path": "https://opensea.io/collection/baddogscompany"
+            },
+            {
+                "id": 32,
+                "text": "Twitter",
+                "path": "https://twitter.com/BadDogsCompany"
+            },
+            {
+                "id": 33,
+                "text": "Instagram",
+                "path": "https://www.instagram.com/baddogscompany/"
+            }
+        ]
+    }
+]

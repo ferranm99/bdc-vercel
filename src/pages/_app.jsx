@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+// import { ThirdwebProvider } from "@3rdweb/react";
+import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 // import { MoralisProvider } from "react-moralis";
@@ -10,10 +12,23 @@ import "../assets/css/feather.css";
 import "../assets/scss/style.scss";
 import "../assets/css/custom.css";
 import "../assets/css/carousel.css";
+import "../assets/css/timeline.min.css";
+import "../assets/css/thirdweb.chakra.css";
 import "react-toastify/dist/ReactToastify.css";
 
 // const moralisAppId = "RthQq8e4P7aK65qA9AxkrUhs1r2l4LbVBvJ6L71v";
 // const moralisServerURL = "https://u9r1l5bklpfl.usemoralis.com:2053/server";
+// const supportedChainIds = [1, 4, 137];
+const supportedChainIds = [1, 4];
+const connectors = {
+    injected: {},
+    walletlink: {
+        appName: "Bad Dogs Company",
+        url: "https://baddogscompany.com",
+        darkMode: false,
+    },
+    walletconnect: {},
+};
 
 const MyApp = ({ Component, pageProps }) => {
     const router = useRouter();
@@ -28,13 +43,23 @@ const MyApp = ({ Component, pageProps }) => {
         document.body.className = `${pageProps.className}`;
     });
     return (
-        <SSRProvider>
-            {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
-            <ThemeProvider defaultTheme="dark">
-                <Component {...pageProps} />
-            </ThemeProvider>
-            {/* </MoralisProvider> */}
-        </SSRProvider>
+        // <ThirdwebProvider
+        //     connectors={connectors}
+        //     supportedChainIds={supportedChainIds}
+        // >
+        <ThirdwebWeb3Provider
+            connectors={connectors}
+            supportedChainIds={supportedChainIds}
+        >
+            <SSRProvider>
+                {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
+                <ThemeProvider defaultTheme="dark">
+                    <Component {...pageProps} />
+                </ThemeProvider>
+                {/* </MoralisProvider> */}
+            </SSRProvider>
+            {/* </ThirdwebProvider> */}
+        </ThirdwebWeb3Provider>
     );
 };
 

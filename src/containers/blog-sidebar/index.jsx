@@ -6,7 +6,7 @@ import TagWidget from "@widgets/tag-widget";
 
 const BlogSidebar = ({ className, categories, recentPosts, tags }) => (
     <aside className={clsx("rwt-sidebar", className)}>
-        <CategoryWidget categories={categories} />
+        {/* <CategoryWidget categories={categories} /> */}
         <RecentPostsWidget recentPosts={recentPosts} />
         <TagWidget tags={tags} />
     </aside>

@@ -146,10 +146,12 @@
                 }
 
                 &[aria-expanded="true"] {
-                    color: var(--color-primary);
+                    // color: var(--color-primary);
+                    color: #ffdf0b;
 
                     i {
-                        color: var(--color-primary);
+                        // color: var(--color-primary);
+                        color: #ffdf0b;
                     }
                 }
             }

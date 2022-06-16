@@ -8,7 +8,8 @@ const CommingSoonArea = () => (
             <div className="row row--0 h-100">
                 <div className="col-lg-4 col-md-4">
                     <div className="inner">
-                        <Logo logo={[{ src: "/images/logo/logo-white.png" }]} />
+                        {/* <Logo logo={[{ src: "/images/logo/logo-white.png" }]} /> */}
+                        <Logo logo={[{ src: "/images/bdc/logo/bdc-logo-400px.png" }]} />
                         <div className="content">
                             <span className="sub-title">Stay Tuned</span>
                             <h3 className="title">
@@ -17,13 +18,8 @@ const CommingSoonArea = () => (
                             <p>
                                 We are available please connect with us via
                                 <br />
-                                Phone:{" "}
-                                <a href="tel:+880191122334">+880123456789</a> or
-                                <br /> Email:{" "}
-                                <a href="mailto:admin@example.com">
-                                    {" "}
-                                    admin@example.com
-                                </a>
+                                Twitter:{" "}
+                                <a href="https://twitter.com/BadDogsCompany">@BadDogsCompany</a>
                             </p>
                         </div>
                     </div>

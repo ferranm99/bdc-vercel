@@ -9,13 +9,13 @@ const BlogDetailsArea = ({ className, post }) => {
     return (
         <div className={clsx("blog-details-area", className)}>
             <div className="blog-content-top">
-                <h2 className="title">{post.title}</h2>
-                <span className="date">
-                    {date.getDate().toString().padStart(2, "0")}{" "}
-                    {getMonth(date)}, {date.getFullYear()}
-                </span>
+                <h2 className="title pl_sm--20 pr_sm--20">{post.title}</h2>
+                <p className="date pl_sm--20 pr_sm--20">
+                    {/* {getMonth(date).toLocaleString("default", { month: "long" })}{" "}{date.getDate().toString().padStart(2, "0")}
+                    , {date.getFullYear()} */}
+                </p>
             </div>
-            <div className="bd-thumbnail">
+            <div className="bd-thumbnail pl_sm--20 pr_sm--20">
                 <div className="large-img mb--30">
                     {post.image?.src && (
                         <Image
@@ -30,7 +30,7 @@ const BlogDetailsArea = ({ className, post }) => {
                 </div>
             </div>
             <div
-                className="news-details"
+                className="news-details pl_sm--20 pr_sm--20"
                 dangerouslySetInnerHTML={{ __html: post.content }}
             />
         </div>

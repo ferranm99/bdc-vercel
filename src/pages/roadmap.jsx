@@ -2,13 +2,21 @@ import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
 import Footer from "@layout/footer/footer-bdc";
+import Particles from "@ui/particles";
 import Breadcrumb from "@components/breadcrumb";
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+import {
+    VerticalTimeline,
+    VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+// import 'react-vertical-timeline-component/style.min.css';
+
 // import ContactTopArea from "@containers/contact-top";
 
+// export async function getStaticProps() {
+//     return { props: { className: "template-color-1" } };
+// }
 export async function getStaticProps() {
-    return { props: { className: "template-color-1" } };
+    return { props: { className: "template-color-1 with-particles" } };
 }
 
 const Roadmap = () => (
@@ -16,112 +24,306 @@ const Roadmap = () => (
         <SEO pageTitle="Roadmap" />
         <Header />
         <main id="main-content">
-            <Breadcrumb
-                pageTitle="Bad Dogs Roadmap"
-                currentPage="Roadmap"
-            />
+            <Particles />
+            <Breadcrumb pageTitle="Bad Dogs Roadmap" currentPage="Roadmap" />
             <VerticalTimeline>
                 <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="2011 - present"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    icon={<i className="bi bi-briefcase" />}
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q1 2022"
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
                 >
-                    <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                    <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-                    <p>
-                        Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-                    </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="2010 - 2011"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    icon={<i className="bi bi-briefcase" />}
-                >
-                    <h3 className="vertical-timeline-element-title">Art Director</h3>
-                    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                    <p>
-                        Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-                    </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="2008 - 2010"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    icon={<i className="bi bi-briefcase" />}
-                >
-                    <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                    <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                    <p>
-                        User Experience, Visual Design
-                    </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="2006 - 2008"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    icon={<i className="bi bi-briefcase" />}
-                >
-                    <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                    <p>
-                        User Experience, Visual Design
-                    </p>
+                    <h3 className="vertical-timeline-element-title">
+                        Bad Dogs Genesis Collection successfully launched on
+                        OpenSea
+                    </h3>
+                    <p className="text-success">Completed</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    contentStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(233, 30, 99)' }}
-                    date="April 2013"
-                    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                    icon={<i className="bi bi-briefcase" />}
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q1 2022"
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
                 >
-                    <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-                    <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-                    <p>
-                        Strategy, Social Media
-                    </p>
+                    <h3 className="vertical-timeline-element-title">
+                        Fully Custom BadDogs for our first 25 unique holders
+                    </h3>
+                    <p className="text-success">Completed</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    contentStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(233, 30, 99)' }}
-                    date="November 2012"
-                    iconStyle={{ background: 'rgb(233, 30, 99)', textAlign: 'center', color: '#fff', paddingTop: '5px' }}
-                    icon={<i className="feather-briefcase icon-md" />}
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#ffdf0b",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
                 >
-                    <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                    <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-                    <p>
-                        Creative Direction, User Experience, Visual Design
-                    </p>
+                    <h3 className="vertical-timeline-element-title">
+                        Building a strong core community
+                    </h3>
+                    <p className="text-warning">In Progress</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    contentStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(16, 204, 82)' }}
-                    date="2002 - 2006"
-                    iconStyle={{ background: 'rgb(16, 204, 82)', textAlign: 'center', color: '#fff', paddingTop: '5px' }}
-                    icon={<i className="feather-home icon-md" />}
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q2 2022"
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
                 >
-                    <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-                    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-                    <p>
-                        Creative Direction, Visual Design
-                    </p>
+                    <h3 className="vertical-timeline-element-title">
+                        Diamond Club was born.
+                    </h3>
+                    <p className="text-success">Completed</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
-                    iconStyle={{ background: 'rgb(16, 204, 82)', textAlign: 'center', color: '#fff', marginTop: '50px' }}
-                    icon={<i className="feather-home icon-md" />}
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q2 2022"
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Purchase Otherside land for community
+                    </h3>
+                    <p className="text-success">Completed</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q2 2022"
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Limited Merch v1.0 giveaways to holders
+                    </h3>
+                    <p className="text-success">Completed</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q2 2022"
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Website launch
+                    </h3>
+                    <p className="text-success">Completed</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q3 2022"
+                    iconStyle={{
+                        background: "#ffdf0b",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Migrate Genesis contract away from OpenSea contract.
+                    </h3>
+                    <p className="text-warning">In Progress</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="Q3 2022"
+                    iconStyle={{
+                        background: "#ffdf0b",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Partner with new NFT marketplaces or projects
+                    </h3>
+                    <p className="text-warning">In Progress</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        The BadDog story written by our holders via website
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#ffdf0b",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Special auctions of 333, 444, 555, etc.
+                    </h3>
+                    <p className="text-warning">In Progress</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Free Merch v2.0 drop for all genesis holders
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Merch Shop added to website for purchase
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Launch 4K collection
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Mutation of Genesis and 4K Collection
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Launch $BONES token for holders
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    contentStyle={{ background: "#191925", color: "#fff" }}
+                    contentArrowStyle={{ borderRight: "7px solid  #191925" }}
+                    date="TBD"
+                    iconStyle={{
+                        background: "#808080",
+                        textAlign: "center",
+                        color: "#fff",
+                        paddingTop: "5px",
+                    }}
+                >
+                    <h3 className="vertical-timeline-element-title">
+                        Develop CyberCity Metaverse or Heaven (Arcade)
+                    </h3>
+                    <p className="text-pending">Pending</p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
+                    iconStyle={{
+                        background: "#fff",
+                        textAlign: "center",
+                        color: "#fff",
+                        marginTop: "50px",
+                    }} // icon={<i className="feather-home icon-md" />}
                 />
             </VerticalTimeline>
         </main>

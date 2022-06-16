@@ -34,7 +34,7 @@ const HeroArea = ({ data }) => (
 
                         <Image
                             src="/images/bdc/logo/bdc-logo-400px.png"
-                            alt="Nft_Profile"
+                            alt="BDC Logo"
                             width={500}
                             height={281}
                         />

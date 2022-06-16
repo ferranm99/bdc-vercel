@@ -19,7 +19,7 @@ button {
         border: none;
         color: var(--color-white);
         padding: 10px 16px;
-        border-radius: 10px;
+        // border-radius: 10px;
         transition: var(--transition);
         letter-spacing: 0.5px;
         width: auto;
@@ -29,10 +29,12 @@ button {
 
         &.btn-primary {
             background: var(--color-primary);
+            color: var(--color-dark);
 
             &:hover {
                 background: var(--color-primary-alta);
-                color: var(--color-white);
+                // color: var(--color-white);
+                color: var(--color-primary);
             }
 
             &.active {
@@ -49,7 +51,8 @@ button {
 
             &:hover {
                 background: var(--color-primary);
-                color: var(--color-white) !important;
+                // color: var(--color-white) !important;
+                color: var(--color-dark) !important;
             }
         }
 

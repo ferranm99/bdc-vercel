@@ -1,35 +1,77 @@
-@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&JosefinSansy=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Permanent+Marker&display=swap"); */
+
 #bannerImg {
-    background-image: url("/images/bg/bg-image-21.jpg");
+    /* background-image: url("/images/bg/bg-image-21.jpg"); */
+    background-image: url("/images/bdc/background/gutter1-bg.jpg");
     background-image: fill;
+    background-position: center;
     object-fit: cover;
 }
+
+.parallax-content {
+    position: absolute;
+    left: 50%; 
+    margin-top: 5rem;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.parallax-fix {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+}
+
+.parallax-scroll {
+    /* For Safari only */
+    background-attachment: scroll;
+}
+
 .parallax {
     /* The image used */
-    background-image: url("/images/bg/bg-image-1.jpg");
+    /* background-image: url("/images/bg/bg-image-1.jpg"); */
+    background-image: url("/images/bdc/background/sewer-min-scaled.jpeg");
 
     /* Set a specific height */
-    min-height: 40vh;
+    min-height: 50vh;
+    min-width: 100vw;
     display: block;
 
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
+    /* background-attachment: fixed; */
+    /* position: fixed; */
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .parallax-2 {
     /* The image used */
-    background-image: url("/images/bdc/background/cyborg-background.jpg");
+    background-image: url("/images/bdc/background/bdc-bg-01b.jpg");
 
     /* Set a specific height */
-    min-height: 40vh;
+    min-height: 50vh;
     display: block;
 
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-3 {
+    /* The image used */
+    background-image: url("/images/bdc/background/bdc-bg-03c.jpg");
+
+    /* Set a specific height */
+    min-height: 50vh;
+    display: block;
+
+    /* Create the parallax scrolling effect */
+    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,18 +99,35 @@
     align-content: flex-end;
     align-items: flex-end;
 }
-
 .customFont {
     font-family: "Koulen", cursive;
 }
 .customTitleFont {
-    font-family: "Permanent Marker", cursive;
-    text-shadow: -1px 2px 2px black;
+    /* font-family: "Permanent Marker", cursive; */
+    font-family: "Nosifer";
+    color: #ffdf0b;
+    text-transform: uppercase;
+    text-shadow: -1px 4px 4px black;
+    /* margin-top: 0px !important;
+    margin-bottom: 0px !important; */
 }
+/* @media only screen and (min-width: 768px) {
+    .customTitleFont {
+        font-size: 5rem;
+    }
+} */
+/* @media only screen and (min-width: 1200px) {
+    .customTitleFont {
+        font-size: 7rem;
+    }
+} */
 .customTitleStyle {
-    font-family: "Permanent Marker", cursive;
-    text-shadow: -1px 2px 0px yellow;
+    /* font-family: "Permanent Marker", cursive; */
+    text-shadow: -2px 2px 0px yellow;
     font-size: 3.5rem;
+}
+.customTitleFont-bottom-20 {
+    margin-bottom: 20px;
 }
 .btn-a,
 .btn-b {
@@ -105,7 +164,6 @@
     left: 400px;
     z-index: -1;
 }
-
 .inner {
     display: inline-block;
     /* letter-spacing: -4px; */
@@ -115,7 +173,6 @@
     color: skyblue;
     font-size: 0;
 }
-
 .inner span:first-child {
     color: pink;
 }
@@ -149,6 +206,8 @@
 }
 .dogs-info-link {
     font-size: 2rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
 }
 .float-l {
     float: left !important;
@@ -171,8 +230,23 @@
     margin-right: auto;
 }
 /* feather icon sizes */
-.icon-sm {
-    font-size: 15px;
+@media only screen and (min-width: 2400px) {
+    .icon-sm {
+        font-size: 18px;
+        padding-top: 15px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .icon-sm {
+        font-size: 18px;
+        padding-top: 5px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .icon-sm {
+        font-size: 18px;
+        padding-top: 15px;
+    }
 }
 @media only screen and (min-width: 2400px) {
     .icon-md {
@@ -194,4 +268,43 @@
 }
 .icon-lg {
     font-size: 35px;
+}
+.img-valign-bottom {
+    vertical-align: bottom;
+}
+.bg-dark-opacity-75 {
+    background: rgba(33, 37, 41, 0.9) !important;
+}
+.fade-animation {
+    transition-delay: 3s;
+    transition-timing-function: ease-in;
+}
+.text-success {
+    color: #26b170;
+}
+.text-warning {
+    color: #ffdf0b;
+}
+.text-pending {
+    color: #808080;
+}
+.icon-green {
+    color:#26b170;
+    padding-right:12px;
+}
+a.btn-mr-3 {
+    margin-right: 3rem;
+}
+mark.arrow {
+    background: transparent;
+    color: #ffdf0b;
+}
+.customIcon {
+    height: 22px !important;
+    width: 22px !important;
+}
+.customIconFooter {
+    height: 22px !important;
+    width: 22px !important;
+    margin-top: 5px !important;
 }

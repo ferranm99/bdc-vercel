@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const NewsletterWidget = ({ data }) => (
     <div className="text-center mt--40 pt--40">
-        <h6>{data.title}</h6>
+        <h3>{data.title}</h3>
         <div className="centerblock">
             <div className="input-group input-group-lg">
                 <input

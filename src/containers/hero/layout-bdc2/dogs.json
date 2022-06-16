@@ -3,50 +3,56 @@
     "collections": [
         {
             "id": 1,
-            "title": "Bad Dogs",
-            "description": "The naughtiest collection of them all.",
+            "title": "Genesis Collection",
+            "description": "Only 888 tokens ever. Every line drawn by hand.  Legit AF.",
+            "element": "bdc-genesis",
             "image": {
-                "src": "/images/banner/banner-sm-01.jpg"
+                "src": "/images/bdc/nft/bdc027-235px.png"
             }
         },
         {
             "id": 2,
-            "title": "Wild Dogs",
-            "description": "You wouldn't want to mess with these fellas",
+            "title": "Custom Dogs",
+            "description": "The most prestigious dogs money can’t buy.",
+            "element": "bdc-custom",
             "image": {
-                "src": "/images/banner/banner-sm-01.jpg"
+                "src": "/images/bdc/nft/bdc188-235px.png"
             }
         },
         {
             "id": 3,
-            "title": "Okay Dogs",
-            "description": "Pet them if you'd like, see what happens.",
+            "title": "4K Collection",
+            "description": "Generated from traits of the Genesis collection.",
+            "element": "bdc-4k",
             "image": {
-                "src": "/images/banner/banner-sm-01.jpg"
+                "src": "/images/bdc/nft/bdc235-235px.png"
             }
         },
         {
             "id": 4,
-            "title": "Foul Dogs",
-            "description": "Eek! they reek!",
+            "title": "Energy Pack",
+            "description": "100% pure rocket fuel for Bad Dogs. It's better than serum!",
+            "element": "bdc-serum",
             "image": {
-                "src": "/images/banner/banner-sm-01.jpg"
+                "src": "/images/bdc/nft/energy-pack-235px.png"
             }
         },
         {
             "id": 5,
-            "title": "Fat Dogs",
-            "description": "A little too much, a little too late.",
+            "title": "CyberDog 3077",
+            "description": "What do cyber dogs dream about in the year 3077...",
+            "element": "bdc-cyberdog",
             "image": {
-                "src": "/images/banner/banner-sm-01.jpg"
+                "src": "/images/bdc/nft/bdc126-235px.png"
             }
         },
         {
             "id": 6,
-            "title": "Wheezing Dogs",
-            "description": "Don't catch em or you know..",
+            "title": "Heaven",
+            "description": "Because All Bad Dogs Go to Heaven.",
+            "element": "bdc-heaven",
             "image": {
-                "src": "/images/banner/banner-sm-01.jpg"
+                "src": "/images/bdc/nft/bdc137-235px.png"
             }
         }
     ]

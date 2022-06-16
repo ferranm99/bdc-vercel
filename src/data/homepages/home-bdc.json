@@ -4,7 +4,7 @@
         {
             "section": "hero-section",
             "badge": "Bad Dogs Company",
-            "title": "Bad Dogs -  <br/>  Good Company",
+            "title": "Bad Dogs Make  <br/>  Good Company",
             "description": "A tight community embarking on a Web3 journey together. Building a collection with incredible artwork and vision. <br/>",
             "buttons": [
                 {
@@ -23,37 +23,37 @@
                 {
                     "id": 1,
                     "title": "BDC#222",
-                    "client": "Bordcast",
-                    "path": "/collection",
+                    "client": "OpenSea",
+                    "path": "https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/40721341926649942604524054295385484712682943270694199897760179993332296974337",
                     "image": {
-                        "src": "/images/nft/bdc-222.png"
+                        "src": "/images/nft/bdc-222.jpg"
                     }
                 },
                 {
                     "id": 2,
                     "title": "BDC#188",
-                    "client": "Md. Master",
-                    "path": "/collection",
+                    "client": "OpenSea",
+                    "path": "https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/40721341926649942604524054295385484712682943270694199897760179959247436513281",
                     "image": {
-                        "src": "/images/nft/bdc-188.png"
+                        "src": "/images/nft/bdc-188.jpg"
                     }
                 },
                 {
                     "id": 3,
                     "title": "BDC#193",
-                    "client": "John Lee",
-                    "path": "/collection",
+                    "client": "OpenSea",
+                    "path": "https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/40721341926649942604524054295385484712682943270694199897760179952650366746625",
                     "image": {
-                        "src": "/images/nft/bdc-193.png"
+                        "src": "/images/nft/bdc-193.jpg"
                     }
                 },
                 {
                     "id": 4,
                     "title": "BDC#200",
-                    "client": "Keenlee",
-                    "path": "/collection",
+                    "client": "OpenSea",
+                    "path": "https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/40721341926649942604524054295385484712682943270694199897760179961446459768833",
                     "image": {
-                        "src": "/images/nft/bdc-200.png"
+                        "src": "/images/nft/bdc-200.jpg"
                     }
                 }
             ]

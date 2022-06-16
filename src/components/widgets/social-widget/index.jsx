@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Image from "next/image";
 
 const SocialWidget = ({ socials }) => (
     <ul className="social-copyright">
@@ -14,6 +15,39 @@ const SocialWidget = ({ socials }) => (
                 </a>
             </li>
         ))}
+        {/* Custom Icons */}
+        <li key="discord">
+            <a
+                href="https://discord.gg/pf98svgC7N"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Discord"
+            >
+                <Image
+                    className="customIconFooter"
+                    alt="Discord"
+                    src="/images/icons/discord.svg"
+                    width={22}
+                    height={22}
+                />
+            </a>
+        </li>
+        <li key="opensea">
+            <a
+                href="https://opensea.io/collection/baddogscompany"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Opensea"
+            >
+                <Image
+                    className="customIconFooter"
+                    alt="OpenSea"
+                    src="/images/icons/opensea.svg"
+                    width={22}
+                    height={22}
+                />
+            </a>
+        </li>
     </ul>
 );
 
