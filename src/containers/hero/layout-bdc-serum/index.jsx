@@ -85,7 +85,7 @@ const HeroAreaBdcSerum = ({ data }) => (
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-2">
                     <Image
-                        src="/images/bdc/nft/bdc169-667px.png"
+                        src="/images/bdc/nft/BDC-PowerPack-667px.png"
                         className="card-img-center"
                         width={667}
                         height={667}
