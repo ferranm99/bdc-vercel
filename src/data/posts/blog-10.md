@@ -1,21 +1,19 @@
 ---
-title: Unstoppable Hostings
-date: "2021-05-02 11:33:00"
-category: Development
+title: BDC Poker Tournament
+date: "2022-04-26 11:33:00"
+category: Tournament
 image: {
-	src: "/images/blog/10.jpg"
+	src: "/images/blog/bg10.png"
 }
-tags: ["corporate", "agency", "creative"]
+tags: ["Tournament", "poker dog", "poker tourney"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+Good Morning/Evening Everybody,
 
-#### Nobis eleifend option conguenes.
+Since I joined the team I wanted to set up some events for us to participate in a WL type of game. One of the first things we have come up with is a Poker Tournament!!!!  This isn't just any Poker Tournament, as the winner will be claiming a FREE CUSTOM POKER BAD DOG in first place. 
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
+The Tournament will be held on May 7th, 12:30 PM EST. Which is a Saturday. The Tournament is a private lobby and you will need to get in contact with me for the code. We will be using [ClubGG](https://www.clubgg.net/) for the tournament. Registration begins now and will end on May 5th Giving me enough time to ensure the lobby is good to go for the tournament
 
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
+If you have any questions please be sure to reach out, and I look forward to this poker game with yall! 
 
-#### Mauris tempor, orci id pellentesque.
-
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+-SirDump

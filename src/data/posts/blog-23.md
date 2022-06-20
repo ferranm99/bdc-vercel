@@ -1,6 +1,6 @@
 ---
 title: Beeple Everydays The First 10 Days
-date: "2021-08-02 11:67:00"
+date: "2021-08-02 11:37:00"
 category: Digital Art
 image: {
 	src: "/images/blog/13.jpg"

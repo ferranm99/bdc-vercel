@@ -1,21 +1,24 @@
 ---
-title: Share NFT tickets with your friends
-date: "2021-05-02 08:50:00"
-category: Condolance
+title: Auction for BDC#222
+date: "2022-05-20 08:50:00"
+category: DROPS
 image: {
-	src: "/images/blog/13.jpg"
+	src: "/images/blog/bg13.jpg"
 }
-tags: ["business", "landing", "software"]
+tags: ["drop", "auction", "charity"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+Hi BDC fam!
 
-#### Nobis eleifend option conguenes.
+The custom queue took a little longer than expected but @13six is finally able to release Bad Dog #222.
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
+![BDC#156](/images/nft/bdc-222.jpg)
 
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
+As with BDC#111, this Bad Dog will be auctioned for 48 hours.
+The winner of the auction will also receive the hat below which was inspired by the Bad Dog that @Pops | Bad Dogs  own.
 
-#### Mauris tempor, orci id pellentesque.
+As you are aware the auction for BDC#111, was donated to assist Ukraine. It is important for us to be able to help our fellow BDC members whenever possible. So for BDC#222 we have decided to donate all the proceeds from the auction to @Pops | Bad Dogs 
 
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+I won't go into the details of why because many of you are already aware that he is going through a difficult time with medical treatments and family responsibilities. This is our way to help support him and show him our love.
+
+Good luck on this great auction!! ✊

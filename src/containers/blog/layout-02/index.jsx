@@ -26,6 +26,7 @@ const BlogArea = ({ space, className, data }) => (
                             slug={post.slug}
                             category={post.category}
                             timeToRead={post.timeToRead}
+                            postDate={post.date}
                             image={post.image}
                         />
                     </div>

@@ -1,21 +1,25 @@
 ---
-title: YT's NFT designs 
-date: "2021-05-02 10:45:00"
-category: CEO marketing
+title: BDC News Meme Contest
+date: "2022-05-30 10:45:00"
+category: Contest
 image: {
-	src: "/images/blog/14.jpg"
+	src: "/images/blog/bg14.jpg"
 }
-tags: ["business", "app", "software"]
+tags: ["meme contest", "contest", "bdc news meme"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+Good Morning,
 
-#### Nobis eleifend option conguenes.
+We are excited to announce a new contest for this week. 
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
+Over the weekend some of our BadDogs were caught doing some Bad stuff...
 
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
+In this contest, you must create "breaking news" articles with any bad dog. We ask you to pick any live photo of the news and paste your dog into any news broadcast. Write a funny or good title as to why the dog is in the news. 
 
-#### Mauris tempor, orci id pellentesque.
+Post your submission on Twitter using #BadDogsNews and tag @BadDogsCompany
 
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+At the end of the contest, the BadDogs team will select entries for the community to vote on the winners. (3 WL available)
+
+##### Submissions for the contest will end on June 4, 2022 6:00 AM
+
+Goodluck all contestants!

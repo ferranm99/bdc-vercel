@@ -10,7 +10,13 @@
     background-position: center;
     object-fit: cover;
 }
-
+.read-info {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 15px;
+    margin-bottom: 15px;
+    text-align: right;
+}
 .parallax-content {
     position: absolute;
     left: 50%; 
@@ -169,7 +175,7 @@
     /* letter-spacing: -4px; */
     vertical-align: top;
     /* margin: 30px 110px; */
-    line-height: 60px;
+    /* line-height: 60px; */
     color: skyblue;
     font-size: 0;
 }

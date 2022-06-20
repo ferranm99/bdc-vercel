@@ -1,21 +1,27 @@
 ---
-title: Great image for great artists and NFT's 
-date: "2021-05-02 11:50:00"
-category: GIF IMAGE
+title: Bad Dogs Adoption Program
+date: "2022-04-18 11:50:00"
+category: Announcement
 image: {
-	src: "/images/blog/8.jpg"
+	src: "/images/blog/bg8.jpg"
 }
-tags: ["corporate", "app", "company"]
+tags: ["announcement", "adoption", "program"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+We would like to provide more details about our Bad Dogs Adoption Program as promised last week.
 
-#### Nobis eleifend option conguenes.
+#### What is the Bad Dogs Adoption Program? 
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
+ This program is designed to help non-holders secure a dog. These dogs are reserved for non-holders ONLY!  We believe all adopted Bad Dogs will be very special to their new owners. 🥰 
 
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
+#### Wen Adopt?
 
-#### Mauris tempor, orci id pellentesque.
+Starting today, any Bad Dog with an expired OpenSea listing will go into the Adoption Program!  A team member will take these dogs out for some well-deserved love and attention, where the dogs will enjoy their time running around in our dog park. The BDC team will randomly decide which dog to put up for adoption. 
 
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+#### How to Adopt? 
+
+Dogs will be put up for adoption at random times in our #bdc-adoption via giveaway bot. Each giveaway will have a different expiration, ranging from 10 mins to as long as 24 hrs.
+
+We've received much feedback from non-holders in this community regarding a lack of non-holder opportunities to secure a dog. We hope this program will help bridge some of that gap. Good luck with finding your forever dog!
+
+Enjoy the rest of your day!

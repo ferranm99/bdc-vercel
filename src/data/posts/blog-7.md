@@ -1,21 +1,16 @@
 ---
-title: Provide a rare theme in this market 
-date: "2021-05-02 11:10:00"
-category: CEO marketing
+title: Bad Dogs Meme Contest
+date: "2022-04-06 11:10:00"
+category: Contest
 image: {
-	src: "/images/blog/7.jpg"
+	src: "/images/blog/bg7.jpg"
 }
-tags: ["landing", "art", "software"]
+tags: ["meme", "contest", "twitter contest"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+Hi everyone!
 
-#### Nobis eleifend option conguenes.
+As you know our dogs are hand-drawn and are released little by little every week. 
+If you missed it, there is a meme contest on Twitter to win a WL (0.1eth) for this Bad Dog. Just follow the steps 😉.   
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
-
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
-
-#### Mauris tempor, orci id pellentesque.
-
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+[Twitter Contest Link](https://twitter.com/BadDogsCompany/status/1511380744471465985?s=20&t=O08A-29rMo70aysSW217AQ)
