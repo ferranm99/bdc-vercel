@@ -1,16 +1,19 @@
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import * as dayjs from "dayjs";
 import Image from "next/image";
 import { getMonth } from "@utils/methods";
 import { ImageType } from "@utils/types";
 
 const BlogDetailsArea = ({ className, post }) => {
     const date = new Date(post.date);
+    dayjs().format();
     return (
         <div className={clsx("blog-details-area", className)}>
             <div className="blog-content-top">
                 <h2 className="title pl_sm--20 pr_sm--20">{post.title}</h2>
                 <p className="date pl_sm--20 pr_sm--20">
+                    {dayjs(date).format("dddd, MMMM D, YYYY")}
                     {/* {getMonth(date).toLocaleString("default", { month: "long" })}{" "}{date.getDate().toString().padStart(2, "0")}
                     , {date.getFullYear()} */}
                 </p>

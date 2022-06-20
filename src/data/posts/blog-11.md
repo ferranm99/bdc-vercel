@@ -1,21 +1,31 @@
 ---
-title: John Doe's charitable NFTs
-date: "2021-05-02 08:13:00"
-category: Development
+title: BDC Diamond Club
+date: "2022-04-30 08:13:00"
+category: Announcement
 image: {
-	src: "/images/blog/11.jpg"
+	src: "/images/blog/bg11.jpg"
 }
-tags: ["design", "minimal", "company"]
+tags: ["announcement", "diamond club", "bad dogs diamond club"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+Good Afternoon, we are currently collecting wallets addresses of members holding 3 or more BadDogs in #deleted-channel  Diamond Club roles have been given to these members. Exclusive Diamond Club channel will open soon.. 
 
-#### Nobis eleifend option conguenes.
+#### WHAT IS DIAMOND CLUB?
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
+The Diamond Club is an exclusive membership within the BadDogs community (Replacing OG). Being a member of the Club grants you access to special perks and rewards. The Diamond Club will play a major role in creating a strong foundation for the project and shaping the future of BadDogs Company.. 
 
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
+#### DIAMOND CLUB BENEFITS
+ 
+* EXCLUSIVE DIAMOND CLUB ACCESS 
+* EXCLUSIVE MERCH ACCESS/DROP 
+* BUSINESS DEVELOPMENT CHANNEL ACCESS 
+* ADDITIONAL 4K WHITELIST OPPORTUNITIES 
+* DIAMOND CLUB ONLY CONTESTS
+* GENESIS CUSTOM DOG OPTIONS 
+* PROJECT DEVELOPMENT VOTING 
+* DIAMOND CLUB MEMBER SELECTION 
+* COMMUNITY WALLET VOTING 
+ * “AND MORE..”
 
-#### Mauris tempor, orci id pellentesque.
 
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+##### PS.. Owning 3 BadDogs get you access to the Diamond Club for the next 48hrs. Going forward, members within the club control who comes and goes 😉

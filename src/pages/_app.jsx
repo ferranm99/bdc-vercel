@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
 import SSRProvider from "react-bootstrap/SSRProvider";
+import ReactGA from "react-ga4";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/feather.css";
 import "../assets/scss/style.scss";
@@ -29,6 +30,8 @@ const connectors = {
     },
     walletconnect: {},
 };
+// Initialized Google Analytics GA4
+ReactGA.initialize("G-9P2JCG9QY5");
 
 const MyApp = ({ Component, pageProps }) => {
     const router = useRouter();

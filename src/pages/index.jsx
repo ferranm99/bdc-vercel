@@ -1,9 +1,11 @@
 import SEO from "@components/seo";
+import PropTypes from "prop-types";
 import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
 import Footer from "@layout/footer/footer-bdc";
 import Particles from "@ui/particles";
 import { isSafari, isMobile } from "react-device-detect";
+import BlogArea from "@containers/blog/layout-02";
 import HeroArea from "@containers/hero/layout-bdc1";
 import HeroAreaBDC2 from "@containers/hero/layout-bdc2";
 // import HeroAreaBDC3 from "@containers/hero/layout-bdc3";
@@ -14,7 +16,7 @@ import HeroAreaBdcCustom from "@containers/hero/layout-bdc-custom";
 import HeroAreaBdcCyber from "@containers/hero/layout-bdc-cyber";
 import HeroAreaBdcSerum from "@containers/hero/layout-bdc-serum";
 import Image from "next/image";
-import { Tweet } from "react-twitter-widgets";
+// import { Tweet } from "react-twitter-widgets";
 // import Anchor from "@ui/anchor";
 
 import { normalizedData } from "@utils/methods";
@@ -26,6 +28,7 @@ import { normalizedData } from "@utils/methods";
 // Demo data
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
+import { getAllPosts } from "../lib/api";
 import homepageData from "../data/homepages/home-09.json";
 import homepageDataBdc from "../data/homepages/home-bdc.json";
 // import productData from "../data/products-02.json";
@@ -40,11 +43,13 @@ import "swiper/css/autoplay";
 // export async function getStaticProps() {
 //     return { props: { className: "template-color-1" } };
 // }
-export async function getStaticProps() {
-    return { props: { className: "template-color-1 with-particles" } };
-}
+// export async function getStaticProps() {
+//     return { props: { className: "template-color-1 with-particles" } };
+// }
 
-const Home09 = () => {
+const POSTS_PER_PAGE = 8;
+
+const Home09 = ({ posts, pagiData }) => {
     const content = normalizedData(homepageData?.content || []);
     const content4 = normalizedData(homepageDataBdc?.content || []);
     // const content2 = normalizedData(aboutData?.content || []);
@@ -148,7 +153,7 @@ const Home09 = () => {
                                 <h2 className="customTitleFont">
                                     MERCHANDISE 1.0
                                 </h2>
-                                <div className="w-100">
+                                <div className="w-100 pt--100">
                                     <Swiper
                                         modules={[Autoplay]}
                                         slidesPerView="auto"
@@ -207,6 +212,17 @@ const Home09 = () => {
                 </div>
                 <div className="container mt--60">
                     <div className="row">
+                        <div className="col-12">
+                            <div className="about-wrapper text-center">
+                                <h2 className="customTitleFont">Blog</h2>
+                                <BlogArea data={{ posts, pagiData }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className="container mt--60">
+                    <div className="row">
                         <div className="col-lg-4 col-sm-12">
                             <Tweet
                                 tweetId="1531135537989427201"
@@ -226,11 +242,38 @@ const Home09 = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </div> */}
             </main>
             <Footer />
         </Wrapper>
     );
+};
+
+export async function getStaticProps() {
+    const posts = getAllPosts([
+        "title",
+        "date",
+        "slug",
+        "image",
+        "category",
+        "timeToRead",
+    ]);
+
+    return {
+        props: {
+            posts: posts.slice(0, POSTS_PER_PAGE),
+            className: "template-color-1 with-particles",
+            pagiData: {
+                currentPage: 1,
+                numberOfPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+            },
+        },
+    };
+}
+
+Home09.propTypes = {
+    posts: PropTypes.arrayOf(PropTypes.shape({})),
+    pagiData: PropTypes.shape({}),
 };
 
 export default Home09;

@@ -1,21 +1,39 @@
 ---
-title: NFT for Better
-date: "2021-05-07 05:25:00"
-category: GIF image
+title: BDC x Otherside
+date: "2022-05-05 05:25:00"
+category: Announcement
 image: {
-	src: "/images/blog/12.jpg"
+	src: "/images/blog/bg12.jpg"
 }
-tags: ["development", "app landing", "startup"]
+tags: ["announcement", "metaverse", "otherside"]
 ---
 
-Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+Good morning everyone !
 
-#### Nobis eleifend option conguenes.
+I know it's been a little while since we have provided updates. There have been many going on in the background that we would like to share with you. The team is working hard on planning the short-term and long-term roadmap for this project. Below is what we can share with you at this moment.
 
-Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim id.
+#### Merch (Hats): 
+* We have secured the design, and the prototypes are in production;
+* Product shots will be taken once prototypes are ready for pick up;
+* We will provide more details on how this prototype batch will be dropped;
 
-Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla, posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit bibendum. Morbi nec efficitur ex.
+#### Website and ERC721a Contract:
+- The design and general layout is half way ready, and it's in development environment;
+- We are waiting on graphics that matches the vision of our roadmap to be produced;
+- The minting function is currently working with a test contract on Rinkeby testnet;
+- We have deployed test contracts on Rinkeby but need to work on a few functions that adheres to our roadmap;
 
-#### Mauris tempor, orci id pellentesque.
+#### Diamond Club:
+- The window to join the Diamond Club had closed;
+- There will be more opportunities in the future as we increase Diamond Club capacity as the collection grows;
+- All future Diamond Club members will be voted in by the Diamond Club;
+- The Diamond Club had casted their first vote for keeping the OG role for historical status for community members;
 
-Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida, ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor. Quisque nec imperdiet purus, in ornare odio. Quisque odio felis, vestibulum et.
+#### Metaverse:
+- After a lot of considerations between Sandbox, Cryptovoxels and the Otherside, the core team had decided to go with the Otherside;
+- We have secured a piece of land and will attempt to trade that upwards if that opportunity is available;
+- We have requested for the SDK developer account from Yuga Labs and will be assessing options once access is approved;
+
+To all BDC members, WELCOME to the Otherside!!
+
+BDC Team
