@@ -16,7 +16,6 @@ import HeroAreaBdcCustom from "@containers/hero/layout-bdc-custom";
 import HeroAreaBdcCyber from "@containers/hero/layout-bdc-cyber";
 import HeroAreaBdcSerum from "@containers/hero/layout-bdc-serum";
 import Image from "next/image";
-import { getAllPosts } from "../lib/api";
 // import { Tweet } from "react-twitter-widgets";
 // import Anchor from "@ui/anchor";
 
@@ -29,6 +28,7 @@ import { normalizedData } from "@utils/methods";
 // Demo data
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
+import { getAllPosts } from "../lib/api";
 import homepageData from "../data/homepages/home-09.json";
 import homepageDataBdc from "../data/homepages/home-bdc.json";
 // import productData from "../data/products-02.json";
@@ -214,9 +214,7 @@ const Home09 = ({ posts, pagiData }) => {
                     <div className="row">
                         <div className="col-12">
                             <div className="about-wrapper text-center">
-                                <h2 className="customTitleFont">
-                                    Blog
-                                </h2>
+                                <h2 className="customTitleFont">Blog</h2>
                                 <BlogArea data={{ posts, pagiData }} />
                             </div>
                         </div>
