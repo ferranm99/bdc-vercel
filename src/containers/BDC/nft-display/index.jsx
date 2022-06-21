@@ -6,7 +6,7 @@ import { SectionTitleType, ItemType } from "@utils/types";
 
 const NFTDisplaySection = ({ className, id, space, data }) => (
     <div className=" col-lg-6 col-sm-12 bg-dark mintForm ml-3">
-        <img src="/images/bdc/nft/bdc091-667px.png" className="NFTDisplay" />
+        <img src="/images/bdc/nft/bdc300-667px.jpg" className="NFTDisplay" />
     </div>
 );
 NFTDisplaySection.propTypes = {

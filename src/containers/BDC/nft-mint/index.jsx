@@ -12,7 +12,7 @@ import Particles from "@ui/particles";
 
 const NFTMintSection = ({ className, id, space, data }) => {
     const max = 5;
-    const mintPrice = 0.08;
+    const mintPrice = 0.10;
     const [counter, setCounter] = useState(1);
     const SALETYPE = "OFF"; //unimplemented, use this to change values for mint type
     const incrementCounter = () => {
@@ -46,8 +46,8 @@ const NFTMintSection = ({ className, id, space, data }) => {
                 <div className="row">
                     <div className="col-lg-4 col-sm-12 bg-dark mintForm mb-4">
                         <div className="justify-content-center text-center">
-                            <div className="mintTitle">Mint NFT</div>
-                            <div className="mintSupply">2000 NFTs</div>
+                            <div className="mintTitle">Mint BDC</div>
+                            <div className="mintSupply">4000 NFTs</div>
                         </div>
                         <hr />
                         <small className="mintPrice col-12">
@@ -93,7 +93,7 @@ const NFTMintSection = ({ className, id, space, data }) => {
                                 disabled
                                 type="submit"
                             >
-                                Unavailable
+                                Coming Soon
                             </button>
                         ) : (
                             <button

@@ -7,7 +7,7 @@
             "description": "Only 888 tokens ever. Every line drawn by hand.  Legit AF.",
             "element": "bdc-genesis",
             "image": {
-                "src": "/images/bdc/nft/bdc027-235px.png"
+                "src": "/images/bdc/nft/bdc227-235px.png"
             }
         },
         {
@@ -16,7 +16,7 @@
             "description": "The most prestigious dogs money can’t buy.",
             "element": "bdc-custom",
             "image": {
-                "src": "/images/bdc/nft/bdc188-235px.png"
+                "src": "/images/bdc/nft/bdc267-235px.png"
             }
         },
         {
@@ -52,7 +52,7 @@
             "description": "Because All Bad Dogs Go to Heaven.",
             "element": "bdc-heaven",
             "image": {
-                "src": "/images/bdc/nft/bdc137-235px.png"
+                "src": "/images/bdc/nft/bdc143-235px.png"
             }
         }
     ]
