@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Slider, { SliderItem } from "@ui/slider";
 import { IDType, ImageType } from "@utils/types";
 // import * as Scroll from "react-scroll";
-import { Link, Element } from "react-scroll";
+import { Link } from "react-scroll";
 import Image from "next/image";
 import { useState } from "react";
 import Anchor from "@ui/anchor";
@@ -30,6 +30,7 @@ const HeroAreaBDC2 = () => {
             ele.style.display = 'none';
         }
     };
+
     return (
         <div className="container-fluid pb-5" id="bannerImg">
             <div className="row d-flex align-items-center mx-5 px-5">
@@ -93,6 +94,7 @@ const HeroAreaBDC2 = () => {
                                         </Anchor> */}
                                         <Link
                                             to={dog.element}
+                                            href={"#" + dog.element}
                                             className="border-bottom-4"
                                             spy={true}
                                             smooth={true}
@@ -101,7 +103,7 @@ const HeroAreaBDC2 = () => {
                                                 fontSize: "2rem",
                                             }}
                                         >
-                                            <mark className="arrow">MORE INFO →</mark>
+                                            MORE INFO →
                                         </Link>
                                     </div>
                                 </div>
@@ -114,3 +116,5 @@ const HeroAreaBDC2 = () => {
     );
 };
 export default HeroAreaBDC2;
+
+{/* <mark className="arrow">MORE INFO →</mark> */ }
