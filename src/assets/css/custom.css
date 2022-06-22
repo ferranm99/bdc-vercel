@@ -19,7 +19,7 @@
 }
 .parallax-content {
     position: absolute;
-    left: 50%; 
+    left: 50%;
     margin-top: 5rem;
     transform: translateX(-50%);
     width: 100%;
@@ -295,8 +295,8 @@
     color: #808080;
 }
 .icon-green {
-    color:#26b170;
-    padding-right:12px;
+    color: #26b170;
+    padding-right: 12px;
 }
 a.btn-mr-3 {
     margin-right: 3rem;
@@ -313,4 +313,91 @@ mark.arrow {
     height: 22px !important;
     width: 22px !important;
     margin-top: 5px !important;
+}
+
+.row > .mintForm {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    padding: 5rem;
+    background-color: var(--primary-alta);
+    border-radius: 2rem;
+    min-height: 60vh;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mintTitle {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.mintSupply {
+    font-style: italic;
+    opacity: 0.5;
+}
+.mintPrice,
+.mintTotal {
+    font-size: 2.5rem;
+    flex-direction: horizontal;
+    float: right;
+    justify-content: flex-start;
+    vertical-align: middle;
+}
+.mintTotal {
+    display: flex;
+    text-align: left;
+    font-size: 3.5rem;
+}
+.qty {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    vertical-align: middle;
+    /* margin-top: 2rem;
+    margin-bottom: 2rem; */
+    font-size: 2.5rem;
+}
+.qty .counter {
+    color: white;
+    display: inline-block;
+
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 0 2px;
+    min-width: 35px;
+    text-align: center;
+}
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    font: 3rem/1 Arial, sans-serif;
+    text-align: center;
+    border: none;
+}
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    font: 3rem/1 Arial, sans-serif;
+    text-align: center;
+    border: none;
+    background-clip: padding-box;
+}
+.qty .maxMint {
+    font-weight: bold;
+    float: right;
+}
+.NFTDisplay {
+    object-fit: cover;
+    background-color: black;
+    border-radius: 1rem;
 }
