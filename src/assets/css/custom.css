@@ -5,7 +5,7 @@
 
 #bannerImg {
     /* background-image: url("/images/bg/bg-image-21.jpg"); */
-    background-image: url("/images/bdc/background/gutter1-bg.jpg");
+    background-image: url("/images/bdc/background/BDC-graffiti-1920px.jpg");
     background-image: fill;
     background-position: center;
     object-fit: cover;
@@ -35,10 +35,10 @@
     background-attachment: scroll;
 }
 
-.parallax {
+.parallax-lab {
     /* The image used */
     /* background-image: url("/images/bg/bg-image-1.jpg"); */
-    background-image: url("/images/bdc/background/sewer-min-scaled.jpeg");
+    background-image: url("/images/bdc/background/BDC-lab.jpg");
 
     /* Set a specific height */
     min-height: 50vh;
@@ -48,6 +48,20 @@
     /* Create the parallax scrolling effect */
     /* background-attachment: fixed; */
     /* position: fixed; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-graffiti {
+    /* The image used */
+    /* background-image: url("/images/bg/bg-image-1.jpg"); */
+    background-image: url("/images/bdc/background/BDC-graffiti.jpg");
+
+    /* Set a specific height */
+    min-height: 50vh;
+    min-width: 100vw;
+    display: block;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

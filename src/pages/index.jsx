@@ -87,13 +87,6 @@ const Home09 = ({ posts, pagiData }) => {
                     />
                 </div> */}
 
-                {isSafari || isMobile ? (
-                    <div className="row py-5">
-                        <div className="parallax-3 col-12" />
-                    </div>
-                ) : (
-                    <div className="parallax-3 parallax-fix col-12" />
-                )}
                 <HeroAreaBdcGenesis data={content4["hero-section"]} />
 
                 {isSafari || isMobile ? (
@@ -107,10 +100,10 @@ const Home09 = ({ posts, pagiData }) => {
 
                 {isSafari || isMobile ? (
                     <div className="row py-5">
-                        <div className="parallax-2 col-12" />
+                        <div className="parallax-graffiti col-12" />
                     </div>
                 ) : (
-                    <div className="parallax-2 parallax-fix col-12" />
+                    <div className="parallax-graffiti parallax-fix col-12" />
                 )}
                 <HeroAreaBdc4k data={content4["hero-section"]} />
 
@@ -125,19 +118,19 @@ const Home09 = ({ posts, pagiData }) => {
 
                 {isSafari || isMobile ? (
                     <div className="row py-5">
-                        <div className="parallax-2 col-12" />
+                        <div className="parallax-3 col-12" />
                     </div>
                 ) : (
-                    <div className="parallax-2 parallax-fix col-12" />
+                    <div className="parallax-3 parallax-fix col-12" />
                 )}
                 <HeroAreaBdcCyber data={content4["hero-section"]} />
 
                 {isSafari || isMobile ? (
                     <div className="row py-5">
-                        <div className="parallax col-12" />
+                        <div className="parallax-lab col-12" />
                     </div>
                 ) : (
-                    <div className="parallax parallax-fix col-12" />
+                    <div className="parallax-lab parallax-fix col-12" />
                 )}
                 <HeroAreaBdcHeaven data={content4["hero-section"]} />
 
