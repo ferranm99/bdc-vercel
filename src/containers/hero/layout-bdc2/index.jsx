@@ -33,7 +33,7 @@ const HeroAreaBDC2 = () => {
     };
 
     return (
-        <div className="container-fluid pb-5" id={isMobile ? "bannerImg2" : "bannerImg"}>
+        <div className="container-fluid pb-5" id="bannerImg">
             <div className="row d-flex align-items-center mx-5 px-5">
                 <div className="offset-lg-2 col-lg-8 col-sm-12 text-center">
                     <h1
