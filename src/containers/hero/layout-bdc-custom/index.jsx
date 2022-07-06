@@ -47,7 +47,7 @@ const HeroAreaBdcCustom = ({ data }) => (
                         <h3>INFO</h3>
                         <ul className="dogs-info">
                             <li className="dogs-info-link">
-                                Bad Dogs <a href="#arc"><mark className="arrow">ARC →</mark></a>
+                                Bad Dogs <a href="#arc"><mark className="arrow">ARC → (Coming Soon)</mark></a>
                             </li>
                             <li className="dogs-info-link">
                                 Bad Dogs <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
@@ -96,7 +96,7 @@ const HeroAreaBdcCustom = ({ data }) => (
             </div>
             <div className="row text-center pt-5">
                 <div className="button-group">
-                    <Button
+                    {/* <Button
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="800"
@@ -104,16 +104,16 @@ const HeroAreaBdcCustom = ({ data }) => (
                         path="/"
                     >
                         BUY NOW
-                    </Button>
+                    </Button> */}
                     <Button
                         key="btn1"
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="800"
-                        path="/mint"
-                        color="primary-alta"
+                        path="https://discord.gg/pf98svgC7N"
+                    // color="primary-alta"
                     >
-                        CLAIM
+                        DISCORD MEMBERS ONLY
                     </Button>
                 </div>
                 {/* <button type="button" className="offset-4 col-2 btn-a">

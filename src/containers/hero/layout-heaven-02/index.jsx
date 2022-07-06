@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import Button from "@ui/button";
 import Image from "next/image";
+import Slider, { SliderItem } from "@ui/slider";
+import Portfolio from "@components/portfolio/layout-02";
 import { ButtonType, IDType, ImageType } from "@utils/types";
 
 const SliderOptions = {
@@ -13,10 +15,19 @@ const SliderOptions = {
     adaptiveHeight: true,
 };
 
-const HeroAreaBdc4k = ({ data }) => (
+const HeroAreaBdcHeaven = ({ data }) => (
     <div className="banner-style-4 rn-section-gapTop rn-section-gapBottom">
-        <div className="container element" id="bdc-4k">
+        <div className="container element" id="bdc-heaven">
             <div className="row align-items-center">
+                <h1
+                    className="title text-center"
+                    data-sal="slide-up"
+                    data-sal-delay="200"
+                    data-sal-duration="800"
+                // dangerouslySetInnerHTML={{ __html: "Bad Dogs go to Heaven" }}
+                >
+                    <span className="customTitleFont">Bad Dogs</span> go to HEAVEN
+                </h1>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-2 order-lg-1 mt_md--40 mt_sm--40 pl_md--25 pl_sm--25">
                     <div className="sldier-content">
                         {/*data?.badge && (
@@ -30,19 +41,9 @@ const HeroAreaBdc4k = ({ data }) => (
                             </span>
                         )*/}
 
-                        <h1
-                            className="title"
-                            data-sal="slide-up"
-                            data-sal-delay="200"
-                            data-sal-duration="800"
-                        // dangerouslySetInnerHTML={{ __html: "Bad Dogs go to Heaven" }}
-                        >
-                            <span className="customTitleFont">Bad Dogs</span> 4k Collection
-                        </h1>
+                        <h3>ABOUT</h3>
                         <p>
-                            Generated from traits of the Genesis collection.
-                            Not your basic dog, only the best in breed for
-                            this showcase.
+                            Because All Bad Dogs Go to Heaven.
                         </p>
                         <h3>INFO</h3>
                         <ul className="dogs-info">
@@ -71,22 +72,22 @@ const HeroAreaBdc4k = ({ data }) => (
                         >
                             <li className="float-l flex-item icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                BDC Membership
+                                Play-to-Earn
                             </li>
                             <li className="float-l ml-5 flex-item px-2 icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                Premium Utility
+                                Redeem Prizes
                             </li>
                             <li className="float-l icon-sm">
                                 <i className="feather-check-circle icon-sm icon-green" />
-                                4,000 Supply
+                                Metaverse
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-2">
                     <Image
-                        src="/images/bdc/nft/bdc091-667px.png"
+                        src="/images/bdc/nft/heaven-667px.png"
                         className="card-img-center"
                         width={667}
                         height={667}
@@ -94,7 +95,7 @@ const HeroAreaBdc4k = ({ data }) => (
                     />
                 </div>
             </div>
-            {/* <div className="row text-center pt-5">
+            <div className="row text-center pt-5">
                 <div className="button-group">
                     <Button
                         data-sal="slide-up"
@@ -116,13 +117,20 @@ const HeroAreaBdc4k = ({ data }) => (
                         CLAIM
                     </Button>
                 </div>
+                {/* <button type="button" className="offset-4 col-2 btn-a">
+                    BUY NOW
+                </button>
+                <hr className="horizontal" />
+                <button type="button" className="col-2 btn-b">
+                    CLAIM
+                </button> */}
                 <div className="col-4" />
-            </div> */}
+            </div>
         </div>
     </div>
 );
 
-HeroAreaBdc4k.propTypes = {
+HeroAreaBdcHeaven.propTypes = {
     data: PropTypes.shape({
         badge: PropTypes.string,
         title: PropTypes.string.isRequired,
@@ -140,4 +148,4 @@ HeroAreaBdc4k.propTypes = {
     }),
 };
 
-export default HeroAreaBdc4k;
+export default HeroAreaBdcHeaven;
