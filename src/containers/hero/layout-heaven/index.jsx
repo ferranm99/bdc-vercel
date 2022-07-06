@@ -19,15 +19,6 @@ const HeroAreaBdcHeaven = ({ data }) => (
     <div className="banner-style-4 rn-section-gapTop rn-section-gapBottom">
         <div className="container element" id="bdc-heaven">
             <div className="row align-items-center">
-                <h1
-                    className="title text-center"
-                    data-sal="slide-up"
-                    data-sal-delay="200"
-                    data-sal-duration="800"
-                // dangerouslySetInnerHTML={{ __html: "Bad Dogs go to Heaven" }}
-                >
-                    <span className="customTitleFont">Bad Dogs</span> go to HEAVEN
-                </h1>
                 <div className="col-xl-6 col-lg-6 col-md-12 order-2 order-lg-1 mt_md--40 mt_sm--40 pl_md--25 pl_sm--25">
                     <div className="sldier-content">
                         {/*data?.badge && (
@@ -40,18 +31,25 @@ const HeroAreaBdcHeaven = ({ data }) => (
                                 {data.badge}
                             </span>
                         )*/}
-
-                        <h3>ABOUT</h3>
+                        <h1
+                            className="title"
+                            data-sal="slide-up"
+                            data-sal-delay="200"
+                            data-sal-duration="800"
+                        // dangerouslySetInnerHTML={{ __html: "Bad Dogs go to Heaven" }}
+                        >
+                            <span className="customTitleFont">Bad Dogs</span> go to HEAVEN
+                        </h1>
                         <p>
                             Because All Bad Dogs Go to Heaven.
                         </p>
                         <h3>INFO</h3>
                         <ul className="dogs-info">
                             <li className="dogs-info-link">
-                                Bad Dogs <a href="#arc"><mark className="arrow">ARC →</mark></a>
+                                Bad Dogs <a href="#arc"><mark className="arrow">ARC → (TBD)</mark></a>
                             </li>
                             <li className="dogs-info-link">
-                                Bad Dogs <a href="#opensea"><mark className="arrow">OpenSea →</mark></a>
+                                Bad Dogs <a href="#opensea"><mark className="arrow">OpenSea → (TBD)</mark></a>
                             </li>
                             {/* <li className="dogs-info-link">
                                 Bad Dogs <a href="#looksrare"><mark className="arrow">LooksRare →</mark></a>
@@ -95,7 +93,7 @@ const HeroAreaBdcHeaven = ({ data }) => (
                     />
                 </div>
             </div>
-            <div className="row text-center pt-5">
+            {/* <div className="row text-center pt-5">
                 <div className="button-group">
                     <Button
                         data-sal="slide-up"
@@ -117,15 +115,8 @@ const HeroAreaBdcHeaven = ({ data }) => (
                         CLAIM
                     </Button>
                 </div>
-                {/* <button type="button" className="offset-4 col-2 btn-a">
-                    BUY NOW
-                </button>
-                <hr className="horizontal" />
-                <button type="button" className="col-2 btn-b">
-                    CLAIM
-                </button> */}
                 <div className="col-4" />
-            </div>
+            </div> */}
         </div>
     </div>
 );

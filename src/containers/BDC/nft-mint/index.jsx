@@ -49,7 +49,7 @@ const NFTMintSection = ({ className, id, space, data }) => {
                             <div className="mintTitle">Mint BDC</div>
                             <div className="mintSupply">4000 NFTs</div>
                         </div>
-                        <hr />
+                        <hr />                        
                         <small className="mintPrice col-12">
                             Price: <span>{mintPrice} ETH</span>
                         </small>

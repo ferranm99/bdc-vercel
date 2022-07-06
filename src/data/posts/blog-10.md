@@ -15,5 +15,3 @@ Since I joined the team I wanted to set up some events for us to participate in 
 The Tournament will be held on May 7th, 12:30 PM EST. Which is a Saturday. The Tournament is a private lobby and you will need to get in contact with me for the code. We will be using [ClubGG](https://www.clubgg.net/) for the tournament. Registration begins now and will end on May 5th Giving me enough time to ensure the lobby is good to go for the tournament
 
 If you have any questions please be sure to reach out, and I look forward to this poker game with yall! 
-
--SirDump
