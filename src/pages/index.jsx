@@ -109,10 +109,10 @@ const Home09 = ({ posts, pagiData }) => {
 
                 {isSafari || isMobile ? (
                     <div className="row py-5">
-                        <div className="parallax-2 col-12" />
+                        <div className="parallax-window col-12" />
                     </div>
                 ) : (
-                    <div className="parallax-2 parallax-fix col-12" />
+                    <div className="parallax-window parallax-fix col-12" />
                 )}
                 <HeroAreaBdcSerum data={content4["hero-section"]} />
 
@@ -135,7 +135,7 @@ const Home09 = ({ posts, pagiData }) => {
                 <HeroAreaBdcHeaven data={content4["hero-section"]} />
 
                 <div className="row py-5">
-                    <div className="parallax-2 col-12" />
+                    <div className="parallax-cityscape col-12" />
                 </div>
 
                 {/* <AboutArea data={content["about-section"]} /> */}

@@ -67,6 +67,32 @@
     background-size: cover;
 }
 
+.parallax-cityscape {
+    /* The image used */
+    background-image: url("/images/bdc/background/BDC-cityscape.jpg");
+
+    /* Set a specific height */
+    min-height: 50vh;
+    min-width: 100vw;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-window {
+    /* The image used */
+    background-image: url("/images/bdc/background/BDC-window.jpg");
+
+    /* Set a specific height */
+    min-height: 50vh;
+    min-width: 100vw;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .parallax-2 {
     /* The image used */
     background-image: url("/images/bdc/background/bdc-bg-01b.jpg");
