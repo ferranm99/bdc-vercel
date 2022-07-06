@@ -3,6 +3,14 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
 /* @import url("https://fonts.googleapis.com/css2?family=Koulen&family=Permanent+Marker&display=swap"); */
 
+
+#bannerImg {
+    /* background-image: url("/images/bg/bg-image-21.jpg"); */
+    background-image: url("/images/bdc/background/seamless-brick.jpg");
+    background-image: fill;
+    background-position: center;
+    object-fit: cover;
+}
 @media (min-width: 768px) {
     #bannerImg {
         /* background-image: url("/images/bg/bg-image-21.jpg"); */
@@ -12,13 +20,7 @@
         object-fit: cover;
     }
 }
-#bannerImg {
-    /* background-image: url("/images/bg/bg-image-21.jpg"); */
-    background-image: url("/images/bdc/background/seamless-brick.jpg");
-    background-image: fill;
-    background-position: center;
-    object-fit: cover;
-}
+
 #bannerImg2 {
     background-image: url("/images/bdc/background/seamless-brick.jpg");
     background-repeat: repeat;
