@@ -17,8 +17,8 @@ import "../assets/css/timeline.min.css";
 import "../assets/css/thirdweb.chakra.css";
 import "react-toastify/dist/ReactToastify.css";
 
-const moralisAppId = "WfYPq6VSyxp6xqh2KOSCJeicfAXIdsdNOXG80KUp";
-const moralisServerURL = "https://wmm6ipifztbl.usemoralis.com:2053/server";
+const moralisAppId = process.env.NEXT_PUBLIC_MORALIS_APP_ID;
+const moralisServerURL = process.env.NEXT_PUBLIC_MORALIS_SERVER;
 // const supportedChainIds = [1, 4, 137];
 const supportedChainIds = [1, 4];
 const connectors = {
@@ -43,6 +43,7 @@ const MyApp = ({ Component, pageProps }) => {
         sal();
     }, []);
     useEffect(() => {
+        console.log(process.env.NEXT_PUBLIC_MORALIS_APP_ID);
         document.body.className = `${pageProps.className}`;
     });
     return (
