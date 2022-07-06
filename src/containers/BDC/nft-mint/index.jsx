@@ -7,12 +7,25 @@ import NFTDisplaySection from "@containers/BDC/nft-display";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+    faMinus,
+    faPlus,
+    faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import Particles from "@ui/particles";
+import {
+    // useMoralisWeb3Api,
+    // useMoralisWeb3ApiCall,
+    useMoralis,
+    useWeb3ExecuteFunction,
+} from "react-moralis";
+// import ABI from "./ABI.json";
 
-const NFTMintSection = ({ className, id, space, data }) => {
+const contractAddress = "0xB59EB1046fe44Dc60E6E1Ce72B0a2863eb010Da5";
+
+const NFTMintSection = ({ className, id, space }) => {
     const max = 5;
-    const mintPrice = 0.10;
+    const mintPrice = 0.1;
     const [counter, setCounter] = useState(1);
     const SALETYPE = "OFF"; //unimplemented, use this to change values for mint type
     const incrementCounter = () => {
@@ -30,6 +43,36 @@ const NFTMintSection = ({ className, id, space, data }) => {
     let setMax = () => {
         setCounter(5);
     };
+    const { Moralis } = useMoralis();
+    const contractProcessor = useWeb3ExecuteFunction();
+
+    async function changeURI(text) {
+        let options = {
+            contractAddress: contractAddress,
+            functionName: "setBaseURI",
+            abi: [
+                {
+                    inputs: [
+                        {
+                            internalType: "string",
+                            name: "newBaseURI",
+                            type: "string",
+                        },
+                    ],
+                    name: "setBaseURI",
+                    outputs: [],
+                    stateMutability: "nonpayable",
+                    type: "function",
+                },
+            ],
+            params: {
+                newBaseURI: text,
+            },
+        };
+        await contractProcessor.fetch({
+            params: options,
+        });
+    }
 
     return (
         <div
@@ -99,6 +142,9 @@ const NFTMintSection = ({ className, id, space, data }) => {
                             <button
                                 className="btn btn-primary w-100"
                                 type="submit"
+                                onClick={() => {
+                                    changeURI("moralis.io");
+                                }}
                             >
                                 Mint
                             </button>
@@ -115,10 +161,6 @@ NFTMintSection.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string,
     space: PropTypes.oneOf([1, 2]),
-    data: PropTypes.shape({
-        section_title: SectionTitleType,
-        items: PropTypes.arrayOf(ItemType),
-    }),
 };
 NFTMintSection.defaultProps = {
     space: 1,
