@@ -11,6 +11,12 @@
                     "id": 1,
                     "path": "https://opensea.io/collection/baddogscompany",
                     "content": "Buy Now"
+                },
+                {
+                    "id": 2,
+                    "path": "/mint",
+                    "color": "primary-alta",
+                    "content": "Mint"
                 }
             ],
             "banners": [

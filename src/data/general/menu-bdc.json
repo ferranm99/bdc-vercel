@@ -10,11 +10,6 @@
         "path": "/roadmap"
     },
     {
-        "id": 3,
-        "text": "Mint",
-        "path": "/mint"
-    },
-    {
         "id": 4,
         "text": "Blog",
         "path": "/blog"

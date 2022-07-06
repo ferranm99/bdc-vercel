@@ -1,9 +1,9 @@
 ---
-title: BDC Waitlist Priority
+title: BDC x ARC
 date: "2022-06-30 12:50:00"
 category: Announcement
 image: {
-	src: "/images/blog/bg18.jpg"
+	src: "/images/blog/bg18.png"
 }
 tags: ["bdc partnership", "partnership", "arc marketplace"]
 ---

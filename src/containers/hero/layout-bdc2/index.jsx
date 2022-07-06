@@ -4,6 +4,7 @@ import { IDType, ImageType } from "@utils/types";
 // import * as Scroll from "react-scroll";
 import { Link } from "react-scroll";
 import Image from "next/image";
+import { isMobile } from "react-device-detect";
 import { useState } from "react";
 import Anchor from "@ui/anchor";
 // import SingleSlide from "./slide";
@@ -32,7 +33,7 @@ const HeroAreaBDC2 = () => {
     };
 
     return (
-        <div className="container-fluid pb-5" id="bannerImg">
+        <div className="container-fluid pb-5" id={isMobile ? "bannerImg2" : "bannerImg"}>
             <div className="row d-flex align-items-center mx-5 px-5">
                 <div className="offset-lg-2 col-lg-8 col-sm-12 text-center">
                     <h1

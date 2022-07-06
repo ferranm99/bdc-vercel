@@ -10,6 +10,14 @@
     background-position: center;
     object-fit: cover;
 }
+#bannerImg2 {
+    background-image: url("/images/bdc/background/seamless-brick.jpg");
+    background-repeat: repeat;
+    /* background-image: fill;
+    background-position: center;
+    object-fit: cover; */
+}
+
 .read-info {
     font-size: 1.25rem;
     font-weight: 600;
