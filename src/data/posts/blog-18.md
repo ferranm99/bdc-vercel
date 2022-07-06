@@ -16,4 +16,4 @@ We will keep you update about the partnership and the opportunities coming with 
 
 Now, to celebrate this great deal we have a new custom for @Jasper | ARC , who is a team member of ARC and also one of our holders. 
 
-Congrats
+Congrats!
