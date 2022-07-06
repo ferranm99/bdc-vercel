@@ -136,7 +136,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 0,
                                     title: "What is Genesis mint price?",
                                     description:
-                                        "<p><strong>0.1 ETH</strong></p>",
+                                        "<p><strong>0.2 ETH</strong></p>",
                                 },
                                 {
                                     id: 1,
