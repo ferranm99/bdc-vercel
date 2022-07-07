@@ -1,6 +1,11 @@
 {
     "name": "bdc-nextjs",
     "private": true,
+    "engines":{
+        "node": ">=16.0.0",
+        "yarn": "please-use-npm",
+        "npm": ">=8.0.0"
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
