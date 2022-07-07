@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
-// import { MoralisProvider } from "react-moralis";
+import { MoralisProvider } from "react-moralis";
 import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
 import SSRProvider from "react-bootstrap/SSRProvider";
@@ -17,8 +17,8 @@ import "../assets/css/timeline.min.css";
 import "../assets/css/thirdweb.chakra.css";
 import "react-toastify/dist/ReactToastify.css";
 
-// const moralisAppId = "RthQq8e4P7aK65qA9AxkrUhs1r2l4LbVBvJ6L71v";
-// const moralisServerURL = "https://u9r1l5bklpfl.usemoralis.com:2053/server";
+const moralisAppId = process.env.NEXT_PUBLIC_MORALIS_APP_ID;
+const moralisServerURL = process.env.NEXT_PUBLIC_MORALIS_SERVER;
 // const supportedChainIds = [1, 4, 137];
 const supportedChainIds = [1, 4];
 const connectors = {
@@ -43,6 +43,7 @@ const MyApp = ({ Component, pageProps }) => {
         sal();
     }, []);
     useEffect(() => {
+        console.log(process.env.NEXT_PUBLIC_MORALIS_APP_ID);
         document.body.className = `${pageProps.className}`;
     });
     return (
@@ -55,11 +56,14 @@ const MyApp = ({ Component, pageProps }) => {
             supportedChainIds={supportedChainIds}
         >
             <SSRProvider>
-                {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
-                <ThemeProvider defaultTheme="dark">
-                    <Component {...pageProps} />
-                </ThemeProvider>
-                {/* </MoralisProvider> */}
+                <MoralisProvider
+                    appId={moralisAppId}
+                    serverUrl={moralisServerURL}
+                >
+                    <ThemeProvider defaultTheme="dark">
+                        <Component {...pageProps} />
+                    </ThemeProvider>
+                </MoralisProvider>
             </SSRProvider>
             {/* </ThirdwebProvider> */}
         </ThirdwebWeb3Provider>
