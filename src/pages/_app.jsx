@@ -20,7 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 const moralisAppId = process.env.NEXT_PUBLIC_MORALIS_APP_ID;
 const moralisServerURL = process.env.NEXT_PUBLIC_MORALIS_SERVER;
 // const supportedChainIds = [1, 4, 137];
-const supportedChainIds = [1, 4];
+// const supportedChainIds = [1, 4];
 const connectors = {
     injected: {},
     walletlink: {
@@ -47,16 +47,12 @@ const MyApp = ({ Component, pageProps }) => {
         document.body.className = `${pageProps.className}`;
     });
     return (
-
         // <ThirdwebWeb3Provider
         //     connectors={connectors}
         //     supportedChainIds={supportedChainIds}
         // >
         <SSRProvider>
-            <MoralisProvider
-                appId={moralisAppId}
-                serverUrl={moralisServerURL}
-            >
+            <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}>
                 <ThemeProvider defaultTheme="dark">
                     <Component {...pageProps} />
                 </ThemeProvider>
