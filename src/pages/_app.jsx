@@ -19,17 +19,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 const moralisAppId = process.env.NEXT_PUBLIC_MORALIS_APP_ID;
 const moralisServerURL = process.env.NEXT_PUBLIC_MORALIS_SERVER;
+// *Depreciated - 3rdweb specific variables
 // const supportedChainIds = [1, 4, 137];
 // const supportedChainIds = [1, 4];
-const connectors = {
-    injected: {},
-    walletlink: {
-        appName: "Bad Dogs Company",
-        url: "https://baddogscompany.com",
-        darkMode: false,
-    },
-    walletconnect: {},
-};
+// const connectors = {
+//     injected: {},
+//     walletlink: {
+//         appName: "Bad Dogs Company",
+//         url: "https://baddogscompany.com",
+//         darkMode: false,
+//     },
+//     walletconnect: {},
+// };
 // Initialized Google Analytics GA4
 ReactGA.initialize("G-9P2JCG9QY5");
 
