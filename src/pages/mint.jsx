@@ -3,8 +3,8 @@ import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
 import Footer from "@layout/footer/footer-bdc";
 import Breadcrumb from "@components/breadcrumb";
-import ServiceArea from "@containers/services/layout-01";
-import SupportArea from "@containers/support";
+// import ServiceArea from "@containers/services/layout-01";
+// import SupportArea from "@containers/support";
 import NFTMintSection from "@containers/BDC/nft-mint";
 
 export async function getStaticProps() {

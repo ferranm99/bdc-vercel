@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Skeleton } from "antd";
 import Blockies from "react-blockies";
 import { useMoralis } from "react-moralis";
@@ -8,7 +9,9 @@ import { useMoralis } from "react-moralis";
  * @returns <Blockies> JSX Elemenet
  */
 
-function Blockie(props) {
+// function Blockie(props) {
+
+const Blockie = ({ props }) => {
     const { account } = useMoralis();
     if (!props.address && !account) return <Skeleton.Avatar active size={40} />;
 
@@ -23,6 +26,15 @@ function Blockie(props) {
             {...props}
         />
     );
-}
+};
+
+Blockie.propTypes = {
+    props: PropTypes.shape({
+        address: PropTypes.string,
+        currentWallet: PropTypes.string,
+    }),
+    address: PropTypes.string,
+    currentWallet: PropTypes.string,
+};
 
 export default Blockie;

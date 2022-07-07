@@ -4,7 +4,7 @@ import clsx from "clsx";
 // import Logo from "@components/logo";
 import Image from "next/image";
 // import { ConnectWallet } from "@3rdweb/react";
-import { useWeb3 } from "@3rdweb/hooks";
+// import { useWeb3 } from "@3rdweb/hooks";
 import MainMenu from "@components/menu/main-menu";
 import MobileMenu from "@components/menu/mobile-menu";
 // import SearchForm from "@components/search-form/layout-01";

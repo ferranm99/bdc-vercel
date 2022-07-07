@@ -12,8 +12,6 @@
         "clean": "rimraf node_modules"
     },
     "dependencies": {
-        "@3rdweb/hooks": "^1.9.2",
-        "@3rdweb/react": "^1.9.3",
         "@ant-design/icons": "^4.7.0",
         "@fortawesome/fontawesome-svg-core": "^6.1.1",
         "@fortawesome/free-regular-svg-icons": "^6.1.1",
