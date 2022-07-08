@@ -1,24 +1,24 @@
-import PropTypes from "prop-types";
-import clsx from "clsx";
+// import PropTypes from "prop-types";
+// import clsx from "clsx";
 
-import Account from "@components/header-account-bdc";
-import UserDropdown from "@components/user-dropdown";
+// import Account from "@components/header-account-bdc";
+// import UserDropdown from "@components/user-dropdown";
 
-import BurgerButton from "@ui/burger-button";
+// import BurgerButton from "@ui/burger-button";
 // import Anchor from "@ui/anchor";
 import Button from "@ui/button";
-//Moralis wallet connect Imports
+// Moralis wallet connect Imports
 import { useMoralis } from "react-moralis";
 import { useState, useEffect } from "react";
 import { Card, Modal } from "antd";
 import { getEllipsisTxt } from "@utils/formatters";
-import Blockie from "@components/Blockie";
+// import Blockie from "@components/Blockie";
 import { getExplorer } from "@utils/networks";
 import { SelectOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
-import { useOffcanvas, useSticky, useFlyoutSearch } from "@hooks";
+// import { useOffcanvas, useSticky, useFlyoutSearch } from "@hooks";
 // import headerData from "../../../data/general/header-01.json";
 // import menuData from "../../../data/general/menu-01.json";
 // import menuData from "../../../data/general/menu-bdc.json";
@@ -35,7 +35,7 @@ const styles = {
         justifyContent: "center",
         alignItems: "center",
         width: "inherit",
-        height: "inherit",
+        // height: "inherit",
         borderRadius: "14px",
         backgroundColor: "#24243557",
         cursor: "pointer",
@@ -65,10 +65,10 @@ const HeaderAccount = () => {
         //     logout();
         // }
         if (isAuthenticated && !account) {
-            //persist web3 session
+            // persist web3 session
             enableWeb3();
         }
-    }, [account, isAuthenticated]);
+    }, [account, isAuthenticated, enableWeb3]);
 
     return (
         <>
@@ -90,7 +90,10 @@ const HeaderAccount = () => {
                 <>
                     <div
                         style={styles.account}
+                        role="button"
+                        tabIndex={0}
                         onClick={() => setIsModalVisible(true)}
+                        onKeyDown={() => ({})}
                     >
                         <div
                             style={{
@@ -113,6 +116,7 @@ const HeaderAccount = () => {
                                 disabled={isAuthenticating}
                                 width={25}
                                 height={25}
+                                type="button"
                             >
                                 <FontAwesomeIcon
                                     icon={faRightFromBracket}
