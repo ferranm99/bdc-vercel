@@ -83,7 +83,7 @@ const HeaderAccount = () => {
                             size="small"
                             onClick={() => setIsAuthModalVisible(true)}
                         >
-                            Wallet Connect
+                            Wallet
                         </Button>
                     </div>
                 </div>
