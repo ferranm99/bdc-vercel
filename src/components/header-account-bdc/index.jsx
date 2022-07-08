@@ -7,6 +7,7 @@
 // import BurgerButton from "@ui/burger-button";
 // import Anchor from "@ui/anchor";
 import Button from "@ui/button";
+import Image from "next/image";
 // Moralis wallet connect Imports
 import { useMoralis } from "react-moralis";
 import { useState, useEffect } from "react";
@@ -110,22 +111,39 @@ const HeaderAccount = () => {
                     >
                         Connect Wallet
                     </div>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "1fr 1fr",
+                        }}
+                    >
                         {connectors.map(({ title, icon, connectorId }, key) => (
                             <div
                                 style={styles.connector}
+                                role="button"
+                                tabIndex={0}
                                 key={key}
+                                onKeyDown={() => ({})}
                                 onClick={async () => {
                                     try {
-                                        await authenticate({ provider: connectorId });
-                                        window.localStorage.setItem("connectorId", connectorId);
+                                        await authenticate({
+                                            provider: connectorId,
+                                        });
+                                        window.localStorage.setItem(
+                                            "connectorId",
+                                            connectorId
+                                        );
                                         setIsAuthModalVisible(false);
                                     } catch (e) {
                                         console.error(e);
                                     }
                                 }}
                             >
-                                <img src={icon} alt={title} style={styles.icon} />
+                                <Image
+                                    src={icon}
+                                    alt={title}
+                                    style={styles.icon}
+                                />
                                 <h4 style={{ fontSize: "14px" }}>{title}</h4>
                             </div>
                         ))}
@@ -217,9 +235,7 @@ const HeaderAccount = () => {
                         }}
                     >
                         <a
-                            href={`${getExplorer(
-                                chainId
-                            )}/address/${account}`}
+                            href={`${getExplorer(chainId)}/address/${account}`}
                             target="_blank"
                             rel="noreferrer"
                         >
