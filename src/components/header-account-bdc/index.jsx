@@ -11,7 +11,8 @@ import Image from "next/image";
 // Moralis wallet connect Imports
 import { useMoralis } from "react-moralis";
 import { useState, useEffect } from "react";
-import { Card, Modal } from "antd";
+import { Card } from "antd";
+import Modal from "react-bootstrap/Modal";
 import { getEllipsisTxt } from "@utils/formatters";
 // import Blockie from "@components/Blockie";
 import { getExplorer } from "@utils/networks";
@@ -42,8 +43,19 @@ const styles = {
         backgroundColor: "#24243557",
         cursor: "pointer",
     },
+    connector: {
+        alignItems: "center",
+        display: "flex",
+        flexDirection: "column",
+        height: "auto",
+        justifyContent: "center",
+        marginLeft: "auto",
+        marginRight: "auto",
+        padding: "15px 5px",
+        cursor: "pointer",
+    },
     text: {
-        color: "white",
+        color: "black",
     },
     logout: {
         width: "0.7rem",
@@ -89,28 +101,23 @@ const HeaderAccount = () => {
                     </div>
                 </div>
                 <Modal
-                    visible={isAuthModalVisible}
-                    footer={null}
-                    onCancel={() => setIsAuthModalVisible(false)}
-                    bodyStyle={{
-                        padding: "15px",
-                        fontSize: "17px",
-                        fontWeight: "500",
-                    }}
-                    style={{ fontSize: "16px", fontWeight: "500" }}
-                    width="340px"
+                    show={isAuthModalVisible}
+                    // footer={null}
+                    size="sm"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    onHide={() => setIsAuthModalVisible(false)}
+                    // bodyStyle={{
+                    //     padding: "15px",
+                    //     fontSize: "17px",
+                    //     fontWeight: "500",
+                    // }}
+                    // style={{ fontSize: "16px", fontWeight: "500" }}
+                    // width="340px"
+                    centered
                 >
-                    <div
-                        style={{
-                            padding: "10px",
-                            display: "flex",
-                            justifyContent: "center",
-                            fontWeight: "700",
-                            fontSize: "20px",
-                        }}
-                    >
-                        Connect Wallet
-                    </div>
+                    <Modal.Header closeButton>
+                        <div style={{ fontSize: "24px" }}>Connect Wallet</div>
+                    </Modal.Header>
                     <div
                         style={{
                             display: "grid",
@@ -125,6 +132,7 @@ const HeaderAccount = () => {
                                 key={key}
                                 onKeyDown={() => ({})}
                                 onClick={async () => {
+                                    // console.log("clicked: " + connectorId);
                                     try {
                                         await authenticate({
                                             provider: connectorId,
@@ -142,9 +150,19 @@ const HeaderAccount = () => {
                                 <Image
                                     src={icon}
                                     alt={title}
-                                    style={styles.icon}
+                                    // style={styles.icon}
+                                    width={65}
+                                    height={65}
                                 />
-                                <h4 style={{ fontSize: "14px" }}>{title}</h4>
+                                <div
+                                    style={{
+                                        fontSize: "14px",
+                                        color: "black",
+                                        paddingTop: "8px",
+                                    }}
+                                >
+                                    {title}
+                                </div>
                             </div>
                         ))}
                     </div>
