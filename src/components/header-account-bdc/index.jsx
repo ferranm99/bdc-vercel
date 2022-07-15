@@ -9,7 +9,7 @@
 import Button from "@ui/button";
 import Image from "next/image";
 // Moralis wallet connect Imports
-import { useMoralis } from "react-moralis";
+// import { useMoralis } from "react-moralis";
 import { useState, useEffect } from "react";
 import { Card } from "antd";
 import Modal from "react-bootstrap/Modal";
@@ -63,6 +63,15 @@ const styles = {
 };
 
 const HeaderAccount = () => {
+    // const {
+    //     authenticate,
+    //     isAuthenticated,
+    //     isAuthenticating,
+    //     logout,
+    //     chainId,
+    //     account,
+    //     enableWeb3,
+    // } = useMoralis();
     const {
         authenticate,
         isAuthenticated,
@@ -70,20 +79,19 @@ const HeaderAccount = () => {
         logout,
         chainId,
         account,
-        enableWeb3,
-    } = useMoralis();
+    } = null;
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
 
-    useEffect(() => {
-        // if (isAuthenticated && !account) {
-        //     logout();
-        // }
-        if (isAuthenticated && !account) {
-            // persist web3 session
-            enableWeb3();
-        }
-    }, [account, isAuthenticated, enableWeb3]);
+    // useEffect(() => {
+    //     // if (isAuthenticated && !account) {
+    //     //     logout();
+    //     // }
+    //     if (isAuthenticated && !account) {
+    //         // persist web3 session
+    //         enableWeb3();
+    //     }
+    // }, [account, isAuthenticated, enableWeb3]);
 
     if (!isAuthenticated || !account) {
         return (
@@ -277,7 +285,7 @@ const HeaderAccount = () => {
                         fontWeight: "500",
                     }}
                     onClick={() => {
-                        logout();
+                        // logout();
                         setIsModalVisible(false);
                     }}
                 >

@@ -13,12 +13,12 @@ import {
     faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import Particles from "@ui/particles";
-import {
-    // useMoralisWeb3Api,
-    // useMoralisWeb3ApiCall,
-    useMoralis,
-    useWeb3ExecuteFunction,
-} from "react-moralis";
+// import {
+//     // useMoralisWeb3Api,
+//     // useMoralisWeb3ApiCall,
+//     useMoralis,
+//     useWeb3ExecuteFunction,
+// } from "react-moralis";
 // import ABI from "./ABI.json";
 
 const contractAddress = "0xB59EB1046fe44Dc60E6E1Ce72B0a2863eb010Da5";
@@ -43,36 +43,36 @@ const NFTMintSection = ({ className, id, space }) => {
     let setMax = () => {
         setCounter(5);
     };
-    const { Moralis } = useMoralis();
-    const contractProcessor = useWeb3ExecuteFunction();
+    // const { Moralis } = useMoralis();
+    // const contractProcessor = useWeb3ExecuteFunction();
 
-    async function changeURI(text) {
-        let options = {
-            contractAddress: contractAddress,
-            functionName: "setBaseURI",
-            abi: [
-                {
-                    inputs: [
-                        {
-                            internalType: "string",
-                            name: "newBaseURI",
-                            type: "string",
-                        },
-                    ],
-                    name: "setBaseURI",
-                    outputs: [],
-                    stateMutability: "nonpayable",
-                    type: "function",
-                },
-            ],
-            params: {
-                newBaseURI: text,
-            },
-        };
-        await contractProcessor.fetch({
-            params: options,
-        });
-    }
+    // async function changeURI(text) {
+    //     let options = {
+    //         contractAddress: contractAddress,
+    //         functionName: "setBaseURI",
+    //         abi: [
+    //             {
+    //                 inputs: [
+    //                     {
+    //                         internalType: "string",
+    //                         name: "newBaseURI",
+    //                         type: "string",
+    //                     },
+    //                 ],
+    //                 name: "setBaseURI",
+    //                 outputs: [],
+    //                 stateMutability: "nonpayable",
+    //                 type: "function",
+    //             },
+    //         ],
+    //         params: {
+    //             newBaseURI: text,
+    //         },
+    //     };
+    //     await contractProcessor.fetch({
+    //         params: options,
+    //     });
+    // }
 
     return (
         <div
@@ -92,7 +92,7 @@ const NFTMintSection = ({ className, id, space }) => {
                             <div className="mintTitle">Mint BDC</div>
                             <div className="mintSupply">4000 NFTs</div>
                         </div>
-                        <hr />                        
+                        <hr />
                         <small className="mintPrice col-12">
                             Price: <span>{mintPrice} ETH</span>
                         </small>
@@ -143,7 +143,7 @@ const NFTMintSection = ({ className, id, space }) => {
                                 className="btn btn-primary w-100"
                                 type="submit"
                                 onClick={() => {
-                                    changeURI("moralis.io");
+                                    // changeURI("moralis.io");
                                 }}
                             >
                                 Mint

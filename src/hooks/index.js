@@ -1,3 +1,4 @@
+export { useWeb3 } from './Web3Client';
 export { default as useOffcanvas } from "./use-offcanvas";
 export { default as useSticky } from "./use-sticky";
 export { default as useFlyoutSearch } from "./use-flyout-search";

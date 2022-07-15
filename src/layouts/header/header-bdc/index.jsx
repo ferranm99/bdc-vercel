@@ -10,22 +10,24 @@ import MobileMenu from "@components/menu/mobile-menu";
 // import SearchForm from "@components/search-form/layout-01";
 // import FlyoutSearchForm from "@components/search-form/layout-02";
 import SocialWidget from "@widgets/header-social-widget-bdc";
-import HeaderAccount from "@components/header-account-bdc";
-import UserDropdown from "@components/user-dropdown";
+// import HeaderAccount from "@components/header-account-bdc";
+import Web3Button from "@components/web3-button";
+// import Web3Address from "@components/web3-address";
+// import UserDropdown from "@components/user-dropdown";
 // import ColorSwitcher from "@components/color-switcher";
 import BurgerButton from "@ui/burger-button";
 // import Anchor from "@ui/anchor";
 import Button from "@ui/button";
 //Moralis wallet connect Imports
-import { useMoralis } from "react-moralis";
+// import { useMoralis } from "react-moralis";
 import { useState, useEffect } from "react";
-import { Card, Modal } from "antd";
-import { getEllipsisTxt } from "@utils/formatters";
-import Blockie from "@components/Blockie";
-import { getExplorer } from "@utils/networks";
-import { SelectOutlined } from "@ant-design/icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+// import { Card, Modal } from "antd";
+// import { getEllipsisTxt } from "@utils/formatters";
+// import Blockie from "@components/Blockie";
+// import { getExplorer } from "@utils/networks";
+// import { SelectOutlined } from "@ant-design/icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 import { useOffcanvas, useSticky, useFlyoutSearch } from "@hooks";
 // import headerData from "../../../data/general/header-01.json";
@@ -63,26 +65,26 @@ const Header = ({ className }) => {
     const { offcanvas, offcanvasHandler } = useOffcanvas();
     const { search, searchHandler } = useFlyoutSearch();
     const [accountId, setAccountId] = useState("");
-    const {
-        authenticate,
-        isAuthenticated,
-        isAuthenticating,
-        logout,
-        chainId,
-        account,
-        enableWeb3,
-    } = useMoralis();
+    // const {
+    //     authenticate,
+    //     isAuthenticated,
+    //     isAuthenticating,
+    //     logout,
+    //     chainId,
+    //     account,
+    //     enableWeb3,
+    // } = useMoralis();
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-    useEffect(() => {
-        // if (isAuthenticated && !account) {
-        //     logout();
-        // }
-        if (isAuthenticated && !account) {
-            //persist web3 session
-            enableWeb3();
-        }
-    }, [account, isAuthenticated]);
+    // useEffect(() => {
+    //     // if (isAuthenticated && !account) {
+    //     //     logout();
+    //     // }
+    //     if (isAuthenticated && !account) {
+    //         //persist web3 session
+    //         enableWeb3();
+    //     }
+    // }, [account, isAuthenticated]);
     return (
         <>
             <header
@@ -148,7 +150,7 @@ const Header = ({ className }) => {
                                     {/* <ConnectWallet /> */}
 
                                     {/*<HeaderAccount/>*/}
-                                    <HeaderAccount />
+                                    <Web3Button />
                                 </div>
                             </div>
 

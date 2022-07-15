@@ -61,6 +61,7 @@
         "eslint-plugin/fixer-return:": "off",
         "operator-linebreak": "off",
         "linebreak-style":0,
+        "arrow-body-style": "off",
         "implicit-arrow-linebreak": "off",
         "comma-dangle": ["error", "only-multiline"],
         "function-paren-newline": "off",

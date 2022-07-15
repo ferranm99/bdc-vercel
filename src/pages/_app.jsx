@@ -3,11 +3,13 @@ import { useEffect } from "react";
 // import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
-import { MoralisProvider } from "react-moralis";
+
+// import { MoralisProvider } from "react-moralis";
 import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
 import SSRProvider from "react-bootstrap/SSRProvider";
 import ReactGA from "react-ga4";
+import { Web3ContextProvider } from "../context";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/feather.css";
 import "../assets/scss/style.scss";
@@ -17,8 +19,8 @@ import "../assets/css/timeline.min.css";
 // import "../assets/css/thirdweb.chakra.css";
 import "react-toastify/dist/ReactToastify.css";
 
-const moralisAppId = process.env.NEXT_PUBLIC_MORALIS_APP_ID;
-const moralisServerURL = process.env.NEXT_PUBLIC_MORALIS_SERVER;
+// const moralisAppId = process.env.NEXT_PUBLIC_MORALIS_APP_ID;
+// const moralisServerURL = process.env.NEXT_PUBLIC_MORALIS_SERVER;
 // *Depreciated - 3rdweb specific variables
 // const supportedChainIds = [1, 4, 137];
 // const supportedChainIds = [1, 4];
@@ -36,6 +38,7 @@ ReactGA.initialize("G-9P2JCG9QY5");
 
 const MyApp = ({ Component, pageProps }) => {
     const router = useRouter();
+
     useEffect(() => {
         sal({ threshold: 0.1, once: true });
     }, [router.asPath]);
@@ -53,11 +56,13 @@ const MyApp = ({ Component, pageProps }) => {
         //     supportedChainIds={supportedChainIds}
         // >
         <SSRProvider>
-            <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}>
+            <Web3ContextProvider>
+                {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
                 <ThemeProvider defaultTheme="dark">
                     <Component {...pageProps} />
                 </ThemeProvider>
-            </MoralisProvider>
+                {/* </MoralisProvider> */}
+            </Web3ContextProvider>
         </SSRProvider>
     );
 };

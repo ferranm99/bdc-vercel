@@ -41,3 +41,14 @@ export const tokenValue = (value, decimals) =>
  */
 export const tokenValueTxt = (value, decimals, symbol) =>
     `${n4.format(tokenValue(value, decimals))} ${symbol}`;
+
+/**
+ * Truncates an ethereum address to the format 0x0000…0000
+ * @param address Full address to truncate
+ * @returns Truncated address
+ */
+export const truncateEthAddress = (address) => {
+    const match = address.match(/^(0x[a-zA-Z0-9]{4})[a-zA-Z0-9]+([a-zA-Z0-9]{4})$/);
+    if (!match) return address;
+    return `${match[1]}…${match[2]}`;
+};
