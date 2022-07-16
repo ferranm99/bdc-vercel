@@ -9,7 +9,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { truncateEthAddress } from "@utils/formatters";
 import { useWeb3Context } from "src/context";
 import { toast } from "react-toastify";
-import { ethers } from "ethers";
+// import { ethers } from "ethers";
 
 // interface ConnectProps {
 //     connect: (() => Promise<void>) | null
@@ -83,10 +83,15 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
 };
 
 const Web3Button = () => {
-    const { web3Provider, connect, disconnect, address, balance } = useWeb3Context();
+    const { web3Provider, connect, disconnect, address, balance } =
+        useWeb3Context();
 
     return web3Provider ? (
-        <DisconnectButton disconnect={disconnect} address={address} balance={balance} />
+        <DisconnectButton
+            disconnect={disconnect}
+            address={address}
+            balance={balance}
+        />
     ) : (
         <ConnectButton connect={connect} />
     );
@@ -99,6 +104,7 @@ ConnectButton.propTypes = {
 DisconnectButton.propTypes = {
     disconnect: PropTypes.func.isRequired,
     address: PropTypes.string,
+    balance: PropTypes.number,
 };
 
 export default Web3Button;
