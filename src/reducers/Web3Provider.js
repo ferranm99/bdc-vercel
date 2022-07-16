@@ -45,6 +45,7 @@ export const web3InitialState = {
     provider: null,
     web3Provider: null,
     address: null,
+    balance: null,
     network: null,
     connect: null,
     disconnect: null,
@@ -61,12 +62,18 @@ export function web3Reducer(
                 provider: action.provider,
                 web3Provider: action.web3Provider,
                 address: action.address,
+                balance: action.balance,
                 network: action.network,
             }
         case 'SET_ADDRESS':
             return {
                 ...state,
                 address: action.address,
+            }
+        case 'SET_BALANCE':
+            return {
+                ...state,
+                balance: action.balance,
             }
         case 'SET_NETWORK':
             return {

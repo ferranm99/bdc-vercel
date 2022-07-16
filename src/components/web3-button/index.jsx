@@ -9,6 +9,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { truncateEthAddress } from "@utils/formatters";
 import { useWeb3Context } from "src/context";
 import { toast } from "react-toastify";
+import { ethers } from "ethers";
 
 // interface ConnectProps {
 //     connect: (() => Promise<void>) | null
@@ -27,7 +28,14 @@ const ConnectButton = ({ connect }) => {
 //     disconnect: (() => Promise<void>) | null
 //   }
 
-const DisconnectButton = ({ disconnect, address }) => {
+const DisconnectButton = ({ disconnect, address, balance }) => {
+    // const balanceInEth = web3Provider.getBalance(address).then((balance) => {
+    //     // convert a currency unit from wei to ether
+    //     // const balanceInEth = ethers.utils.formatEther(balance)
+    //     return ethers.utils.formatEther(balance);
+    //     //console.log(`balance: ${balanceInEth} ETH`)
+    // })
+
     return disconnect ? (
         <ButtonGroup>
             <CopyToClipboard
@@ -44,6 +52,14 @@ const DisconnectButton = ({ disconnect, address }) => {
                 </Button>
             </CopyToClipboard>
             <DropdownButton as={ButtonGroup} title="" id="bg-nested-dropdown">
+                <Dropdown.Item
+                    style={{ fontSize: "1.75em" }}
+                    eventKey="1"
+                    href="#"
+                >
+                    Balance: {Number(balance).toFixed(4)} Ξ
+                </Dropdown.Item>
+                <Dropdown.Divider />
                 <Dropdown.Item
                     style={{ fontSize: "1.75em" }}
                     eventKey="1"
@@ -67,10 +83,10 @@ const DisconnectButton = ({ disconnect, address }) => {
 };
 
 const Web3Button = () => {
-    const { web3Provider, connect, disconnect, address } = useWeb3Context();
+    const { web3Provider, connect, disconnect, address, balance } = useWeb3Context();
 
     return web3Provider ? (
-        <DisconnectButton disconnect={disconnect} address={address} />
+        <DisconnectButton disconnect={disconnect} address={address} balance={balance} />
     ) : (
         <ConnectButton connect={connect} />
     );

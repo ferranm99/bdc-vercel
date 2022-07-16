@@ -51,7 +51,7 @@ if (typeof window !== 'undefined') {
 
 export const useWeb3 = () => {
     const [state, dispatch] = useReducer(web3Reducer, web3InitialState);
-    const { provider, web3Provider, address, network } = state;
+    const { provider, web3Provider, address, balance, network } = state;
 
     const connect = useCallback(async () => {
         if (web3Modal) {
@@ -60,6 +60,7 @@ export const useWeb3 = () => {
                 const web3Provider = new ethers.providers.Web3Provider(provider);
                 const signer = web3Provider.getSigner();
                 const address = await signer.getAddress();
+                const balance = ethers.utils.formatEther(await web3Provider.getBalance(address));
                 const network = await web3Provider.getNetwork();
                 toast.success('Connected to Web3', {
                     position: toast.POSITION.BOTTOM_LEFT
@@ -70,6 +71,7 @@ export const useWeb3 = () => {
                     provider,
                     web3Provider,
                     address,
+                    balance,
                     network,
                 });
             } catch (e) {
@@ -107,13 +109,17 @@ export const useWeb3 = () => {
     // EIP-1193 events
     useEffect(() => {
         if (provider?.on) {
-            const handleAccountsChanged = (accounts) => {
+            const handleAccountsChanged = async (accounts) => {
                 toast.info('Changed Web3 Account', {
                     position: toast.POSITION.BOTTOM_LEFT
                 })
                 dispatch({
                     type: 'SET_ADDRESS',
                     address: accounts[0],
+                });
+                dispatch({
+                    type: 'SET_BALANCE',
+                    balance: ethers.utils.formatEther(await web3Provider.getBalance(accounts[0])),
                 });
             }
 
@@ -153,6 +159,7 @@ export const useWeb3 = () => {
         provider,
         web3Provider,
         address,
+        balance,
         network,
         connect,
         disconnect,
