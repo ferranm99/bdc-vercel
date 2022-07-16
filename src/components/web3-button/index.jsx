@@ -92,13 +92,13 @@ const Web3Button = () => {
     );
 };
 
-// ConnectButton.propTypes = {
-//     connect: PropTypes.func.isRequired,
-// };
+ConnectButton.propTypes = {
+    connect: PropTypes.func.isRequired,
+};
 
-// DisconnectButton.propTypes = {
-//     disconnect: PropTypes.func.isRequired,
-//     address: PropTypes.string,
-// };
+DisconnectButton.propTypes = {
+    disconnect: PropTypes.func.isRequired,
+    address: PropTypes.string,
+};
 
 export default Web3Button;
