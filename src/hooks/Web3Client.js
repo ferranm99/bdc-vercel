@@ -1,8 +1,9 @@
 import { useEffect, useReducer, useCallback } from 'react';
 import { ethers } from 'ethers';
 import Web3Modal from 'web3modal';
-// import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
+import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
 import WalletConnectProvider from '@walletconnect/web3-provider';
+// import { Web3Auth } from "@web3auth/web3auth";
 
 import {
     // Web3ProviderState,
@@ -20,20 +21,30 @@ const providerOptions = {
             infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
         },
     },
-    // coinbasewallet: {
-    //     package: CoinbaseWalletSDK,
+    coinbasewallet: {
+        package: CoinbaseWalletSDK, // Required
+        options: {
+            appName: "Bad Dogs Company", // Required
+            infuraId: process.env.NEXT_PUBLIC_INFURA_ID, // Required
+            rpc: "", // Optional if `infuraId` is provided; otherwise it's required
+            chainId: 1, // Optional. It defaults to 1 if not provided
+            darkMode: true // Optional. Use dark theme, defaults to false
+        }
+    },
+    // web3auth: {
+    //     package: Web3Auth, // required
     //     options: {
-    //         appName: "Bad Dogs Company",
-
+    //         infuraId: process.env.NEXT_PUBLIC_INFURA_ID // required
     //     }
-    // }
+    // },
 };
 
 let web3Modal = Web3Modal | null;
 if (typeof window !== 'undefined') {
     web3Modal = new Web3Modal({
-        network: 'mainnet', // optional
+        network: "mainnet", // optional
         cacheProvider: true,
+        theme: "dark", // optional
         providerOptions, // required
     })
 };

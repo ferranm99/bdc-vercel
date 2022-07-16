@@ -42,6 +42,7 @@
         "react": "17.0.2",
         "react-blockies": "^1.4.1",
         "react-bootstrap": "^2.1.1",
+        "react-copy-to-clipboard": "^5.1.0",
         "react-countdown": "^2.3.2",
         "react-countup": "^6.1.1",
         "react-device-detect": "^2.2.2",

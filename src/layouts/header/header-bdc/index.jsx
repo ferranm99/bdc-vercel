@@ -74,7 +74,7 @@ const Header = ({ className }) => {
     //     account,
     //     enableWeb3,
     // } = useMoralis();
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    // const [isModalVisible, setIsModalVisible] = useState(false);
 
     // useEffect(() => {
     //     // if (isAuthenticated && !account) {

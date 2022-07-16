@@ -10,7 +10,7 @@ import Button from "@ui/button";
 import Image from "next/image";
 // Moralis wallet connect Imports
 // import { useMoralis } from "react-moralis";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card } from "antd";
 import Modal from "react-bootstrap/Modal";
 import { getEllipsisTxt } from "@utils/formatters";
@@ -151,7 +151,7 @@ const HeaderAccount = () => {
                                         );
                                         setIsAuthModalVisible(false);
                                     } catch (e) {
-                                        console.error(e);
+                                        // console.error(e);
                                     }
                                 }}
                             >
