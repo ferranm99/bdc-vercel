@@ -45,7 +45,7 @@ export const web3InitialState = {
     provider: null,
     web3Provider: null,
     address: null,
-    balance: null,
+    balance: 0,
     network: null,
     connect: null,
     disconnect: null,

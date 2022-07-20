@@ -1,6 +1,8 @@
 // import React from 'react';
 import PropTypes from "prop-types";
 // import Button from "@ui/button";
+// import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -35,6 +37,10 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
     //     return ethers.utils.formatEther(balance);
     //     //console.log(`balance: ${balanceInEth} ETH`)
     // })
+    const logoff = () => {
+        signOut();
+        disconnect();
+    };
 
     return disconnect ? (
         <ButtonGroup>
@@ -71,7 +77,7 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
                 <Dropdown.Item
                     style={{ fontSize: "1.75em" }}
                     eventKey="2"
-                    onClick={disconnect}
+                    onClick={logoff}
                 >
                     Logout
                 </Dropdown.Item>
@@ -85,12 +91,15 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
 const Web3Button = () => {
     const { web3Provider, connect, disconnect, address, balance } =
         useWeb3Context();
+    // const session = useSession();
+    // console.log(`session: ${JSON.stringify(session)}`);
 
     return web3Provider ? (
+        // return !session || session?.status !== 'authenticated' ? (
         <DisconnectButton
             disconnect={disconnect}
-            address={address}
-            balance={balance}
+            address={address || ""}
+            balance={Number(balance)}
         />
     ) : (
         <ConnectButton connect={connect} />

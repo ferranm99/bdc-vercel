@@ -3,7 +3,7 @@ import { useEffect } from "react";
 // import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import PropTypes from "prop-types";
 import { useRouter } from "next/router";
-
+import { SessionProvider } from "next-auth/react";
 // import { MoralisProvider } from "react-moralis";
 import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
@@ -55,21 +55,25 @@ const MyApp = ({ Component, pageProps }) => {
         //     connectors={connectors}
         //     supportedChainIds={supportedChainIds}
         // >
-        <SSRProvider>
-            <Web3ContextProvider>
-                {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
-                <ThemeProvider defaultTheme="dark">
-                    <Component {...pageProps} />
-                </ThemeProvider>
-                {/* </MoralisProvider> */}
-            </Web3ContextProvider>
-        </SSRProvider>
+        <SessionProvider session={pageProps.session} refetchInterval={0}>
+            <SSRProvider>
+                <Web3ContextProvider>
+                    {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
+                    <ThemeProvider defaultTheme="dark">
+                        <Component {...pageProps} />
+                    </ThemeProvider>
+                    {/* </MoralisProvider> */}
+                </Web3ContextProvider>
+            </SSRProvider>
+        </SessionProvider>
     );
 };
 
 MyApp.propTypes = {
     Component: PropTypes.elementType,
     pageProps: PropTypes.shape({
+        // eslint-disable-next-line react/forbid-prop-types
+        session: PropTypes.object,
         className: PropTypes.string,
     }),
 };
