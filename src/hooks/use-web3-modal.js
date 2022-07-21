@@ -100,9 +100,7 @@ export const useWeb3Modal = () => {
                     callbackUrl: '/',
                 });
 
-                toast.success('Connected to Web3', {
-                    position: toast.POSITION.BOTTOM_LEFT
-                });
+                // TODO: Backend logic to create account in MongoDB
 
                 dispatch({
                     type: 'SET_WEB3_PROVIDER',
@@ -111,6 +109,10 @@ export const useWeb3Modal = () => {
                     address,
                     balance,
                     network,
+                });
+
+                toast.success('Connected to Web3', {
+                    position: toast.POSITION.BOTTOM_LEFT
                 });
             } catch (e) {
                 console.log('connect error', e);
