@@ -26,14 +26,6 @@ export default async function auth(req, res) {
             },
             async authorize(credentials) {
                 try {
-                    const user = await prisma.User.findFirst({
-                        where: {
-                            ethAddress: credentials.message.address
-                        }
-                    });
-
-                    console.log(`MongoDB User: ${user}`);
-
                     // console.log(`credential.message: ${credentials.message}`);
                     // Sample credential.message
                     // credential.message: {"domain":"localhost:3000","address":"0x5E6C8309e0B1B7d2BF064AbFF405C52A088982a4","statement":"Sign in with Ethereum to localhost:3000","uri":"http://localhost:3000","version":"1","chainId":1,"nonce":"4c730cc55b6cd499ae3cd67252faaf0c60cd451466763cb49d7e8de6d4052009","issuedAt":"2022-07-22T12:23:23.088Z"}
@@ -50,6 +42,25 @@ export default async function auth(req, res) {
                     }
 
                     await siwe.validate(credentials?.signature || "");
+                    const user = await prisma.User.findFirst({
+                        where: {
+                            ethAddress: credentials.message.address
+                        }
+                    });
+
+                    if (user !== null) {
+
+                    } else {
+                        await prisma.user.create({
+                            data: {
+                                ethAddress: credentials.message.address,
+                                status: "A"
+                            }
+                        })
+                    }
+
+                    console.log(`MongoDB User: ${user}`);
+
                     return {
                         id: siwe.address,
                     };
