@@ -1,8 +1,8 @@
 // import React from 'react';
 import PropTypes from "prop-types";
 // import Button from "@ui/button";
-// import { signOut, useSession } from "next-auth/react";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -91,14 +91,16 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
 const Web3Button = () => {
     const { web3Provider, connect, disconnect, address, balance } =
         useWeb3Context();
+    const { data: session, status } = useSession();
     // const session = useSession();
     // console.log(`session: ${JSON.stringify(session)}`);
 
-    return web3Provider ? (
+    // return web3Provider ? (
+    return session ? (
         // return !session || session?.status !== 'authenticated' ? (
         <DisconnectButton
             disconnect={disconnect}
-            address={address || ""}
+            address={session.address || ""}
             balance={Number(balance)}
         />
     ) : (
