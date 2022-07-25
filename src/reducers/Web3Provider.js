@@ -57,6 +57,7 @@ export function web3Reducer(
 ) {
     switch (action.type) {
         case 'SET_WEB3_PROVIDER':
+            // console.log("SET_WEB3_PROVIDER");
             return {
                 ...state,
                 provider: action.provider,
@@ -66,21 +67,25 @@ export function web3Reducer(
                 network: action.network,
             }
         case 'SET_ADDRESS':
+            // console.log("SET_ADDRESS");
             return {
                 ...state,
                 address: action.address,
             }
         case 'SET_BALANCE':
+            // console.log("SET_BALANCE");
             return {
                 ...state,
                 balance: action.balance,
             }
         case 'SET_NETWORK':
+            // console.log("SET_NETWORK");
             return {
                 ...state,
                 network: action.network,
             }
         case 'RESET_WEB3_PROVIDER':
+            // console.log("RESET_WEB3_PROVIDER");
             return web3InitialState;
         default:
             throw new Error();

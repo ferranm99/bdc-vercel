@@ -17,5 +17,6 @@ export const Web3ContextProvider = (props) => {
 }
 
 export function useWeb3Context() {
+    // console.log(useContext(Web3Context));
     return useContext(Web3Context);
 }

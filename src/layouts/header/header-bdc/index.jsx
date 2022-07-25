@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import clsx from "clsx";
-
+import Anchor from "@ui/anchor";
 // import Logo from "@components/logo";
 import Image from "next/image";
 // import { ConnectWallet } from "@3rdweb/react";
@@ -98,14 +98,14 @@ const Header = ({ className }) => {
                     <div className="header-inner">
                         <div className="header-left">
                             {/* <Logo logo={headerData.logo} /> */}
-                            <a href="/">
+                            <Anchor path="/">
                                 <Image
                                     src="/images/bdc/logo/bdc-yellow-logo-50px.png"
                                     alt="Bad Dogs Company Circle Logo"
                                     width={50}
                                     height={50}
                                 />
-                            </a>
+                            </Anchor>
                             <div className="mainmenu-wrapper">
                                 <nav
                                     id="sideNav"
