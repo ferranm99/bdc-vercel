@@ -1,3 +1,5 @@
+// import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react"
 import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
@@ -11,7 +13,21 @@ export async function getStaticProps() {
 }
 
 const MyAccount = () => {
-    const { web3Provider } = useWeb3Context();
+    // const { web3Provider } = useWeb3Context();
+    const { data: session, status } = useSession();
+    // const [content, setContent] = useState();
+
+    // Fetch content from protected route
+    // useEffect(() => {
+    // const fetchData = async () => {
+    //     const res = await fetch("/api/examples/protected")
+    //     const json = await res.json()
+    //     if (json.content) {
+    //     setContent(json.content)
+    //     }
+    // }
+    // fetchData()
+    // }, [session])
 
     return (
         <Wrapper>
@@ -19,7 +35,7 @@ const MyAccount = () => {
             <Header />
             <main id="main-content">
                 <Breadcrumb pageTitle="My Account" currentPage="My Account" />
-                {web3Provider ? (
+                {session ? (
                     <EditProfileArea />
                 ) : (
                     <div style={{ textAlign: "center", paddingTop: "50px" }}>

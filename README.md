@@ -45,3 +45,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - style: Changes that do not affect the meaning of the code (white-sapce, formatting, missing semi-colons, etc)
 - content: Change of static content (e.g. text title, i18n, etc)
 - test: Adding missing tests or correcting existing tests
+
+## Troubleshooting
+
+- use "export NODE_TLS_REJECT_UNAUTHORIZED=0" in the command prompt to bypass self-signed cert error for node or nvm
+- use "npm set strict-ssl false" in the command prompt to bypass self-signed cert error for npm

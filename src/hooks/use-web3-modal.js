@@ -1,7 +1,7 @@
 import { useEffect, useState, useReducer, useCallback } from 'react';
 import { ethers } from 'ethers';
-import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
-import WalletConnectProvider from '@walletconnect/web3-provider';
+// import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
+// import WalletConnectProvider from '@walletconnect/web3-provider';
 import { getCsrfToken, signIn } from 'next-auth/react';
 import { SiweMessage } from 'siwe';
 import Web3Modal from 'web3modal';
@@ -44,12 +44,16 @@ const providerOptions = {
 let web3Modal = Web3Modal | null;
 if (typeof window !== 'undefined') {
     // console.log("inside window if statement");
-    web3Modal = new Web3Modal({
-        network: "mainnet", // optional
-        cacheProvider: true,
-        theme: "dark", // optional
-        providerOptions, // required
-    })
+    // Only create new Web3Modal instance if web3Modal object is null
+    if (!web3Modal) {
+        // console.log(`creating new web3Modal instance: ${web3Modal}`);
+        web3Modal = new Web3Modal({
+            network: "mainnet", // optional
+            cacheProvider: true,
+            theme: "dark", // optional
+            providerOptions, // required
+        })
+    }
 };
 
 export const useWeb3Modal = () => {
@@ -57,9 +61,9 @@ export const useWeb3Modal = () => {
     const [state, dispatch] = useReducer(web3Reducer, web3InitialState);
     const { provider, web3Provider, address, balance, network } = state;
 
-    // useEffect(() => {
+    // useEffect(async () => {
     //     console.log("inside setWeb3Modal");
-    //     let web3ModalInstance = new Web3Modal({
+    //     const web3ModalInstance = await new Web3Modal({
     //         network: "mainnet", // optional
     //         cacheProvider: true,
     //         theme: "dark", // optional
