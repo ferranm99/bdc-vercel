@@ -1,4 +1,4 @@
-import { ethers } from 'ethers';
+import { ethers } from "ethers";
 
 // Typescript specific exports
 
@@ -51,12 +51,9 @@ export const web3InitialState = {
     disconnect: null,
 };
 
-export function web3Reducer(
-    state = web3InitialState,
-    action
-) {
+export function web3Reducer(state = web3InitialState, action) {
     switch (action.type) {
-        case 'SET_WEB3_PROVIDER':
+        case "SET_WEB3_PROVIDER":
             return {
                 ...state,
                 provider: action.provider,
@@ -64,25 +61,25 @@ export function web3Reducer(
                 address: action.address,
                 balance: action.balance,
                 network: action.network,
-            }
-        case 'SET_ADDRESS':
+            };
+        case "SET_ADDRESS":
             return {
                 ...state,
                 address: action.address,
-            }
-        case 'SET_BALANCE':
+            };
+        case "SET_BALANCE":
             return {
                 ...state,
                 balance: action.balance,
-            }
-        case 'SET_NETWORK':
+            };
+        case "SET_NETWORK":
             return {
                 ...state,
                 network: action.network,
-            }
-        case 'RESET_WEB3_PROVIDER':
+            };
+        case "RESET_WEB3_PROVIDER":
             return web3InitialState;
         default:
             throw new Error();
     }
-};
+}

@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import SectionTitle from "@components/section-title/layout-02";
-import Service from "@components/service";
-import { SectionTitleType, ItemType } from "@utils/types";
+import { useState, useContext, useEffect } from "react";
 import NFTDisplaySection from "@containers/BDC/nft-display";
-import { useState } from "react";
+import { useWeb3Context } from "src/context";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,6 +11,13 @@ import {
     faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import Particles from "@ui/particles";
+// import { checkIfWalletIsConnected } from "@utils/connectWallet";
+import {
+    getContractValues,
+    grabConnectedContract,
+} from "@utils/smartContractFxns";
+import { contractAddress, whiteList } from "@utils/contractData.json";
+import { isWhitelisted } from "@utils/smartContractFxns";
 // import {
 //     // useMoralisWeb3Api,
 //     // useMoralisWeb3ApiCall,
@@ -21,11 +26,28 @@ import Particles from "@ui/particles";
 // } from "react-moralis";
 // import ABI from "./ABI.json";
 
-const contractAddress = "0xB59EB1046fe44Dc60E6E1Ce72B0a2863eb010Da5";
-
 const NFTMintSection = ({ className, id, space }) => {
-    const max = 5;
-    const mintPrice = 0.1;
+    const { web3Provider, connect, disconnect, address, balance, account } =
+        useWeb3Context();
+    const [onWhitelist, setOnWhitelist] = useState(false);
+    useEffect(async () => {
+        // window is accessible here.
+        console.log(account);
+        setOnWhitelist(isWhitelisted(account));
+        try {
+            await setContractValues(await getContractValues(window));
+            //temporary log - to see contract values
+            console.log(await grabConnectedContract(window));
+        } catch (err) {
+            console.log(err);
+        }
+        console.log(contractValues);
+    }, []);
+    const [contractValues, setContractValues] = useState({});
+    const max = contractValues.maxDogs;
+    const mintPrice = contractValues.paused
+        ? contractValues.WHITELIST_SALE_PRICE
+        : contractValues.PUBLIC_SALE_PRICE;
     const [counter, setCounter] = useState(1);
     const SALETYPE = "OFF"; //unimplemented, use this to change values for mint type
     const incrementCounter = () => {
@@ -43,7 +65,8 @@ const NFTMintSection = ({ className, id, space }) => {
     let setMax = () => {
         setCounter(5);
     };
-    // const { Moralis } = useMoralis();
+
+    /// const { Moralis } = useMoralis();
     // const contractProcessor = useWeb3ExecuteFunction();
 
     // async function changeURI(text) {
@@ -130,7 +153,7 @@ const NFTMintSection = ({ className, id, space }) => {
                         </div>
 
                         <hr />
-                        {SALETYPE === "OFF" ? (
+                        {onWhitelist == false ? (
                             <button
                                 className="btn btn-primary w-100 "
                                 disabled
