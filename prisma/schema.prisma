@@ -59,3 +59,24 @@ model User {
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
 }
+
+model NftToken {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  collection    String    @default("genesis")
+  tokenId       String
+  bdcTokenId    Int
+  name          String
+  owner         String
+  traits        Json?
+  previewUrl    String?
+  thumbnailUrl  String?
+  osUrl         String?
+  lrUrl         String?
+  websiteUrl    String?
+  isOwnerMatch  Boolean     @default(false)
+  isStolen      Boolean     @default(false)
+  lastSyncAt    DateTime
+  lastSaleAt    DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
