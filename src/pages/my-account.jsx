@@ -5,7 +5,7 @@ import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
 import Footer from "@layout/footer/footer-bdc";
 import Breadcrumb from "@components/breadcrumb";
-import EditProfileArea from "@containers/edit-profile";
+import NftProfileArea from "@containers/nft-profile";
 import { useWeb3Context } from "src/context";
 
 export async function getStaticProps() {
@@ -36,7 +36,7 @@ const MyAccount = () => {
             <main id="main-content">
                 <Breadcrumb pageTitle="My Account" currentPage="My Account" />
                 {session ? (
-                    <EditProfileArea />
+                    <NftProfileArea />
                 ) : (
                     <div style={{ textAlign: "center", paddingTop: "50px" }}>
                         <h1>Please connect your wallet</h1>
