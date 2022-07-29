@@ -13,6 +13,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { truncateEthAddress } from "@utils/formatters";
 import { useWeb3Context } from "src/context";
 import { toast } from "react-toastify";
+// import { useEffect } from "react";
 // import { ethers } from "ethers";
 
 // interface ConnectProps {
@@ -68,18 +69,12 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
                     Balance: {Number(balance).toFixed(4)} Ξ
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item
-                    style={{ fontSize: "1.75em" }}
-                    eventKey="1"
-                >
+                <Dropdown.Item style={{ fontSize: "1.75em" }} eventKey="1">
                     <Anchor style={{ color: "#000000" }} path="/my-account">
                         My Account
                     </Anchor>
                 </Dropdown.Item>
-                <Dropdown.Item
-                    style={{ fontSize: "1.75em" }}
-                    eventKey="1"
-                >
+                <Dropdown.Item style={{ fontSize: "1.75em" }} eventKey="1">
                     <Anchor style={{ color: "#000000" }} path="/mint">
                         Mint
                     </Anchor>
@@ -100,11 +95,21 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
 };
 
 const Web3Button = () => {
-    const { web3Provider, connect, disconnect, address, balance } =
-        // const { connect, disconnect } =
-        useWeb3Context();
+    // const { web3Provider, connect, disconnect, address, balance } =
+    const { connect, disconnect, balance } = useWeb3Context();
 
-    const { data: session, status } = useSession();
+    // const { data: session, status } = useSession();
+    const { data: session } = useSession();
+
+    // useEffect(async () => {
+    //     // signOut();
+    //     // disconnect();
+    //     console.log("address changed: ", address);
+    // }, [address]);
+
+    // console.log('state in web3-button');
+    // console.log(web3Provider);
+
     // console.log(`state: ${JSON.stringify(state)}`);
     // const session = useSession();
     // console.log(`session: ${JSON.stringify(session)}`);

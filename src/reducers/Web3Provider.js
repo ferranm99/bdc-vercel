@@ -57,6 +57,8 @@ export function web3Reducer(
 ) {
     switch (action.type) {
         case 'SET_WEB3_PROVIDER':
+            // Store state in localStorage
+            // window.localStorage.setItem('WEB3_STATE', JSON.stringify(state));
             // console.log("SET_WEB3_PROVIDER");
             return {
                 ...state,

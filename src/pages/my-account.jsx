@@ -1,12 +1,12 @@
 // import { useState, useEffect } from "react";
-import { useSession } from "next-auth/react"
+import { useSession } from "next-auth/react";
 import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
 import Footer from "@layout/footer/footer-bdc";
 import Breadcrumb from "@components/breadcrumb";
 import NftProfileArea from "@containers/nft-profile";
-import { useWeb3Context } from "src/context";
+// import { useWeb3Context } from "src/context";
 
 export async function getStaticProps() {
     return { props: { className: "template-color-1" } };
@@ -14,7 +14,8 @@ export async function getStaticProps() {
 
 const MyAccount = () => {
     // const { web3Provider } = useWeb3Context();
-    const { data: session, status } = useSession();
+    // const { data: session, status } = useSession();
+    const { data: session } = useSession();
     // const [content, setContent] = useState();
 
     // Fetch content from protected route
