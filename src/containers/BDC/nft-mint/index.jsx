@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { useState, useContext, useEffect } from "react";
+import { useSession, getSession } from "next-auth/react";
 import NFTDisplaySection from "@containers/BDC/nft-display";
 import { useWeb3Context } from "src/context";
+import { ContractContext } from "src/pages/_app";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,12 +14,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Particles from "@ui/particles";
 // import { checkIfWalletIsConnected } from "@utils/connectWallet";
-import {
-    getContractValues,
-    grabConnectedContract,
-} from "@utils/smartContractFxns";
+import { WLMintNFT, mintNFT } from "@utils/smartContractFxns";
 import { contractAddress, whiteList } from "@utils/contractData.json";
 import { isWhitelisted } from "@utils/smartContractFxns";
+import { useForceUpdate } from "framer-motion";
 // import {
 //     // useMoralisWeb3Api,
 //     // useMoralisWeb3ApiCall,
@@ -29,25 +29,46 @@ import { isWhitelisted } from "@utils/smartContractFxns";
 const NFTMintSection = ({ className, id, space }) => {
     const { web3Provider, connect, disconnect, address, balance, account } =
         useWeb3Context();
-    const [onWhitelist, setOnWhitelist] = useState(false);
+    // const { data: session, status } = useSession();
+
+    const { contractValues } = useContext(ContractContext);
+    const [onWhitelist, setOnWhitelist] = useState();
+    const [isClaiming, setIsClaiming] = useState(false);
+    const PUBLIC_PRICE = contractValues.PUBLIC_SALE_PRICE || 0;
+    const WHITELIST_PRICE = contractValues.WHITELIST_SALE_PRICE || 0;
+    const [mintPrice, setMintPrice] = useState(PUBLIC_PRICE);
+
     useEffect(async () => {
-        // window is accessible here.
-        console.log(account);
-        setOnWhitelist(isWhitelisted(account));
-        try {
-            await setContractValues(await getContractValues(window));
-            //temporary log - to see contract values
-            console.log(await grabConnectedContract(window));
-        } catch (err) {
-            console.log(err);
-        }
-        console.log(contractValues);
+        let session = await getSession();
+
+        // console.log(session);
+        // console.log(await isWhitelisted(session.address));
+        session !== null && session !== undefined
+            ? setMintPrice(
+                  (await isWhitelisted(session.address))
+                      ? WHITELIST_PRICE
+                      : PUBLIC_PRICE
+              )
+            : setMintPrice(PUBLIC_PRICE);
     }, []);
-    const [contractValues, setContractValues] = useState({});
+
+    // useEffect(async () => {
+    //     // window is accessible here
+    //     try {
+    //         // setMintPrice(
+    //         //     !contractValues.paused && onWhitelist
+    //         //         ? contractValues.WHITELIST_SALE_PRICE
+    //         //         : contractValues.PUBLIC_SALE_PRICE
+    //         // );
+    //         //temporary log - to see contract values
+    //         // console.log(await grabConnectedContract(window));
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    //     console.log(contractValues);
+    // }, []);
+
     const max = contractValues.maxDogs;
-    const mintPrice = contractValues.paused
-        ? contractValues.WHITELIST_SALE_PRICE
-        : contractValues.PUBLIC_SALE_PRICE;
     const [counter, setCounter] = useState(1);
     const SALETYPE = "OFF"; //unimplemented, use this to change values for mint type
     const incrementCounter = () => {
@@ -117,7 +138,7 @@ const NFTMintSection = ({ className, id, space }) => {
                         </div>
                         <hr />
                         <small className="mintPrice col-12">
-                            Price: <span>{mintPrice} ETH</span>
+                            Price: <span>{mintPrice} Ξ</span>
                         </small>
                         <div className="qty">
                             Amount:
@@ -153,7 +174,7 @@ const NFTMintSection = ({ className, id, space }) => {
                         </div>
 
                         <hr />
-                        {onWhitelist == false ? (
+                        {contractValues.paused == true ? (
                             <button
                                 className="btn btn-primary w-100 "
                                 disabled
@@ -161,15 +182,31 @@ const NFTMintSection = ({ className, id, space }) => {
                             >
                                 Coming Soon
                             </button>
+                        ) : onWhitelist == true ? (
+                            <button
+                                className="btn btn-primary w-100"
+                                type="submit"
+                                onClick={() => {
+                                    // changeURI("moralis.io");
+                                    WLMintNFT(window, counter, setIsClaiming);
+                                }}
+                            >
+                                <strong>
+                                    {!isClaiming ? "MINT" : "MINTING..."}
+                                </strong>
+                            </button>
                         ) : (
                             <button
                                 className="btn btn-primary w-100"
                                 type="submit"
                                 onClick={() => {
                                     // changeURI("moralis.io");
+                                    mintNFT(window, counter, setIsClaiming);
                                 }}
                             >
-                                Mint
+                                <strong>
+                                    {!isClaiming ? "MINT" : "MINTING..."}
+                                </strong>
                             </button>
                         )}
                     </div>

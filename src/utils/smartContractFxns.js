@@ -6,18 +6,32 @@ const contractABI = abi.abi;
 const { whiteList, contractAddress } = require("./contractData.json");
 
 export const isWhitelisted = async (account) => {
-    console.log("account:", account);
-    const proof = await runProof(account, whiteList);
-    console.log("proof", proof);
-    const isVerified = proof.proof ? true : false;
-    return isVerified;
+    if (account) {
+        const proof = await runProof(account, whiteList);
+        const isVerified = proof.proof ? true : false;
+        return isVerified;
+    }
+    return false;
 };
 
-export const grabConnectedContract = (window) => {
+export const grabConnectedContractv2 = (window) => {
     const { ethereum } = window;
     console.log(ethereum);
     if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const connectedContract = new ethers.Contract(
+            contractAddress,
+            contractABI,
+            signer
+        );
+        return connectedContract;
+    } else {
+        console.log("Ethereum object doesn't exist!");
+    }
+};
+export const grabConnectedContract = (provider) => {
+    if (provider) {
         const signer = provider.getSigner();
         const connectedContract = new ethers.Contract(
             contractAddress,
@@ -55,7 +69,9 @@ export const getContractStatus = async (window) => {
 
 const getWLSalePrice = async (window) => {
     const connectedContract = grabConnectedContract(window);
+    console.log(connectedContract);
     const p = await connectedContract.WL_SALE_PRICE();
+    console.log(p);
     let hexStr = p._hex.toString(16);
     return ethers.utils.formatEther(hexStr);
 };
@@ -108,7 +124,13 @@ export const mintNFT = async (window, mintQuantity, setIsClaiming) => {
             value: ethers.utils.parseEther(price),
             gasLimit: 230000, //optional
         };
-        let nftTxn = await connectedContract.mint(mintQuantity, overrides);
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+        const account = accounts[0];
+        let nftTxn = await connectedContract.mint(
+            account,
+            mintQuantity,
+            overrides
+        );
         setIsClaiming(true);
         await nftTxn.wait();
         //if error do something
@@ -127,65 +149,60 @@ export const mintNFT = async (window, mintQuantity, setIsClaiming) => {
     }
 };
 
-export const mintCommunityNFT = async (window, mintQuantity, setIsClaiming) => {
-    var doc = document.getElementById("mintAlert");
-    if (mintQuantity < 1 || mintQuantity > 3) {
-        doc.classList.add("alert-danger");
-        doc.classList.remove("alert-success");
-        doc.innerHTML = `Please input a valid number.`;
-        doc.classList.remove("hidden");
-    } else {
-        try {
-            //valid entry
-            doc.classList.add("hidden");
-            const { ethereum } = window;
-            const mintPrice = await getCommunitySalePrice(window);
-            const price = (mintPrice * mintQuantity).toFixed(3);
-            const overrides = {
-                value: ethers.utils.parseEther(price),
-                gasLimit: 230000, //optional
-            };
-            const accounts = await ethereum.request({ method: "eth_accounts" });
-            const account = accounts[0];
-            if (ethereum) {
-                const provider = new ethers.providers.Web3Provider(ethereum);
-                const signer = provider.getSigner();
-                const connectedContract = new ethers.Contract(
-                    contractAddress,
-                    contractABI,
-                    signer
-                );
+export const WLMintNFT = async (window, mintQuantity, setIsClaiming) => {
+    try {
+        const connectedContract = grabConnectedContract(window);
+        //valid entry
+        console.log("connected to contract", connectedContract);
+        const { ethereum } = window;
 
-                const proof = await runProof(account, whiteList);
-                // console.log(
-                //     "Minting community NFT",
-                //     proof,
-                //     overrides,
-                //     mintQuantity
-                // );
-                let nftTxn2 = await connectedContract.mintCommunitySale(
-                    mintQuantity,
-                    proof.proof,
-                    overrides
-                );
-                setIsClaiming(true);
-                await nftTxn2.wait();
-                // console.log(
-                //     `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn2.hash}`
-                // );
-                setIsClaiming(false);
-                var doc = document.getElementById("mintAlert");
-                doc.classList.add("alert-success");
-                doc.classList.remove("alert-danger");
-                doc.innerHTML = `Thank you for minting. <br/><a href="https://rinkeby.etherscan.io/tx/${nftTxn2.hash}" target="_blank">See Transaction</a> `;
-                doc.classList.remove("hidden");
-            } else {
-                console.log("Ethereum object doesn't exist!");
-            }
-        } catch (error) {
-            console.log(error);
-            handleFailMint(error, setIsClaiming);
+        const mintPrice = await getWLSalePrice(window);
+        const price = (mintPrice * mintQuantity).toFixed(3);
+        const overrides = {
+            value: ethers.utils.parseEther(price),
+            gasLimit: 230000, //optional
+        };
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+        const account = accounts[0];
+        if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum);
+            const signer = provider.getSigner();
+            const connectedContract = new ethers.Contract(
+                contractAddress,
+                contractABI,
+                signer
+            );
+
+            const proof = await runProof(account, whiteList);
+            // console.log(
+            //     "Minting community NFT",
+            //     proof,
+            //     overrides,
+            //     mintQuantity
+            // );
+            let nftTxn2 = await connectedContract.WLMint(
+                account,
+                mintQuantity,
+                proof.proof,
+                overrides
+            );
+            setIsClaiming(true);
+            await nftTxn2.wait();
+            // console.log(
+            //     `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn2.hash}`
+            // );
+            setIsClaiming(false);
+            // var doc = document.getElementById("mintAlert");
+            // doc.classList.add("alert-success");
+            // doc.classList.remove("alert-danger");
+            // doc.innerHTML = `Thank you for minting. <br/><a href="https://rinkeby.etherscan.io/tx/${nftTxn2.hash}" target="_blank">See Transaction</a> `;
+            // doc.classList.remove("hidden");
+        } else {
+            console.log("Ethereum object doesn't exist!");
         }
+    } catch (error) {
+        console.log(error);
+        // handleFailMint(error, setIsClaiming);
     }
 };
 
