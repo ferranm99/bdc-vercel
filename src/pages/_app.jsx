@@ -9,7 +9,7 @@ import sal from "sal.js";
 import { ThemeProvider } from "next-themes";
 import SSRProvider from "react-bootstrap/SSRProvider";
 import ReactGA from "react-ga4";
-import { Web3ContextProvider } from "../context";
+// import { Web3ContextProvider } from "../context";
 import "../assets/css/bootstrap.min.css";
 import "../assets/css/feather.css";
 import "../assets/scss/style.scss";
@@ -57,13 +57,13 @@ const MyApp = ({ Component, pageProps }) => {
         // >
         <SessionProvider session={pageProps.session} refetchInterval={0}>
             <SSRProvider>
-                <Web3ContextProvider>
-                    {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
-                    <ThemeProvider defaultTheme="dark">
-                        <Component {...pageProps} />
-                    </ThemeProvider>
-                    {/* </MoralisProvider> */}
-                </Web3ContextProvider>
+                {/* <Web3ContextProvider> */}
+                {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
+                <ThemeProvider defaultTheme="dark">
+                    <Component {...pageProps} />
+                </ThemeProvider>
+                {/* </MoralisProvider> */}
+                {/* </Web3ContextProvider> */}
             </SSRProvider>
         </SessionProvider>
     );

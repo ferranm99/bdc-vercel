@@ -11,7 +11,8 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import { truncateEthAddress } from "@utils/formatters";
-import { useWeb3Context } from "src/context";
+// import { useWeb3Context } from "src/context";
+import { useWallet } from "src/hooks/use-wallet";
 import { toast } from "react-toastify";
 // import { useEffect } from "react";
 // import { ethers } from "ethers";
@@ -96,7 +97,8 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
 
 const Web3Button = () => {
     // const { web3Provider, connect, disconnect, address, balance } =
-    const { connect, disconnect, balance } = useWeb3Context();
+    // const { connect, disconnect, balance } = useWeb3Context();
+    const { connect, disconnect, balance } = useWallet();
 
     // const { data: session, status } = useSession();
     const { data: session } = useSession();
