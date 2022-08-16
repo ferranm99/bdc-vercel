@@ -49,7 +49,7 @@ const HeroAreaBdcGenesis = ({ data }) => (
                                 Bad Dogs <a href="#arc"><mark className="arrow">ARC → (Coming Soon)</mark></a>
                             </li>
                             <li className="dogs-info-link">
-                                Bad Dogs <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
+                                Bad Dogs <a href="https://opensea.io/collection/baddogscompany-v2"><mark className="arrow">OpenSea →</mark></a>
                             </li>
                             {/* <li className="dogs-info-link">
                                 Bad Dogs <a href="#looksrare"><mark className="arrow">LooksRare →</mark></a>
@@ -100,7 +100,7 @@ const HeroAreaBdcGenesis = ({ data }) => (
                         data-sal-delay="300"
                         data-sal-duration="800"
                         className="btn-mr-3"
-                        path="https://opensea.io/collection/baddogscompany"
+                        path="https://opensea.io/collection/baddogscompany-v2"
                     >
                         BUY NOW
                     </Button>
