@@ -1,9 +1,9 @@
 import NextAuth from "next-auth";
 // import { PrismaClient } from "@prisma/client";
-import prisma from "../../../lib/prisma";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { getCsrfToken } from "next-auth/react";
 import { SiweMessage } from "siwe";
+import prisma from "../../../lib/prisma";
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -45,20 +45,18 @@ export default async function auth(req, res) {
                     await siwe.validate(credentials?.signature || "");
                     const user = await prisma.User.findFirst({
                         where: {
-                            ethAddress: siwe.address
-                        }
+                            ethAddress: siwe.address,
+                        },
                     });
 
-                    if (user !== null) {
-
-                    } else {
-                        const u = await prisma.user.create({
+                    // if (user !== null) { } else {
+                    if (user === null) {
+                        await prisma.user.create({
                             data: {
                                 ethAddress: siwe.address,
-                                status: "A"
-                            }
+                                status: "A",
+                            },
                         });
-                        // console.log(u);
                     }
 
                     console.log(`MongoDB User: ${JSON.stringify(user)}`);

@@ -53,7 +53,9 @@ export const web3InitialState = {
 
 export function web3Reducer(state = web3InitialState, action) {
     switch (action.type) {
-        case "SET_WEB3_PROVIDER":
+        case 'SET_WEB3_PROVIDER':
+            // Store state in localStorage
+            // window.localStorage.setItem('WEB3_STATE', JSON.stringify(state));
             // console.log("SET_WEB3_PROVIDER");
             return {
                 ...state,

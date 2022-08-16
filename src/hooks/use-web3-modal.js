@@ -41,37 +41,43 @@ const providerOptions = {
     // },
 };
 
-let web3Modal = Web3Modal | null;
-if (typeof window !== 'undefined') {
-    // console.log("inside window if statement");
-    // Only create new Web3Modal instance if web3Modal object is null
-    if (!web3Modal) {
-        // console.log(`creating new web3Modal instance: ${web3Modal}`);
-        web3Modal = new Web3Modal({
-            network: "mainnet", // optional
-            cacheProvider: true,
-            theme: "dark", // optional
-            providerOptions, // required
-        })
-    }
-};
+// let web3Modal = Web3Modal | null;
+// if (typeof window !== 'undefined') {
+//     // console.log("inside window if statement");
+//     // Only create new Web3Modal instance if web3Modal object is null
+//     if (!web3Modal) {
+//         // console.log(`creating new web3Modal instance: ${web3Modal}`);
+//         web3Modal = new Web3Modal({
+//             network: "mainnet", // optional
+//             cacheProvider: true,
+//             theme: "dark", // optional
+//             providerOptions, // required
+//         })
+//     }
+// };
 
 export const useWeb3Modal = () => {
-    // const [web3Modal, setWeb3Modal] = useState();
+    const [web3Modal, setWeb3Modal] = useState(Web3Modal | null);
     const [state, dispatch] = useReducer(web3Reducer, web3InitialState);
     const { provider, web3Provider, address, balance, network } = state;
 
-    // useEffect(async () => {
-    //     console.log("inside setWeb3Modal");
-    //     const web3ModalInstance = await new Web3Modal({
-    //         network: "mainnet", // optional
-    //         cacheProvider: true,
-    //         theme: "dark", // optional
-    //         providerOptions,
-    //     });
-    //     setWeb3Modal(web3ModalInstance);
-    //     console.log("initial set web3Modal", web3Modal);
-    // }, []);
+    useEffect(async () => {
+        // console.log("inside setWeb3Modal");
+        // console.log(web3Modal);
+        // console.log(localStorage.getItem("WEB3_CONNECT_CACHED_PROVIDER"));
+        if (!web3Modal) {
+            // const web3ModalInstance = await new Web3Modal({
+            web3Modal = await new Web3Modal({
+                network: "mainnet", // optional
+                cacheProvider: true,
+                theme: "dark", // optional
+                providerOptions,
+            });
+            // setWeb3Modal(web3ModalInstance);
+            setWeb3Modal(web3Modal);
+            // console.log("initial set web3Modal", web3Modal);
+        }
+    }, []);
 
     const connect = useCallback(async () => {
         if (web3Modal) {
@@ -201,6 +207,7 @@ export const useWeb3Modal = () => {
     }, [provider, disconnect]);
 
     return {
+        state,
         provider,
         web3Provider,
         address,

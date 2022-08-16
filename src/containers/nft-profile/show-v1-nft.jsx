@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
-import Image from "next/image";
-import ToggleButton from 'react-bootstrap/ToggleButton';
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+// import Image from "next/image";
+// import ToggleButton from 'react-bootstrap/ToggleButton';
+// import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -28,24 +28,52 @@ const ShowV1Nft = () => {
         // console.log(e.currentTarget.className);
         console.log(e.currentTarget.parentNode);
         console.log(e.currentTarget);
+        console.log(`e.currentTarget.name: ${e.currentTarget.name}`);
+        console.log(`e.currentTarget.classList: ${e.currentTarget.classList}`);
+        console.log(`before genesis: ${genesis}`);
 
         // Change to highlighted border on select
-        e.currentTarget.className = e.currentTarget.classList.contains("card-active") ?
-            "card bg-dark" : "card bg-dark card-active";
+        if (e.currentTarget.classList.contains("card-active")) {
+            // e.currentTarget.className = e.currentTarget.classList.contains("card-active") ?
+            // "card bg-dark" : "card bg-dark card-active";
+            e.currentTarget.className = "card bg-dark";
+
+            // Remove value from state array
+            let index = genesis.indexOf(e.currentTarget.name);
+            console.log(`in setGenesis.splice indexOf: ${index}`);
+            if (index > -1) { // only splice array when item is found
+                let newGenesis = [...genesis];  // Need to create a new copy so it don't splice by reference
+                // console.log(newGenesis.splice(index, 1));
+                newGenesis.splice(index, 1);
+                // setGenesis(genesis.splice(index, 1)); // 2nd parameter means to remove one item only
+                setGenesis(newGenesis); // 2nd parameter means to remove one item only
+            }
+        } else {
+            e.currentTarget.className = "card bg-dark card-active";
+
+            // setGenesis([...genesis,
+            // {
+            //     id: genesis.length,
+            //     value: e.currentTarget.value
+            // }]);
+            console.log("in setGenesis");
+            setGenesis([...genesis, e.currentTarget.name]);
+            // setGenesis((prev) => {
+            //     return [
+            //         ...prev,
+            //         e.currentTarget.name
+            //     ]
+            // });
+        }
 
         console.log(`className: ${e.currentTarget.className}`);
 
-        setGenesis([...genesis,
-        {
-            id: genesis.length,
-            value: e.currentTarget.value
-        }]);
-
-        console.log(`genesis: ${genesis}`);
+        console.log(`after genesis: ${genesis}`);
     }
 
     return (
         <div className="nuron-information">
+            {/* <button onClick={() => (console.log(genesis))}>Click</button> */}
             <Row xs={1} md={2} className="g-4">
 
                 {Array.from({ length: 4 }).map((_, idx) => (
