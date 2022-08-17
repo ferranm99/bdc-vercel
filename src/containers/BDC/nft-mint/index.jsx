@@ -30,12 +30,11 @@ const NFTMintSection = ({ className, id, space }) => {
     const WHITELIST_PRICE = contractValues.WHITELIST_SALE_PRICE || 0;
     const [mintPrice, setMintPrice] = useState(PUBLIC_PRICE);
 
+    //Set mintPrice if session exists and then checks if the address held in session is whitelisted using isWhitelisted function
     useEffect(async () => {
         console.log(contractValues);
         let session = await getSession();
 
-        // console.log(session);
-        // console.log(await isWhitelisted(session.address));
         session !== null && session !== undefined
             ? setMintPrice(
                   (await isWhitelisted(session.address))
@@ -61,9 +60,12 @@ const NFTMintSection = ({ className, id, space }) => {
     //     console.log(contractValues);
     // }, []);
 
-    const max = contractValues.maxDogs;
     const [counter, setCounter] = useState(1);
-    const SALETYPE = "OFF"; //unimplemented, use this to change values for mint type
+
+    //unimplemented, use this to change values for mint type
+    //const SALETYPE = "OFF";
+
+    //if max button is pressed then set it to max else add 1 to button
     const incrementCounter = () => {
         if (counter >= 5) {
             setCounter(5);
@@ -75,7 +77,7 @@ const NFTMintSection = ({ className, id, space }) => {
     if (counter <= 1) {
         decrementCounter = () => setCounter(1);
     }
-
+    //MAX is currently hard-coded needs to be obtained from contract
     let setMax = () => {
         setCounter(5);
     };
