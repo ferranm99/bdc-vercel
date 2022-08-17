@@ -34,7 +34,7 @@ const SocialWidget = ({ socials }) => (
         </li>
         <li key="opensea">
             <a
-                href="https://opensea.io/collection/baddogscompany"
+                href="https://opensea.io/collection/baddogscompany-v2"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Opensea"

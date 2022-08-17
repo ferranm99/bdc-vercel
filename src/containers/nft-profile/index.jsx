@@ -28,9 +28,9 @@ const NftProfile = () => {
             <div className="container">
                 <div className="row plr--70 padding-control-edit-wrapper pl_md--0 pr_md--0 pl_sm--0 pr_sm--0">
                     <div className="col-12 d-flex justify-content-between mb--30 align-items-center">
-                        <h4 className="title-left">Your Bad Dogs</h4>
+                        <h4 className="title-left">My Bad Dogs</h4>
                         <Anchor path="/author" className="btn btn-primary ml--10">
-                            <i className="feather-eye mr--5" /> Migrate
+                            <i className="feather-eye mr--5" /> Waitlist
                         </Anchor>
                     </div>
                 </div>
@@ -42,25 +42,25 @@ const NftProfile = () => {
                                     <Nav className="nav nav-tabs">
                                         <Nav.Link eventKey="nav-home" as="button">
                                             <i className="feather-edit" />
-                                            Genesis V1
+                                            Genesis
                                         </Nav.Link>
                                         <Nav.Link eventKey="nav-homes" as="button">
                                             <i className="feather-user" />
-                                            Genesis V2
+                                            Generative
                                         </Nav.Link>
                                         <Nav.Link
                                             eventKey="nav-profile"
                                             as="button"
                                         >
                                             <i className="feather-unlock" />
-                                            Change Password
+                                            Story
                                         </Nav.Link>
                                         <Nav.Link
                                             eventKey="nav-contact"
                                             as="button"
                                         >
                                             <i className="feather-bell" />
-                                            Notification Setting
+                                            Claim
                                         </Nav.Link>
                                     </Nav>
                                 </nav>
