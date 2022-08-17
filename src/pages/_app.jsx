@@ -70,7 +70,6 @@ const MyApp = ({ Component, pageProps }) => {
         });
 
         const instance = await web3Modal.connect();
-
         const provider = new ethers.providers.Web3Provider(instance);
 
         try {
@@ -90,11 +89,11 @@ const MyApp = ({ Component, pageProps }) => {
                     value={{ isWhiteListed, contractValues }}
                 >
                     {/* <Web3ContextProvider> */}
-                        {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
-                        <ThemeProvider defaultTheme="dark">
-                            <Component {...pageProps} />
-                        </ThemeProvider>
-                        {/* </MoralisProvider> */}
+                    {/* <MoralisProvider appId={moralisAppId} serverUrl={moralisServerURL}> */}
+                    <ThemeProvider defaultTheme="dark">
+                        <Component {...pageProps} />
+                    </ThemeProvider>
+                    {/* </MoralisProvider> */}
                     {/* </Web3ContextProvider> */}
                 </ContractContext.Provider>
             </SSRProvider>
