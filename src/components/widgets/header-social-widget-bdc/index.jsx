@@ -36,7 +36,7 @@ const SocialWidget = ({ socials }) => (
             </div>
             <div className="col icon-box" key="opensea">
                 <a
-                    href="https://opensea.io/collection/baddogscompany-v2"
+                    href="https://opensea.io/collection/baddogscompany"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Opensea"

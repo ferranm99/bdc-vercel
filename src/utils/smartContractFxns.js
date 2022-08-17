@@ -59,7 +59,9 @@ export const getContractStatus = async (window) => {
 const getWLSalePrice = async (window) => {
     const connectedContract = grabConnectedContract(window);
     console.log(connectedContract);
-    const p = await connectedContract.WL_SALE_PRICE();
+    // TODO: Need to grab the Whitelist sales price from live contract
+    // const p = await connectedContract.WL_SALE_PRICE();
+    const p = await connectedContract.PUBLIC_SALE_PRICE();
     console.log(p);
     let hexStr = p._hex.toString(16);
     return ethers.utils.formatEther(hexStr);
@@ -139,7 +141,7 @@ export const mintNFT = async (window, mintQuantity, setIsClaiming) => {
         doc.classList.remove("hidden");
     } catch (error) {
         console.log(error);
-        handleFailMint(error, setIsClaiming);
+        // handleFailMint(error, setIsClaiming);
     }
 };
 

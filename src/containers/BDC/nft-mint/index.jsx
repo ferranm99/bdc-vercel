@@ -3,8 +3,10 @@ import clsx from "clsx";
 import { useState, useContext, useEffect } from "react";
 import { useSession, getSession } from "next-auth/react";
 import NFTDisplaySection from "@containers/BDC/nft-display";
-import { useWeb3Context } from "src/context";
-import { ContractContext } from "src/pages/_app";
+// import { useWeb3Context } from "src/context";
+import { useWallet } from "src/hooks/use-wallet";
+import { getContractValues } from "@utils/smartContractFxns";
+// import { ContractContext } from "src/pages/_app";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,11 +21,13 @@ import { contractAddress, whiteList } from "@utils/contractData.json";
 import { isWhitelisted } from "@utils/smartContractFxns";
 
 const NFTMintSection = ({ className, id, space }) => {
-    const { web3Provider, connect, disconnect, address, balance, account } =
-        useWeb3Context();
+    // const { web3Provider, connect, disconnect, address, balance, account } =
+    //     useWeb3Context();
+    const { provider } = useWallet();
     // const { data: session, status } = useSession();
 
-    const { contractValues } = useContext(ContractContext);
+    // const { contractValues } = useContext(ContractContext);
+    const [contractValues, setContractValues] = useState({});
     const [onWhitelist, setOnWhitelist] = useState();
     const [isClaiming, setIsClaiming] = useState(false);
     const PUBLIC_PRICE = contractValues.PUBLIC_SALE_PRICE || 0;
@@ -32,16 +36,22 @@ const NFTMintSection = ({ className, id, space }) => {
 
     //Set mintPrice if session exists and then checks if the address held in session is whitelisted using isWhitelisted function
     useEffect(async () => {
-        console.log(contractValues);
         let session = await getSession();
 
         session !== null && session !== undefined
             ? setMintPrice(
-                  (await isWhitelisted(session.address))
-                      ? WHITELIST_PRICE
-                      : PUBLIC_PRICE
-              )
+                (await isWhitelisted(session.address))
+                    ? WHITELIST_PRICE
+                    : PUBLIC_PRICE
+            )
             : setMintPrice(PUBLIC_PRICE);
+
+        try {
+            setContractValues(await getContractValues(provider));
+        } catch (err) {
+            console.log(err);
+        }
+        // console.log(contractValues);
     }, []);
 
     // useEffect(async () => {

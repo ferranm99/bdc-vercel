@@ -57,7 +57,7 @@ const SupportArea = ({ className, space }) => (
                                         <li>
                                             You can purchase a BDC from the secondary
                                             market or random drops on
-                                            <a href="https://opensea.io/collection/baddogscompany-v2"><mark className="arrow">OpenSea →</mark></a>
+                                            <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
                                         </li>
                                         <li>
                                             You can enter our Whitelist giveaway bots
@@ -154,7 +154,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 3,
                                     title: "Where can I see my purchased dogs?",
                                     description:
-                                        "<p>You can view them on <a href='https://opensea.io/collection/baddogscompany-v2'>OpenSea</a>. Once we migrate the collection to ERC721, you will be able to see them directly in your wallet (e.g. MetaMask).</p>",
+                                        "<p>You can view them on <a href='https://opensea.io/collection/baddogscompany'>OpenSea</a>. Once we migrate the collection to ERC721, you will be able to see them directly in your wallet (e.g. MetaMask).</p>",
                                 },
                                 {
                                     id: 4,
