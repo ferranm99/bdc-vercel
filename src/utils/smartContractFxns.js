@@ -5,6 +5,7 @@ const ethers = require("ethers");
 const contractABI = abi.abi;
 const { whiteList, contractAddress } = require("./contractData.json");
 
+//used to check if user is whitelisted
 export const isWhitelisted = async (account) => {
     if (account) {
         const proof = await runProof(account, whiteList);
@@ -13,23 +14,25 @@ export const isWhitelisted = async (account) => {
     }
     return false;
 };
+//Original code using browser window
+// export const grabConnectedContract = (window) => {
+//     const { ethereum } = window;
+//     console.log(ethereum);
+//     if (ethereum) {
+//         const provider = new ethers.providers.Web3Provider(ethereum);
+//         const signer = provider.getSigner();
+//         const connectedContract = new ethers.Contract(
+//             contractAddress,
+//             contractABI,
+//             signer
+//         );
+//         return connectedContract;
+//     } else {
+//         console.log("Ethereum object doesn't exist!");
+//     }
+// };
 
-export const grabConnectedContractv2 = (window) => {
-    const { ethereum } = window;
-    console.log(ethereum);
-    if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const connectedContract = new ethers.Contract(
-            contractAddress,
-            contractABI,
-            signer
-        );
-        return connectedContract;
-    } else {
-        console.log("Ethereum object doesn't exist!");
-    }
-};
+//Obtains connected contract given a provider and imported ABI + Address
 export const grabConnectedContract = (provider) => {
     if (provider) {
         const signer = provider.getSigner();
@@ -40,27 +43,13 @@ export const grabConnectedContract = (provider) => {
         );
         return connectedContract;
     } else {
-        console.log("Ethereum object doesn't exist!");
+        console.log("Provider given is undefined/invalid.");
     }
-};
-//shows error at footer of the modal if an error occurs
-const handleFailMint = (err, setIsClaiming) => {
-    setIsClaiming(false);
-    var doc = document.getElementById("mintAlert");
-    console.log(err);
-    if (doc == null) {
-        //do nothing
-        return;
-    } else if (err.code === 4001) {
-        doc.innerHTML = err.message;
-    } else {
-        doc.innerHTML = `Minting failed. Check:<br/><a href="https://rinkeby.etherscan.io/tx/${err.transactionHash}">here</a> to see what went wrong`;
-    }
-    doc.classList.add("alert-danger");
-    doc.classList.remove("alert-success");
-    doc.classList.remove("hidden");
 };
 
+/*
+        GETTER FUNCTIONS
+*/
 export const getContractStatus = async (window) => {
     const connectedContract = grabConnectedContract(window);
     const txn = await connectedContract.paused();
@@ -93,27 +82,32 @@ export const getContractValues = async (window) => {
         paused: paused,
     };
 };
-export const claimNFT = async (window, setIsClaiming) => {
-    try {
-        const connectedContract = grabConnectedContract(window);
-        let nftTxn = await connectedContract.claim();
-        setIsClaiming(true);
-        await nftTxn.wait();
-        //if error do something
-        // console.log(
-        //     `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
-        // );
-        setIsClaiming(false);
-        var doc = document.getElementById("mintAlert");
-        doc.classList.add("alert-success");
-        doc.classList.remove("alert-danger");
-        doc.innerHTML = `Thank you for minting. <br/><a href="https://rinkeby.etherscan.io/tx/${nftTxn.hash}" target="_blank">See Transaction</a> `;
-        doc.classList.remove("hidden");
-    } catch (error) {
-        console.log(error);
-        handleFailMint(error, setIsClaiming);
-    }
-};
+
+/*
+    MINT FUNCTIONS
+*/
+//Havent used since migration from GAC
+// export const claimNFT = async (window, setIsClaiming) => {
+//     try {
+//         const connectedContract = grabConnectedContract(window);
+//         let nftTxn = await connectedContract.claim();
+//         setIsClaiming(true);
+//         await nftTxn.wait();
+//         //if error do something
+//         // console.log(
+//         //     `Minted, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
+//         // );
+//         setIsClaiming(false);
+//         var doc = document.getElementById("mintAlert");
+//         doc.classList.add("alert-success");
+//         doc.classList.remove("alert-danger");
+//         doc.innerHTML = `Thank you for minting. <br/><a href="https://rinkeby.etherscan.io/tx/${nftTxn.hash}" target="_blank">See Transaction</a> `;
+//         doc.classList.remove("hidden");
+//     } catch (error) {
+//         console.log(error);
+//         handleFailMint(error, setIsClaiming);
+//     }
+// };
 
 export const mintNFT = async (window, mintQuantity, setIsClaiming) => {
     try {
@@ -166,20 +160,15 @@ export const WLMintNFT = async (window, mintQuantity, setIsClaiming) => {
         const account = accounts[0];
         if (ethereum) {
             const provider = new ethers.providers.Web3Provider(ethereum);
+            console.log(provider);
             const signer = provider.getSigner();
             const connectedContract = new ethers.Contract(
                 contractAddress,
                 contractABI,
                 signer
             );
-
+            //**IMPORTANT** Get proof in order to provide for minting
             const proof = await runProof(account, whiteList);
-            // console.log(
-            //     "Minting community NFT",
-            //     proof,
-            //     overrides,
-            //     mintQuantity
-            // );
             let nftTxn2 = await connectedContract.WLMint(
                 account,
                 mintQuantity,
