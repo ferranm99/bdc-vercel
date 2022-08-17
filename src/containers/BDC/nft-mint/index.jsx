@@ -17,14 +17,6 @@ import Particles from "@ui/particles";
 import { WLMintNFT, mintNFT } from "@utils/smartContractFxns";
 import { contractAddress, whiteList } from "@utils/contractData.json";
 import { isWhitelisted } from "@utils/smartContractFxns";
-import { useForceUpdate } from "framer-motion";
-// import {
-//     // useMoralisWeb3Api,
-//     // useMoralisWeb3ApiCall,
-//     useMoralis,
-//     useWeb3ExecuteFunction,
-// } from "react-moralis";
-// import ABI from "./ABI.json";
 
 const NFTMintSection = ({ className, id, space }) => {
     const { web3Provider, connect, disconnect, address, balance, account } =
@@ -39,6 +31,7 @@ const NFTMintSection = ({ className, id, space }) => {
     const [mintPrice, setMintPrice] = useState(PUBLIC_PRICE);
 
     useEffect(async () => {
+        console.log(contractValues);
         let session = await getSession();
 
         // console.log(session);
