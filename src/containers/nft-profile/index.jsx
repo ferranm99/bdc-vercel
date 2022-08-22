@@ -5,12 +5,14 @@ import TabContainer from "react-bootstrap/TabContainer";
 import TabPane from "react-bootstrap/TabPane";
 import Nav from "react-bootstrap/Nav";
 // import EditProfileImage from "./edit-profile-image";
-import ShowV1Nft from "./show-v1-nft";
+// import ShowV1Nft from "./show-v1-nft";
+import ShowGensis from "./show-genesis";
 import PersonalInformation from "./personal-information";
 import ChangePassword from "./change-password";
 import NotificationSetting from "./notification-setting";
 // import Button from "@ui/button";
 import useSWR from "swr";
+import ShowGenerative from "./show-generative";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -29,9 +31,9 @@ const NftProfile = () => {
                 <div className="row plr--70 padding-control-edit-wrapper pl_md--0 pr_md--0 pl_sm--0 pr_sm--0">
                     <div className="col-12 d-flex justify-content-between mb--30 align-items-center">
                         <h4 className="title-left">My Bad Dogs</h4>
-                        <Anchor path="/author" className="btn btn-primary ml--10">
+                        {/* <Anchor path="/waitlist" className="btn btn-primary ml--10">
                             <i className="feather-eye mr--5" /> Waitlist
-                        </Anchor>
+                        </Anchor> */}
                     </div>
                 </div>
                 <TabContainer defaultActiveKey="nav-home">
@@ -41,26 +43,26 @@ const NftProfile = () => {
                                 <nav className="left-nav rbt-sticky-top-adjust-five">
                                     <Nav className="nav nav-tabs">
                                         <Nav.Link eventKey="nav-home" as="button">
-                                            <i className="feather-edit" />
+                                            <i className="feather-sun" />
                                             Genesis
                                         </Nav.Link>
                                         <Nav.Link eventKey="nav-homes" as="button">
-                                            <i className="feather-user" />
+                                            <i className="feather-layers" />
                                             Generative
                                         </Nav.Link>
                                         <Nav.Link
                                             eventKey="nav-profile"
                                             as="button"
                                         >
-                                            <i className="feather-unlock" />
+                                            <i className="feather-book-open" />
                                             Story
                                         </Nav.Link>
                                         <Nav.Link
                                             eventKey="nav-contact"
                                             as="button"
                                         >
-                                            <i className="feather-bell" />
-                                            Claim
+                                            <i className="feather-file-text" />
+                                            Licensing
                                         </Nav.Link>
                                     </Nav>
                                 </nav>
@@ -69,10 +71,10 @@ const NftProfile = () => {
                         <div className="col-lg-9 col-md-9 col-sm-12 mt_sm--30">
                             <TabContent className="tab-content-edit-wrapepr">
                                 <TabPane eventKey="nav-home">
-                                    <ShowV1Nft />
+                                    <ShowGensis />
                                 </TabPane>
                                 <TabPane eventKey="nav-homes">
-                                    <PersonalInformation />
+                                    <ShowGenerative />
                                 </TabPane>
                                 <TabPane eventKey="nav-profile">
                                     <ChangePassword />

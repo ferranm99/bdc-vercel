@@ -63,11 +63,14 @@ model User {
 model NftToken {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
   collection    String    @default("genesis")
+  contractAddress    String
   tokenId       String
   bdcTokenId    Int
   name          String
+  description   String
   owner         String
   traits        Json?
+  imageUrl      String?
   previewUrl    String?
   thumbnailUrl  String?
   osUrl         String?

@@ -55,6 +55,13 @@ export const useWallet = () => {
     const address = useStore(state => state.address);
     const balance = useStore(state => state.balance);
 
+    // hook to automatically connect to the cached provider
+    useEffect(() => {
+        if (web3Modal.cacheProvider) {
+            connect();
+        }
+    }, []);
+
     // useEffect(async () => {
     //     // console.log("inside setWeb3Modal");
     //     // console.log(web3Modal);

@@ -9,7 +9,7 @@ export default async (req, res) => {
             where: {
                 // owner: jwtToken.sub,
                 // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
-                collection: "genesis",
+                collection: "generative",
                 owner: jwtToken.sub,
             },
         });
