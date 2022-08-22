@@ -35,7 +35,7 @@ export default async function auth(req, res) {
                     );
                     const nextAuthUrl = new URL(process.env.NEXTAUTH_URL ?? "");
                     if (siwe.domain !== nextAuthUrl.host) {
-                        console.log("siwe.domain does not match netAuthUrl.host");
+                        console.log("siwe.domain <> netAuthUrl.host");
                         return null;
                     }
 
