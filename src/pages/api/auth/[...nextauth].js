@@ -34,8 +34,10 @@ export default async function auth(req, res) {
                         JSON.parse(credentials?.message || "{}")
                     );
                     const nextAuthUrl = new URL(process.env.NEXTAUTH_URL ?? "");
+
                     if (siwe.domain !== nextAuthUrl.host) {
-                        console.log("siwe.domain <> netAuthUrl.host");
+                        // console.log(`siwe.domain: ${siwe.domain}`);
+                        // console.log(`netAuthUrl.host: ${nextAuthUrl.host}`);
                         return null;
                     }
 
