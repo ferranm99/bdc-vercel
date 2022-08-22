@@ -110,7 +110,7 @@ const HeroAreaBdcCustom = ({ data }) => (
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="800"
-                        path="https://discord.gg/pf98svgC7N"
+                        path="https://discord.gg/FypdyMEht6"
                     // color="primary-alta"
                     >
                         DISCORD MEMBERS ONLY

@@ -18,7 +18,7 @@ const SocialWidget = ({ socials }) => (
         {/* Custom Icons */}
         <li key="discord">
             <a
-                href="https://discord.gg/pf98svgC7N"
+                href="https://discord.gg/FypdyMEht6"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Discord"

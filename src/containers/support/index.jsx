@@ -62,17 +62,17 @@ const SupportArea = ({ className, space }) => (
                                         <li>
                                             You can enter our Whitelist giveaway bots
                                             or weekly Whitelist games on our
-                                            <a href="https://discord.gg/pf98svgC7N"><mark className="arrow">Discord →</mark></a>
+                                            <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
                                         </li>
                                         <li>
                                             You can participate in our Bounty Dog
                                             or Adoption program that is occasionally
-                                            announced on our <a href="https://discord.gg/pf98svgC7N"><mark className="arrow">Discord →</mark></a>
+                                            announced on our <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
                                         </li>
                                         <li>
                                             You can make private deals with BDC
                                             members in our
-                                            <a href="https://discord.gg/pf98svgC7N"><mark className="arrow">Discord →</mark></a>
+                                            <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
                                         </li>
                                         <li>
                                             You can participate in our giveaway and
@@ -178,7 +178,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 7,
                                     title: "How can I reach the team?",
                                     description:
-                                        "<p>The team is best reached through our <a href='https://discord.gg/pf98svgC7N'>Discord</a>. If you need to contact the team privately, please open a support ticket in the server. For serious inquiries, we are also available through DM on Twitter or let us know in #support if you want to connect and we will accept your friend request.</p>",
+                                        "<p>The team is best reached through our <a href='https://discord.gg/FypdyMEht6'>Discord</a>. If you need to contact the team privately, please open a support ticket in the server. For serious inquiries, we are also available through DM on Twitter or let us know in #support if you want to connect and we will accept your friend request.</p>",
                                 },
                             ]}
                         />
