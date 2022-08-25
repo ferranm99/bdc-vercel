@@ -179,7 +179,10 @@ export const useWallet = () => {
 
     const disconnect = useCallback(async () => {
         if (web3Modal) {
-            web3Modal?.clearCachedProvider();
+            // Try to clear the cache with optional chaining
+            if (typeof web3Modal?.clearCachedProvider === "function")
+                web3Modal?.clearCachedProvider();
+
             // if (provider?.disconnect && typeof provider.disconnect === 'function') {
             //     await provider.disconnect();
             //     // await signOut();  //Only for client side
