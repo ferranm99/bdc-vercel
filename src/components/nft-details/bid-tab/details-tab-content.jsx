@@ -1,23 +1,23 @@
 import PropTypes from "prop-types";
-import TopSeller from "@components/top-seller/layout-01";
+// import TopSeller from "@components/top-seller/layout-01";
 import { IDType, ImageType } from "@utils/types";
 
 const DetailsTabContent = ({ owner, properties, tags }) => (
     <div className="rn-pd-bd-wrapper mt--20">
-        <TopSeller
+        {/* <TopSeller
             name={owner.name}
             total_sale={owner.total_sale}
             slug={owner.slug}
             image={owner.image}
-        />
+        /> */}
         {properties && (
             <div className="rn-pd-sm-property-wrapper">
-                <h6 className="pd-property-title">Property</h6>
+                <h6 className="pd-property-title">Traits</h6>
                 <div className="property-wrapper">
                     {properties.map((property) => (
                         <div key={property.id} className="pd-property-inner">
                             <span className="color-body type">
-                                {property.type}
+                                {property.trait_type}
                             </span>
                             <span className="color-white value">
                                 {property.value}

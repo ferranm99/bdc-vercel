@@ -5,11 +5,13 @@ import { ImageType } from "@utils/types";
 
 const NftCollection = ({ className, collection }) => (
     <div className={clsx("collection", className)}>
-        <span>Collections</span>
+        <span>Collection</span>
         <TopSeller
-            name={collection.name}
+            // name={collection.name}
+            name="Genesis"
             slug={collection.slug}
-            image={{ src: collection.image.src, width: 44, height: 44 }}
+            // image={{ src: collection.image.src, width: 44, height: 44 }}
+            image={{ src: "/images/bdc/logo/bdc-yellow-logo-50px.png", width: 44, height: 44 }}
         />
     </div>
 );
