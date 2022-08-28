@@ -14,7 +14,7 @@ import useSWRImmutable from "swr/immutable";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const NftDetailsArea = ({ space, className, product }) => {
+const NftDetailsArea = ({ space, className, product, collection }) => {
 
     const { data: session } = useSession();
     const { data, error } = useSWRImmutable("/api/genesis/1", fetcher);
@@ -56,8 +56,11 @@ const NftDetailsArea = ({ space, className, product }) => {
                             <div className="catagory-collection">
                                 <NftCategory owner={product.owner} />
                                 <NftCollection
-                                    collection={product.collection}
+                                    collection={collection}
                                 />
+                                {/* <NftCollection
+                                    collection={product.collection}
+                                /> */}
                             </div>
                             <h6 className="title-name">Story</h6>
                             <div className="catagory-collection">
@@ -114,6 +117,7 @@ NftDetailsArea.propTypes = {
         auction_date: PropTypes.string,
         images: PropTypes.arrayOf(ImageType),
     }),
+    collection: PropTypes.shape({}),
 };
 
 NftDetailsArea.defaultProps = {

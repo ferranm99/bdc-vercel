@@ -8,16 +8,17 @@ import NftDetailsArea from "@containers/nft-details";
 // import ProductArea from "@containers/product/layout-03";
 // import { shuffleArray } from "@utils/methods";
 
-// demo data
+// demo data, change to MongoDB later
+import collectionData from "../../data/collections.json";
 import productData from "../../data/products.json";
 
-const NftDetails = ({ product }) => (
+const NftDetails = ({ product, collection }) => (
     <Wrapper>
         <SEO pageTitle="NFT Details" />
         <Header />
         <main id="main-content">
             <Breadcrumb pageTitle="NFT Details" currentPage="NFT Details" />
-            <NftDetailsArea product={product} />
+            <NftDetailsArea product={product} collection={collection} />
             {/* <ProductArea
                 data={{
                     section_title: { title: "Recent View" },
@@ -48,6 +49,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const product = productData.find(({ slug }) => slug === params.slug);
+    // const collection = collectionData.find(({ slug }) => slug === "/genesis");
+    // const collection = collectionData.find(e => e.id == 1);
+    const collection = collectionData.find(e => e.slug === "/genesis");
     // const { cateogries } = product;
     // const recentViewProducts = shuffleArray(productData).slice(0, 5);
     // const relatedProducts = productData
@@ -57,6 +61,7 @@ export async function getStaticProps({ params }) {
         props: {
             className: "template-color-1",
             product,
+            collection
             // recentViewProducts,
             // relatedProducts,
         }, // will be passed to the page component as props
