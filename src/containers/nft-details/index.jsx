@@ -4,7 +4,7 @@ import Sticky from "@ui/sticky";
 import Button from "@ui/button";
 import GalleryTab from "@components/nft-details/gallery-tab";
 import NftTitle from "@components/nft-details/title";
-import NftCategory from "@components/nft-details/category";
+import NftWallet from "@components/nft-details/wallet";
 import NftCollection from "@components/nft-details/collection";
 import NftBidTab from "@components/nft-details/bid-tab";
 // import PlaceBet from "@components/product-details/place-bet";
@@ -54,7 +54,7 @@ const NftDetailsArea = ({ space, className, product, collection }) => {
                             </span>
 
                             <div className="catagory-collection">
-                                <NftCategory owner={product.owner} />
+                                <NftWallet owner={product.owner} />
                                 <NftCollection
                                     collection={collection}
                                 />
