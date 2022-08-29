@@ -3,9 +3,12 @@ import Image from "next/image";
 import clsx from "clsx";
 import Anchor from "@ui/anchor";
 import Button from "@ui/button";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
+import { truncateEthAddress } from "@utils/formatters";
 
 const TopWallet = ({
-    name,
+    address,
     total_sale,
     image,
     slug,
@@ -17,10 +20,10 @@ const TopWallet = ({
         <div className="top-seller-wrapper">
             <div className={clsx("thumbnail", isVarified && "varified")}>
                 {image?.src && (
-                    <Anchor path={slug}>
+                    <Anchor path="#">
                         <Image
                             src="/images/icons/wallet.svg"
-                            alt={name}
+                            alt={address}
                             width={44}
                             height={44}
                             layout="fixed"
@@ -36,16 +39,26 @@ const TopWallet = ({
                 )}
             </div>
             <div className="top-seller-content">
-                <Anchor path={slug}>
-                    <h6 className="name">{name}</h6>
-                </Anchor>
-                {total_sale && (
+                <CopyToClipboard
+                    text={address}
+                    onCopy={() =>
+                        toast.success("Wallet address copied to clipboard.", {
+                            position: toast.POSITION.BOTTOM_LEFT,
+                        })
+                    }
+                >
+                    <Button type="button" color="secondary" size="small">
+                        {truncateEthAddress(address)}
+                    </Button>
+                </CopyToClipboard>
+
+                {/* {total_sale && (
                     <span className="count-number">
                         {new Intl.NumberFormat("en-US", {
                             currency: "USD",
                         }).format(total_sale)}
                     </span>
-                )}
+                )} */}
             </div>
         </div>
         {followBtn && (
@@ -57,7 +70,7 @@ const TopWallet = ({
 );
 
 TopWallet.propTypes = {
-    name: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
     total_sale: PropTypes.number,
     slug: PropTypes.string.isRequired,
     image: PropTypes.shape({

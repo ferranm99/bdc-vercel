@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import TopWallet from "@components/top-wallet/layout-01";
 import { ImageType } from "@utils/types";
-import { truncateEthAddress } from "@utils/formatters";
 
 const NftWallet = ({ className, owner }) => (
     <div className={clsx("catagory", className)}>
@@ -11,7 +10,7 @@ const NftWallet = ({ className, owner }) => (
             {/* Catagory <span className="color-body">10% royalties</span> */}
         </span>
         <TopWallet
-            name={truncateEthAddress(owner.name)}
+            address={owner.name}
             slug={owner.slug}
             image={{ src: owner.image.src, width: 44, height: 44 }}
         />
