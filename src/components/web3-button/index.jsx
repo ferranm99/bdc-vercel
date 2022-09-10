@@ -62,14 +62,14 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
                 </Button>
             </CopyToClipboard>
             <DropdownButton as={ButtonGroup} title="" id="bg-nested-dropdown">
-                <Dropdown.Item
+                {/* <Dropdown.Item
                     style={{ fontSize: "1.75em" }}
                     eventKey="1"
                     href="#"
                 >
                     Balance: {Number(balance).toFixed(4)} Ξ
                 </Dropdown.Item>
-                <Dropdown.Divider />
+                <Dropdown.Divider /> */}
                 <Dropdown.Item style={{ fontSize: "1.75em" }} eventKey="1">
                     <Anchor style={{ color: "#000000" }} path="/my-account">
                         My Account
