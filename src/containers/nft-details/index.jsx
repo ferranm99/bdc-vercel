@@ -42,6 +42,8 @@ const NftDetailsArea = ({ space, className, product, collection }) => {
                         <div className="rn-pd-content-area">
                             <NftTitle
                                 title={data.name}
+                                tokenId={data.tokenId}
+                                owner={data.owner}
                                 likeCount={product.likeCount}
                             />
                             <span className="bid">

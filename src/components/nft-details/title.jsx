@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import ShareDropdown from "../share-dropdown";
 
-const NftTitle = ({ className, title, likeCount }) => (
+const NftTitle = ({ className, title, tokenId, owner, likeCount }) => (
     <div className={clsx("pd-title-area", className)}>
         <h4 className="title">{title}</h4>
         <div className="pd-react-area">
@@ -11,7 +11,7 @@ const NftTitle = ({ className, title, likeCount }) => (
                 <span>{likeCount}</span>
             </div> */}
             <div className="count">
-                <ShareDropdown />
+                <ShareDropdown tokenId={tokenId} owner={owner} />
             </div>
         </div>
     </div>
@@ -20,6 +20,8 @@ const NftTitle = ({ className, title, likeCount }) => (
 NftTitle.propTypes = {
     className: PropTypes.string,
     title: PropTypes.string.isRequired,
+    tokenId: PropTypes.string,
+    owner: PropTypes.string,
     likeCount: PropTypes.number,
 };
 

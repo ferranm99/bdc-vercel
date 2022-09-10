@@ -87,7 +87,7 @@ model NftToken {
 model NftTokenReport {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
   collection    String    @default("genesis")
-  contractAddress    String
+  contractAddress    String?
   tokenId       String
   owner         String
   senderAddress String

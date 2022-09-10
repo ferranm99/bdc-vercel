@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import ShareModal from "@components/modals/share-modal";
 import ReportModal from "@components/modals/report-modal";
 
-const ShareDropdown = () => {
+const ShareDropdown = ({ tokenId, owner }) => {
     const [showShareModal, setShowShareModal] = useState(false);
     const [showReportModal, setShowReportModal] = useState(false);
     const handleShareModal = () => {
@@ -52,6 +52,8 @@ const ShareDropdown = () => {
             <ShareModal show={showShareModal} handleModal={handleShareModal} />
             <ReportModal
                 show={showReportModal}
+                tokenId={tokenId}
+                owner={owner}
                 handleModal={handleReportModal}
             />
         </>
