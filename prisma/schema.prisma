@@ -83,3 +83,15 @@ model NftToken {
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
 }
+
+model NftTokenReport {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  collection    String    @default("genesis")
+  contractAddress    String
+  tokenId       String
+  owner         String
+  senderAddress String
+  message       String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
