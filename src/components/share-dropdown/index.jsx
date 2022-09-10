@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import Dropdown from "react-bootstrap/Dropdown";
 import ShareModal from "@components/modals/share-modal";
 import ReportModal from "@components/modals/report-modal";
@@ -6,6 +7,8 @@ import ReportModal from "@components/modals/report-modal";
 const ShareDropdown = ({ tokenId, owner }) => {
     const [showShareModal, setShowShareModal] = useState(false);
     const [showReportModal, setShowReportModal] = useState(false);
+    const { data: session } = useSession();
+
     const handleShareModal = () => {
         setShowShareModal((prev) => !prev);
     };
@@ -40,13 +43,15 @@ const ShareDropdown = ({ tokenId, owner }) => {
                     >
                         Share
                     </button>
-                    <button
-                        type="button"
-                        className="btn-setting-text report-text"
-                        onClick={handleReportModal}
-                    >
-                        Report
-                    </button>
+                    {session ? (
+                        <button
+                            type="button"
+                            className="btn-setting-text report-text"
+                            onClick={handleReportModal}
+                        >
+                            Report
+                        </button>
+                    ) : ""}
                 </Dropdown.Menu>
             </Dropdown>
             <ShareModal show={showShareModal} handleModal={handleShareModal} />

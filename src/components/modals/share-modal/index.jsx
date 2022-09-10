@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import Modal from "react-bootstrap/Modal";
 
 const ShareModal = ({ show, handleModal }) => {
+    const twitterLink = "https://twitter.com/intent/tweet?text=I%20love%20%23BDCO%20%23BadDogs%20on%20%40BadDogsCompany%20www.baddogscompany.com";
     // const twitterLink = "https://twitter.com/intent/tweet?text=I%20love%20%23BDCO%20%23BadDogs%20on%20%40BadDogsCompany%20www.baddogscompany.com%20ipfs.baddogscompany.com/tokens/genesis/img/1.png";
-    const twitterLink = "https://twitter.com/intent/tweet?text=I%20love%20%23BDCO%20%23BadDogs%20on%20%40BadDogsCompany%20http://ipfs.baddogscompany.com/tokens/genesis/img/1.png";
+    // const twitterLink = "https://twitter.com/intent/tweet?text=I%20love%20%23BDCO%20%23BadDogs%20on%20%40BadDogsCompany%20http://ipfs.baddogscompany.com/tokens/genesis/img/1.png";
     const fbLink = "http://www.facebook.com/sharer/sharer.php?u=www.baddogscompany.com&t=Bad%20Dogs%20Company"
     const linkedInLink = "https://www.linkedin.com/sharing/share-offsite/?url=www.baddogscompany.com"
     // Instagram and Youtube doesn't currently have url sharing feature
