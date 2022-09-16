@@ -16,10 +16,13 @@ import useSWRImmutable from "swr/immutable";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const NftDetailsArea = ({ space, className, product, collection }) => {
+const NftDetailsArea = ({ space, className, product, collection, slug }) => {
     const [showStoryModal, setShowStoryModal] = useState(false);
     const { data: session } = useSession();
     const { data, error } = useSWRImmutable("/api/genesis/1", fetcher);
+
+    // Slug from the nft/[slug]
+    console.log(`nft-details slug: ${slug}`);
 
     const handleStoryModal = () => {
         setShowStoryModal((prev) => !prev);
@@ -137,6 +140,7 @@ NftDetailsArea.propTypes = {
         images: PropTypes.arrayOf(ImageType),
     }),
     collection: PropTypes.shape({}),
+    slug: PropTypes.string,
 };
 
 NftDetailsArea.defaultProps = {

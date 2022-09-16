@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useRouter } from 'next/router';
 import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
@@ -12,14 +13,18 @@ import NftDetailsArea from "@containers/nft-details";
 import collectionData from "../../data/collections.json";
 import productData from "../../data/products.json";
 
-const NftDetails = ({ product, collection }) => (
-    <Wrapper>
-        <SEO pageTitle="NFT Details" />
-        <Header />
-        <main id="main-content">
-            <Breadcrumb pageTitle="NFT Details" currentPage="NFT Details" />
-            <NftDetailsArea product={product} collection={collection} />
-            {/* <ProductArea
+const NftDetails = ({ product, collection }) => {
+    const router = useRouter();
+    const { slug } = router.query;
+
+    return (
+        <Wrapper>
+            <SEO pageTitle="NFT Details" />
+            <Header />
+            <main id="main-content">
+                <Breadcrumb pageTitle="NFT Details" currentPage="NFT Details" />
+                <NftDetailsArea product={product} collection={collection} slug={slug} />
+                {/* <ProductArea
                 data={{
                     section_title: { title: "Recent View" },
                     products: recentViewProducts,
@@ -31,10 +36,11 @@ const NftDetails = ({ product, collection }) => (
                     products: relatedProducts,
                 }}
             /> */}
-        </main>
-        <Footer />
-    </Wrapper>
-);
+            </main>
+            <Footer />
+        </Wrapper>
+    );
+};
 
 export async function getStaticPaths() {
     return {
