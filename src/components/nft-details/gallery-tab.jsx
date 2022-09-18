@@ -6,7 +6,8 @@ import TabPane from "react-bootstrap/TabPane";
 // import Nav from "react-bootstrap/Nav";
 import { ImageType } from "@utils/types";
 
-const GalleryTab = ({ images, imageUrl }) => (
+// const GalleryTab = ({ images, imageUrl }) => (
+const GalleryTab = ({ imageUrl }) => (
     <div className="product-tab-wrapper">
         <TabContainer defaultActiveKey="nav-0">
             {/* <div className="pd-tab-inner"> */}
@@ -42,7 +43,7 @@ const GalleryTab = ({ images, imageUrl }) => (
 );
 
 GalleryTab.propTypes = {
-    images: PropTypes.arrayOf(ImageType),
+    // images: PropTypes.arrayOf(ImageType),
     imageUrl: PropTypes.string,
 };
 export default GalleryTab;

@@ -16,10 +16,15 @@ import useSWRImmutable from "swr/immutable";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const NftDetailsArea = ({ space, className, product, collection, slug }) => {
+// const NftDetailsArea = ({ space, className, product, collection, slug }) => {
+const NftDetailsArea = ({ space, className, slug }) => {
     const [showStoryModal, setShowStoryModal] = useState(false);
     const { data: session } = useSession();
-    const { data, error } = useSWRImmutable("/api/genesis/1", fetcher);
+
+    const nftNum = slug[1] || 1;
+    const apiUrl = `/api/genesis/${nftNum}`;
+    // const { data, error } = useSWRImmutable("/api/genesis/1", fetcher);
+    const { data, error } = useSWRImmutable(apiUrl, fetcher);
 
     // Slug from the nft/[slug]
     console.log(`nft-details slug: ${slug}`);
@@ -44,7 +49,8 @@ const NftDetailsArea = ({ space, className, product, collection, slug }) => {
                 <div className="row g-5">
                     <div className="col-lg-7 col-md-12 col-sm-12">
                         <Sticky>
-                            <GalleryTab images={product.images} imageUrl={data.imageUrl} />
+                            {/* <GalleryTab images={product.images} imageUrl={data.imageUrl} /> */}
+                            <GalleryTab imageUrl={data.imageUrl} />
                         </Sticky>
                     </div>
                     <div className="col-lg-5 col-md-12 col-sm-12 mt_md--50 mt_sm--60">
@@ -53,21 +59,24 @@ const NftDetailsArea = ({ space, className, product, collection, slug }) => {
                                 title={data.name}
                                 tokenId={data.tokenId}
                                 owner={data.owner}
-                                likeCount={product.likeCount}
+                            // likeCount={product.likeCount}
                             />
                             <span className="bid">
                                 <h6>Highest bid{" "}
                                     <span className="price">
-                                        {product.price.amount}
-                                        {product.price.currency}
+                                        0.95 Eth
+                                        {/* {product.price.amount}
+                                        {product.price.currency} */}
                                     </span>
                                 </h6>
                             </span>
 
                             <div className="catagory-collection">
-                                <NftWallet owner={product.owner} />
+                                {/* <NftWallet owner={product.owner} /> */}
+                                <NftWallet owner={data.owner} />
                                 <NftCollection
-                                    collection={collection}
+                                    // collection={collection}
+                                    collection={slug[0]}
                                 />
                                 {/* <NftCollection
                                     collection={product.collection}
@@ -91,7 +100,7 @@ const NftDetailsArea = ({ space, className, product, collection, slug }) => {
                                     Write your story
                                 </Button>
                             ) : ""}
-                            <div className="rn-bid-details">
+                            {/* <div className="rn-bid-details">
                                 <NftBidTab
                                     bids={product?.bids}
                                     owner={product.owner}
@@ -99,12 +108,12 @@ const NftDetailsArea = ({ space, className, product, collection, slug }) => {
                                     properties={data.traits}
                                     tags={product?.tags}
                                     history={product?.history}
-                                />
-                                {/* <PlaceBet
+                                /> */}
+                            {/* <PlaceBet
                                 highest_bid={product.highest_bid}
                                 auction_date={product?.auction_date}
                             /> */}
-                            </div>
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>
@@ -122,25 +131,25 @@ const NftDetailsArea = ({ space, className, product, collection, slug }) => {
 NftDetailsArea.propTypes = {
     space: PropTypes.oneOf([1, 2]),
     className: PropTypes.string,
-    product: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        likeCount: PropTypes.number,
-        price: PropTypes.shape({
-            amount: PropTypes.number.isRequired,
-            currency: PropTypes.string.isRequired,
-        }).isRequired,
-        owner: PropTypes.shape({}),
-        collection: PropTypes.shape({}),
-        bids: PropTypes.arrayOf(PropTypes.shape({})),
-        properties: PropTypes.arrayOf(PropTypes.shape({})),
-        tags: PropTypes.arrayOf(PropTypes.shape({})),
-        history: PropTypes.arrayOf(PropTypes.shape({})),
-        highest_bid: PropTypes.shape({}),
-        auction_date: PropTypes.string,
-        images: PropTypes.arrayOf(ImageType),
-    }),
-    collection: PropTypes.shape({}),
-    slug: PropTypes.string,
+    // product: PropTypes.shape({
+    //     title: PropTypes.string.isRequired,
+    //     likeCount: PropTypes.number,
+    //     price: PropTypes.shape({
+    //         amount: PropTypes.number.isRequired,
+    //         currency: PropTypes.string.isRequired,
+    //     }).isRequired,
+    //     owner: PropTypes.shape({}),
+    //     collection: PropTypes.shape({}),
+    //     bids: PropTypes.arrayOf(PropTypes.shape({})),
+    //     properties: PropTypes.arrayOf(PropTypes.shape({})),
+    //     tags: PropTypes.arrayOf(PropTypes.shape({})),
+    //     history: PropTypes.arrayOf(PropTypes.shape({})),
+    //     highest_bid: PropTypes.shape({}),
+    //     auction_date: PropTypes.string,
+    //     images: PropTypes.arrayOf(ImageType),
+    // }),
+    // collection: PropTypes.shape({}),
+    slug: PropTypes.arrayOf(PropTypes.string),
 };
 
 NftDetailsArea.defaultProps = {

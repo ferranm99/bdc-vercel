@@ -10,20 +10,22 @@ const NftWallet = ({ className, owner }) => (
             {/* Catagory <span className="color-body">10% royalties</span> */}
         </span>
         <TopWallet
-            address={owner.name}
-            slug={owner.slug}
-            image={{ src: owner.image.src, width: 44, height: 44 }}
+            address={owner}
+        // address={owner.name}
+        // slug={owner.slug}
+        // image={{ src: owner.image.src, width: 44, height: 44 }}
         />
     </div>
 );
 
 NftWallet.propTypes = {
     className: PropTypes.string,
-    owner: PropTypes.shape({
-        name: PropTypes.string,
-        slug: PropTypes.string,
-        image: ImageType,
-    }),
+    owner: PropTypes.string,
+    // owner: PropTypes.shape({
+    //     name: PropTypes.string,
+    //     slug: PropTypes.string,
+    //     image: ImageType,
+    // }),
 };
 
 export default NftWallet;
