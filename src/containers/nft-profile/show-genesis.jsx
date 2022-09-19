@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
+import { useRouter } from "next/router";
 // import Image from "next/image";
 // import ToggleButton from 'react-bootstrap/ToggleButton';
 // import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
@@ -16,10 +17,16 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const ShowGenesis = () => {
     // const { data, error } = useSWR('api/genesis', fetcher);
     const { data, error } = useSWRImmutable('api/genesis', fetcher);
+    const router = useRouter();
 
     if (!data) return <h1>Loading</h1>;  // TODO: Implement <Spinner />
     if (error) return <h1>Error</h1>;
     // console.log(data);
+
+    const handleClick = (tokenId) => {
+        router.push(`/nft/genesis/${tokenId}`);
+        // console.log(`handleClick: ${tokenId}`);
+    }
 
     // const [genesis, setGenesis] = useState([]);
     // const [selectedImage, setSelectedImage] = useState({
@@ -100,6 +107,7 @@ const ShowGenesis = () => {
                                 as="button"
                                 value={idx}
                                 style={{ borderWidth: "0px" }}
+                                onClick={() => { handleClick(item.tokenId) }}
                             // checked={true}
                             // onClick={handleChange}
                             >
@@ -109,11 +117,11 @@ const ShowGenesis = () => {
 
                                 <Card.Body>
                                     <Card.Title>{item.name}</Card.Title>
-                                    <Card.Text>
+                                    {/* <Card.Text>
                                         This is a longer card with supporting text below as a natural
                                         lead-in to additional content. This content is a little bit
                                         longer.
-                                    </Card.Text>
+                                    </Card.Text> */}
                                 </Card.Body>
                                 {/* <Card.Footer>
                                 Last updated 3 mins ago
