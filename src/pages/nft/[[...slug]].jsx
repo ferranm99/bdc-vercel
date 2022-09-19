@@ -19,8 +19,8 @@ const NftDetails = () => {
     // const { slug } = router.query;
     const slug = router.query.slug || [];
 
-    console.log(`What is slug: ${slug}`);
-    console.log(slug);
+    // console.log(`What is slug: ${slug}`);
+    // console.log(slug);
 
     return (
         <Wrapper>

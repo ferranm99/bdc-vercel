@@ -70,6 +70,7 @@ model NftToken {
   description   String
   owner         String
   traits        Json?
+  tags          Json?
   imageUrl      String?
   previewUrl    String?
   thumbnailUrl  String?

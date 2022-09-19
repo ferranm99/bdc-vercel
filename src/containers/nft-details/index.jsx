@@ -21,13 +21,15 @@ const NftDetailsArea = ({ space, className, slug }) => {
     const [showStoryModal, setShowStoryModal] = useState(false);
     const { data: session } = useSession();
 
+    const collectionName = slug[0] || "genesis";
     const nftNum = slug[1] || 1;
-    const apiUrl = `/api/genesis/${nftNum}`;
+    // const apiUrl = `/api/${collectionName}/${nftNum}`;
+    const apiUrl = collectionName == "genesis" ? `/api/genesis/${nftNum}` : `/api/genesis/${nftNum}`;
     // const { data, error } = useSWRImmutable("/api/genesis/1", fetcher);
     const { data, error } = useSWRImmutable(apiUrl, fetcher);
 
     // Slug from the nft/[slug]
-    console.log(`nft-details slug: ${slug}`);
+    // console.log(`nft-details slug: ${slug}`);
 
     const handleStoryModal = () => {
         setShowStoryModal((prev) => !prev);
@@ -100,20 +102,20 @@ const NftDetailsArea = ({ space, className, slug }) => {
                                     Write your story
                                 </Button>
                             ) : ""}
-                            {/* <div className="rn-bid-details">
+                            <div className="rn-bid-details">
                                 <NftBidTab
-                                    bids={product?.bids}
-                                    owner={product.owner}
+                                    // bids={product?.bids}
+                                    // owner={product.owner}
                                     // properties={product?.properties}
                                     properties={data.traits}
-                                    tags={product?.tags}
-                                    history={product?.history}
-                                /> */}
-                            {/* <PlaceBet
+                                    tags={data.tags}
+                                // history={product?.history}
+                                />
+                                {/* <PlaceBet
                                 highest_bid={product.highest_bid}
                                 auction_date={product?.auction_date}
-                            /> */}
-                            {/* </div> */}
+                                /> */}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,8 @@ import PropTypes from "prop-types";
 // import TopSeller from "@components/top-seller/layout-01";
 import { IDType, ImageType } from "@utils/types";
 
-const DetailsTabContent = ({ owner, properties, tags }) => (
+// const DetailsTabContent = ({ owner, properties, tags }) => (
+const DetailsTabContent = ({ properties, tags }) => (
     <div className="rn-pd-bd-wrapper mt--20">
         {/* <TopSeller
             name={owner.name}
@@ -46,12 +47,12 @@ const DetailsTabContent = ({ owner, properties, tags }) => (
 );
 
 DetailsTabContent.propTypes = {
-    owner: PropTypes.shape({
-        name: PropTypes.string,
-        total_sale: PropTypes.number,
-        slug: PropTypes.string,
-        image: ImageType,
-    }),
+    // owner: PropTypes.shape({
+    //     name: PropTypes.string,
+    //     total_sale: PropTypes.number,
+    //     slug: PropTypes.string,
+    //     image: ImageType,
+    // }),
     properties: PropTypes.arrayOf(
         PropTypes.shape({
             id: IDType,

@@ -8,7 +8,8 @@ import BidsTabContent from "./bids-tab-content";
 import DetailsTabContent from "./details-tab-content";
 import HistoryTabContent from "./history-tab-content";
 
-const NftBidTab = ({ className, bids, owner, properties, tags, history }) => (
+// const NftBidTab = ({ className, bids, owner, properties, tags, history }) => (
+const NftBidTab = ({ className, properties, tags }) => (
     <TabContainer defaultActiveKey="nav-home">
         <div className={clsx("tab-wrapper-one", className)}>
             <nav className="tab-button-one">
@@ -16,28 +17,28 @@ const NftBidTab = ({ className, bids, owner, properties, tags, history }) => (
                     <Nav.Link as="button" eventKey="nav-home">
                         Details
                     </Nav.Link>
-                    <Nav.Link as="button" eventKey="nav-contact">
+                    {/* <Nav.Link as="button" eventKey="nav-contact">
                         History
                     </Nav.Link>
                     <Nav.Link as="button" eventKey="nav-bid">
                         Bids
-                    </Nav.Link>
+                    </Nav.Link> */}
                 </Nav>
             </nav>
             <TabContent className="rn-bid-content">
                 <TabPane eventKey="nav-home">
                     <DetailsTabContent
-                        owner={owner}
+                        // owner={owner}
                         properties={properties}
                         tags={tags}
                     />
                 </TabPane>
-                <TabPane eventKey="nav-contact">
+                {/* <TabPane eventKey="nav-contact">
                     <HistoryTabContent history={history} />
                 </TabPane>
                 <TabPane eventKey="nav-bid">
                     <BidsTabContent bids={bids} />
-                </TabPane>
+                </TabPane> */}
             </TabContent>
         </div>
     </TabContainer>
@@ -45,11 +46,11 @@ const NftBidTab = ({ className, bids, owner, properties, tags, history }) => (
 
 NftBidTab.propTypes = {
     className: PropTypes.string,
-    bids: PropTypes.arrayOf(PropTypes.shape({})),
-    owner: PropTypes.shape({}),
+    // bids: PropTypes.arrayOf(PropTypes.shape({})),
+    // owner: PropTypes.shape({}),
     properties: PropTypes.arrayOf(PropTypes.shape({})),
     tags: PropTypes.arrayOf(PropTypes.shape({})),
-    history: PropTypes.arrayOf(PropTypes.shape({})),
+    // history: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default NftBidTab;
