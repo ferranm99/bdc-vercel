@@ -11,14 +11,14 @@ import PersonalInformation from "./personal-information";
 import ChangePassword from "./change-password";
 import NotificationSetting from "./notification-setting";
 // import Button from "@ui/button";
-import useSWR from "swr";
+// import useSWR from "swr";
 import ShowGenerative from "./show-generative";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+// const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const NftProfile = () => {
 
-    const { data, error } = useSWR('api/genesis', fetcher);
+    // const { data, error } = useSWR('api/genesis', fetcher);
     // if (error)
     //     return (<div>{error}</div>);
     // else

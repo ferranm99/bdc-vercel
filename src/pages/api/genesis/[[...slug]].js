@@ -3,10 +3,43 @@ import prisma from "../../../lib/prisma";
 
 export default async (req, res) => {
     const jwtToken = await getToken({ req });
-    const { slug } = req.query;
+    const { slug, page = 1, limit = 10 } = req.query;
+    // const { page = 1, limit = 10 } = req.query;
 
     if (req.method === "GET") {
-        if (slug) {
+        // Return nft by page
+        if (String(slug) === String("all")) {
+            try {
+                const tokens = await prisma.NftToken.findMany({
+                    skip: ((page - 1) * limit),
+                    take: (limit * 1),
+                    where: {
+                        // owner: jwtToken.sub,
+                        // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
+                        collection: "genesis",
+                        // tokenId: slug[0],
+                    },
+                    orderBy: {
+                        tokenId: 'asc',
+                    },
+                });
+
+                //   const count = await prisma.NftToken.count();
+
+                return res.status(200).json(tokens);
+                // return res.status(200).json({
+                //     // totalPages: Math.ceil(count / limit),
+                //     currentPage: page,
+                //     tokens,
+                // });
+            } catch (err) {
+                return res.json(err);
+                // console.error(err.message);
+            }
+        }
+
+        // Return a specific nft token (e.g. 888)
+        if (String(slug) !== String("all")) {
             // Find individual NFT token (check to see if slug is a number)
             if (slug.length === 1 && !Number.isNaN(+slug)) {
                 // res.status(200).json({ tokenId: slug });

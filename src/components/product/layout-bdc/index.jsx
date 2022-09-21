@@ -1,15 +1,20 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import clsx from "clsx";
 import Anchor from "@ui/anchor";
-import CountdownTimer from "@ui/countdown/layout-01";
+// import CountdownTimer from "@ui/countdown/layout-01";
 import ClientAvatar from "@ui/client-avatar";
 import ShareDropdown from "@components/share-dropdown";
-import ProductBid from "@components/product-bid";
-import Button from "@ui/button";
+// import ProductBid from "@components/product-bid";
+// import Button from "@ui/button";
 import { ImageType } from "@utils/types";
-import PlaceBidModal from "@components/modals/placebid-modal";
+// import PlaceBidModal from "@components/modals/placebid-modal";
+import useSWR from "swr";
+// import useSWRImmutable from "swr/immutable";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Product = ({
     overlay,
@@ -29,6 +34,20 @@ const Product = ({
     const handleBidModal = () => {
         setShowBidModal((prev) => !prev);
     };
+    // const { data, error } = useSWRImmutable('api/genesis', fetcher);
+    // const { data, error } = useSWR(`/api/genesis/?page=${currentPage}`, fetcher);
+    const { data, error } = useSWR('/api/genesis/all/?page=1&limit=10', fetcher);
+    const router = useRouter();
+
+    if (!data) return <h1>Loading</h1>;  // TODO: Implement <Spinner />
+    if (data) console.log(data);
+    if (error) return <h1>Error</h1>;
+
+    const handleClick = (tokenId) => {
+        router.push(`/nft/genesis/${tokenId}`);
+        // console.log(`handleClick: ${tokenId}`);
+    }
+
     return (
         <>
             <div
