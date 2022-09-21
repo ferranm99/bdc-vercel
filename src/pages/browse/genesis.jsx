@@ -6,7 +6,7 @@ import Breadcrumb from "@components/breadcrumb";
 import ExploreProductArea from "@containers/explore-product/layout-bdc";
 
 // Demo data
-import productData from "../data/products.json";
+import productData from "../../data/products.json";
 
 export async function getStaticProps() {
     return { props: { className: "template-color-1" } };
@@ -14,10 +14,10 @@ export async function getStaticProps() {
 
 const Home02 = () => (
     <Wrapper>
-        <SEO pageTitle="Explore - Bad Dogs Company Genesis" />
+        <SEO pageTitle="Explore - Genesis" />
         <Header />
         <main id="main-content">
-            <Breadcrumb pageTitle="Explore - Bad Dogs Company Genesis" currentPage="Simple" />
+            <Breadcrumb pageTitle="Explore - Genesis" currentPage="Simple" />
             <ExploreProductArea
                 data={{
                     products: productData,

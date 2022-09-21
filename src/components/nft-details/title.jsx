@@ -26,8 +26,8 @@ NftTitle.propTypes = {
     // likeCount: PropTypes.number,
 };
 
-NftTitle.defaultProps = {
-    likeCount: 0,
-};
+// NftTitle.defaultProps = {
+//     likeCount: 0,
+// };
 
 export default NftTitle;

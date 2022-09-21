@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -51,7 +52,9 @@ const ShareDropdown = ({ tokenId, owner }) => {
                         >
                             Report
                         </button>
-                    ) : ""}
+                    ) : (
+                        ""
+                    )}
                 </Dropdown.Menu>
             </Dropdown>
             <ShareModal show={showShareModal} handleModal={handleShareModal} />
@@ -64,5 +67,8 @@ const ShareDropdown = ({ tokenId, owner }) => {
         </>
     );
 };
-
+ShareDropdown.propTypes = {
+    tokenId: PropTypes.number.isRequired,
+    owner: PropTypes.string.isRequired,
+};
 export default ShareDropdown;

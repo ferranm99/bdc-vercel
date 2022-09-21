@@ -6,7 +6,7 @@ import TabPane from "react-bootstrap/TabPane";
 import Nav from "react-bootstrap/Nav";
 // import EditProfileImage from "./edit-profile-image";
 // import ShowV1Nft from "./show-v1-nft";
-import ShowGensis from "./show-genesis";
+import ShowGenesis from "./show-genesis";
 import PersonalInformation from "./personal-information";
 import ChangePassword from "./change-password";
 import NotificationSetting from "./notification-setting";
@@ -50,13 +50,13 @@ const NftProfile = () => {
                                             <i className="feather-layers" />
                                             Generative
                                         </Nav.Link>
-                                        <Nav.Link
+                                        {/* <Nav.Link
                                             eventKey="nav-profile"
                                             as="button"
                                         >
                                             <i className="feather-book-open" />
                                             Story
-                                        </Nav.Link>
+                                        </Nav.Link> */}
                                         <Nav.Link
                                             eventKey="nav-contact"
                                             as="button"
@@ -71,7 +71,7 @@ const NftProfile = () => {
                         <div className="col-lg-9 col-md-9 col-sm-12 mt_sm--30">
                             <TabContent className="tab-content-edit-wrapepr">
                                 <TabPane eventKey="nav-home">
-                                    <ShowGensis />
+                                    <ShowGenesis />
                                 </TabPane>
                                 <TabPane eventKey="nav-homes">
                                     <ShowGenerative />

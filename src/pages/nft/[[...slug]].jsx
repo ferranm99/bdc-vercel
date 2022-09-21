@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import { useRouter } from 'next/router';
+// import PropTypes from "prop-types";
+import { useRouter } from "next/router";
 import SEO from "@components/seo";
 import Wrapper from "@layout/wrapper";
 import Header from "@layout/header/header-bdc";
@@ -52,15 +52,14 @@ export const getServerSideProps = async (context) => {
     const { slug } = context.query;
     // If slug is "undefined", since "undefined" cannot be serialized, server will throw error
     // But null can be serializable
-    if (!slug) {
-        slug = null;
-    }
+    // if (!slug) { slug = null; }
+
     // now we are passing the slug to the component
     return {
         props: {
             className: "template-color-1",
-            slug: slug
-        }
+            slug,
+        },
     };
 };
 

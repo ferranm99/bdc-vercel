@@ -30,12 +30,7 @@ const GalleryTab = ({ imageUrl }) => (
                     ))}
                 </Nav> */}
 
-            <Image
-                src={imageUrl}
-                alt={"Bad Dogs NFT"}
-                width={560}
-                height={560}
-            />
+            <Image src={imageUrl} alt="Bad Dogs NFT" width={560} height={560} />
 
             {/* </div> */}
         </TabContainer>

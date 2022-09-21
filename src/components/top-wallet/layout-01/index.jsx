@@ -64,7 +64,8 @@ const TopWallet = ({
             </div>
         </div>
         {followBtn && (
-            <Button path={slug} color="primary-alta" size="small">
+            // <Button path={slug} color="primary-alta" size="small">
+            <Button path="" color="primary-alta" size="small">
                 Follow
             </Button>
         )}

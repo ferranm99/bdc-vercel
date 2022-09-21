@@ -5,7 +5,6 @@ import Button from "@ui/button";
 import { toast } from "react-toastify";
 
 const ReportModal = ({ show, tokenId, owner, handleModal }) => {
-
     // async function addNftReport(nftReport) {
     //     let response = await axios.post('/report/genesis', nftReport);
     //     return response.data;
@@ -20,29 +19,29 @@ const ReportModal = ({ show, tokenId, owner, handleModal }) => {
 
         // Get data from the form.
         const data = {
-            tokenId: tokenId,
-            owner: owner,
-            message: event.target.message.value
+            tokenId,
+            owner,
+            message: event.target.message.value,
             //   last: event.target.last.value,
-        }
+        };
 
         // Send the data to the server in JSON format.
         const JSONdata = JSON.stringify(data);
 
         // API endpoint where we send form data.
-        const endpoint = '/api/report/genesis';
+        const endpoint = "/api/report/genesis";
 
         // Form the request for sending data to the server.
         const options = {
             // The method is POST because we are sending data.
-            method: 'POST',
+            method: "POST",
             // Tell the server we're sending JSON.
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             // Body of the request is the JSON data we created above.
             body: JSONdata,
-        }
+        };
 
         try {
             // Send the form data to our forms API on Vercel and get a response.
@@ -71,7 +70,7 @@ const ReportModal = ({ show, tokenId, owner, handleModal }) => {
             });
             // return { notFound: true };
         }
-    }
+    };
 
     return (
         <Modal
@@ -94,13 +93,17 @@ const ReportModal = ({ show, tokenId, owner, handleModal }) => {
                 <h5 className="modal-title">Why are you reporting?</h5>
             </Modal.Header>
             <Modal.Body>
-                <p>
-                    Describe the issue you have with this NFT
-                </p>
+                <p>Describe the issue you have with this NFT</p>
                 <div className="report-form-box">
                     <h6 className="title">Message</h6>
                     <form onSubmit={handleReportSubmit}>
-                        <textarea name="message" id="message" placeholder="Write issues" maxLength="512" required />
+                        <textarea
+                            name="message"
+                            id="message"
+                            placeholder="Write issues"
+                            maxLength="512"
+                            required
+                        />
                         <div className="report-button">
                             <Button
                                 size="medium"

@@ -34,7 +34,8 @@ const ConnectButton = ({ connect }) => {
 //     disconnect: (() => Promise<void>) | null
 //   }
 
-const DisconnectButton = ({ disconnect, address, balance }) => {
+// const DisconnectButton = ({ disconnect, address, balance }) => {
+const DisconnectButton = ({ disconnect, address }) => {
     // const balanceInEth = web3Provider.getBalance(address).then((balance) => {
     //     // convert a currency unit from wei to ether
     //     // const balanceInEth = ethers.utils.formatEther(balance)
@@ -121,8 +122,7 @@ const Web3Button = () => {
         // return !session || session?.status !== 'authenticated' ? (
         <DisconnectButton
             disconnect={disconnect}
-            address={session.address || ""}
-            balance={Number(balance)}
+            address={session.address || ""} // balance={Number(balance)}
         />
     ) : (
         <ConnectButton connect={connect} />
@@ -136,7 +136,7 @@ ConnectButton.propTypes = {
 DisconnectButton.propTypes = {
     disconnect: PropTypes.func.isRequired,
     address: PropTypes.string,
-    balance: PropTypes.number,
+    // balance: PropTypes.number,
 };
 
 export default Web3Button;
