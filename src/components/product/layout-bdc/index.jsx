@@ -11,10 +11,6 @@ import ShareDropdown from "@components/share-dropdown";
 // import Button from "@ui/button";
 import { ImageType } from "@utils/types";
 // import PlaceBidModal from "@components/modals/placebid-modal";
-import useSWR from "swr";
-// import useSWRImmutable from "swr/immutable";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Product = ({
     overlay,
@@ -34,14 +30,8 @@ const Product = ({
     const handleBidModal = () => {
         setShowBidModal((prev) => !prev);
     };
-    // const { data, error } = useSWRImmutable('api/genesis', fetcher);
-    // const { data, error } = useSWR(`/api/genesis/?page=${currentPage}`, fetcher);
-    const { data, error } = useSWR('/api/genesis/all/?page=1&limit=10', fetcher);
-    const router = useRouter();
 
-    if (!data) return <h1>Loading</h1>;  // TODO: Implement <Spinner />
-    if (data) console.log(data);
-    if (error) return <h1>Error</h1>;
+    const router = useRouter();
 
     const handleClick = (tokenId) => {
         router.push(`/nft/genesis/${tokenId}`);

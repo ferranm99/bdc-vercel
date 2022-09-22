@@ -17,10 +17,11 @@ export default async (req, res) => {
                         // owner: jwtToken.sub,
                         // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
                         collection: "genesis",
+                        contractAddress: "0x934910077F5185F1E62f821c167b38A864156688",
                         // tokenId: slug[0],
                     },
                     orderBy: {
-                        tokenId: 'asc',
+                        bdcTokenId: 'asc',
                     },
                 });
 
