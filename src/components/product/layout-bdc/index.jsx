@@ -48,11 +48,11 @@ const Product = ({
                 )}
             >
                 <div className="card-thumbnail">
-                    {image?.src && (
-                        <Anchor path={`/product/${slug}`}>
+                    {image && (
+                        <Anchor path={`/nft/genesis/${slug}`}>
                             <Image
-                                src={image.src}
-                                alt={image?.alt || "NFT_portfolio"}
+                                src={image}
+                                alt={title || "BDC Genesis"}
                                 width={533}
                                 height={533}
                             />
@@ -67,24 +67,25 @@ const Product = ({
                 </div>
                 <div className="product-share-wrapper">
                     <div className="profile-share">
-                        {authors?.map((client) => (
+                        <h6 className="product-name">Genesis</h6>
+                        {/* {authors?.map((client) => (
                             <ClientAvatar
                                 key={client.name}
                                 slug={client.slug}
                                 name={client.name}
                                 image={client.image}
                             />
-                        ))}
-                        <Anchor
+                        ))} */}
+                        {/* <Anchor
                             className="more-author-text"
                             path={`/product/${slug}`}
                         >
                             {bitCount}+ Place Bit.
-                        </Anchor>
+                        </Anchor> */}
                     </div>
                     {!disableShareDropdown && <ShareDropdown />}
                 </div>
-                <Anchor path={`/product/${slug}`}>
+                <Anchor path={`/nft/genesis/${slug}`}>
                     <span className="product-name">{title}</span>
                 </Anchor>
                 {/* <span className="latest-bid">Highest bid {latestBid}</span>

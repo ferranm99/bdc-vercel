@@ -13,8 +13,8 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const PAGE_SIZE = 10;
 
 const ExploreProductArea = ({ className, space, prodData }) => {
-    const [products, setProducts] = useState([]);
-    const [hasMore, setHasMore] = useState(false);
+    // const [products, setProducts] = useState([]);
+    // const [hasMore, setHasMore] = useState(false);
 
     const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
         (index) =>
@@ -44,11 +44,11 @@ const ExploreProductArea = ({ className, space, prodData }) => {
     //     setHasMore(currentProducts.length < prodData.products.length);
     // }, [prodData.products]);
 
-    const loadMoreHandler = () => {
-        const currentProducts = prodData.products.slice(0, products.length + 4);
-        setProducts(currentProducts);
-        setHasMore(currentProducts.length < prodData.products.length);
-    };
+    // const loadMoreHandler = () => {
+    //     const currentProducts = prodData.products.slice(0, products.length + 4);
+    //     setProducts(currentProducts);
+    //     setHasMore(currentProducts.length < prodData.products.length);
+    // };
 
     return (
         <div
@@ -59,7 +59,7 @@ const ExploreProductArea = ({ className, space, prodData }) => {
             )}
         >
             <div className="container">
-                {prodData?.section_title && (
+                {/* {prodData?.section_title && (
                     <div className="row mb--50 align-items-center">
                         <div className="col-lg-6 col-md-6 col-sm-6 col-12">
                             <SectionTitle
@@ -68,24 +68,24 @@ const ExploreProductArea = ({ className, space, prodData }) => {
                             />
                         </div>
                     </div>
-                )}
+                )} */}
 
-                {products.length > 0 && (
+                {tokens.length > 0 && (
                     <div className="row g-5">
-                        {products.map((prod) => (
+                        {tokens.map((token) => (
                             <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                                 <Product
                                     overlay
-                                    placeBid={!!prodData.placeBid}
-                                    title={prod.title}
-                                    slug={prod.slug}
-                                    latestBid={prod.latestBid}
-                                    price={prod.price}
-                                    likeCount={prod.likeCount}
-                                    auction_date={prod.auction_date}
-                                    image={prod.images?.[0]}
-                                    authors={prod.authors}
-                                    bitCount={prod.bitCount}
+                                    placeBid={!!token.placeBid}
+                                    title={token.name}
+                                    slug={token.tokenId}
+                                    latestBid={token.latestBid}
+                                    price={token.price}
+                                    likeCount={token.likeCount}
+                                    auction_date={token.auction_date}
+                                    image={token.imageUrl}
+                                    authors={token.authors}
+                                    bitCount={token.bitCount}
                                 />
                             </div>
                         ))}
