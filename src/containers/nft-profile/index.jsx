@@ -13,6 +13,7 @@ import NotificationSetting from "./notification-setting";
 // import Button from "@ui/button";
 // import useSWR from "swr";
 import ShowGenerative from "./show-generative";
+import ShowLicensing from "./licensing";
 
 // const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -58,7 +59,7 @@ const NftProfile = () => {
                                             Story
                                         </Nav.Link> */}
                                         <Nav.Link
-                                            eventKey="nav-contact"
+                                            eventKey="nav-licensing"
                                             as="button"
                                         >
                                             <i className="feather-file-text" />
@@ -81,6 +82,9 @@ const NftProfile = () => {
                                 </TabPane>
                                 <TabPane eventKey="nav-contact">
                                     <NotificationSetting />
+                                </TabPane>
+                                <TabPane eventKey="nav-licensing">
+                                    <ShowLicensing />
                                 </TabPane>
                             </TabContent>
                         </div>

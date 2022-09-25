@@ -68,7 +68,7 @@ const ShareDropdown = ({ tokenId, owner }) => {
     );
 };
 ShareDropdown.propTypes = {
-    tokenId: PropTypes.number.isRequired,
+    tokenId: PropTypes.string.isRequired,
     owner: PropTypes.string.isRequired,
 };
 export default ShareDropdown;

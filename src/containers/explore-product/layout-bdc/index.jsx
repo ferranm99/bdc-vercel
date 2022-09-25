@@ -72,12 +72,13 @@ const ExploreProductArea = ({ className, space, prodData }) => {
 
                 {tokens.length > 0 && (
                     <div className="row g-5">
-                        {tokens.map((token) => (
-                            <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
+                        {tokens.map((token, idx) => (
+                            <div className="col-5 col-lg-4 col-md-6 col-sm-6 col-12" key={idx}>
                                 <Product
                                     overlay
                                     placeBid={!!token.placeBid}
                                     title={token.name}
+                                    owner={token.owner}
                                     slug={token.tokenId}
                                     latestBid={token.latestBid}
                                     price={token.price}

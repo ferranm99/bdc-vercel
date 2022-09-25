@@ -53,34 +53,35 @@ const SupportArea = ({ className, space }) => (
                                     Due to the limited supply in the Genesis
                                     collection, there are several ways to buy
                                     a dog at the moment:
-                                    <ul>
-                                        <li>
-                                            You can purchase a BDC from the secondary
-                                            market or random drops on
-                                            <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can enter our Whitelist giveaway bots
-                                            or weekly Whitelist games on our
-                                            <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can participate in our Bounty Dog
-                                            or Adoption program that is occasionally
-                                            announced on our <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can make private deals with BDC
-                                            members in our
-                                            <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can participate in our giveaway and
-                                            contests on
-                                            <a href="https://twitter.com/BadDogsCompany"><mark className="arrow">Twitter →</mark></a>
-                                        </li>
-                                    </ul>
                                 </p>
+                                <ul>
+                                    <li>
+                                        You can purchase a BDC from the secondary
+                                        market or random drops on
+                                        <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can enter our Whitelist giveaway bots
+                                        or weekly Whitelist games on our
+                                        <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can participate in our Bounty Dog
+                                        or Adoption program that is occasionally
+                                        announced on our <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can make private deals with BDC
+                                        members in our
+                                        <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can participate in our giveaway and
+                                        contests on
+                                        <a href="https://twitter.com/BadDogsCompany"><mark className="arrow">Twitter →</mark></a>
+                                    </li>
+                                </ul>
+
                             </div>
                         </div>
                         <div className="read-card">

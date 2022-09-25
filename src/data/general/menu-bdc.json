@@ -10,6 +10,11 @@
         "path": "/roadmap"
     },
     {
+        "id": 3,
+        "text": "Browse",
+        "path": "/browse/genesis"
+    },
+    {
         "id": 4,
         "text": "Blog",
         "path": "/blog"

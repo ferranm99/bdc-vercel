@@ -49,7 +49,7 @@ const TopWallet = ({
                         })
                     }
                 >
-                    <Button type="button" color="secondary" size="small">
+                    <Button type="button" color="primary-alta" size="small">
                         {truncateEthAddress(address)}
                     </Button>
                 </CopyToClipboard>

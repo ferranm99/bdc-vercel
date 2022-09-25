@@ -15,6 +15,7 @@ import { ImageType } from "@utils/types";
 const Product = ({
     overlay,
     title,
+    owner,
     slug,
     latestBid,
     price,
@@ -36,7 +37,7 @@ const Product = ({
     const handleClick = (tokenId) => {
         router.push(`/nft/genesis/${tokenId}`);
         // console.log(`handleClick: ${tokenId}`);
-    }
+    };
 
     return (
         <>
@@ -83,7 +84,10 @@ const Product = ({
                             {bitCount}+ Place Bit.
                         </Anchor> */}
                     </div>
-                    {!disableShareDropdown && <ShareDropdown />}
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        !disableShareDropdown && <ShareDropdown tokenId={slug} owner={owner} />
+                    }
                 </div>
                 <Anchor path={`/nft/genesis/${slug}`}>
                     <span className="product-name">{title}</span>
@@ -99,15 +103,17 @@ const Product = ({
 Product.propTypes = {
     overlay: PropTypes.bool,
     title: PropTypes.string.isRequired,
+    owner: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
-    latestBid: PropTypes.string.isRequired,
+    latestBid: PropTypes.string,
     price: PropTypes.shape({
         amount: PropTypes.number.isRequired,
         currency: PropTypes.string.isRequired,
-    }).isRequired,
-    likeCount: PropTypes.number.isRequired,
+    }),
+    likeCount: PropTypes.number,
     auction_date: PropTypes.string,
-    image: ImageType.isRequired,
+    // image: ImageType.isRequired,
+    image: PropTypes.string.isRequired,
     authors: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string.isRequired,

@@ -11,17 +11,18 @@ export default async (req, res) => {
         if (String(slug) === String("all")) {
             try {
                 const tokens = await prisma.NftToken.findMany({
-                    skip: ((page - 1) * limit),
-                    take: (limit * 1),
+                    skip: (page - 1) * limit,
+                    take: limit * 1,
                     where: {
                         // owner: jwtToken.sub,
                         // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
                         collection: "genesis",
-                        contractAddress: "0x934910077F5185F1E62f821c167b38A864156688",
+                        contractAddress:
+                            "0x934910077F5185F1E62f821c167b38A864156688",
                         // tokenId: slug[0],
                     },
                     orderBy: {
-                        bdcTokenId: 'asc',
+                        bdcTokenId: "asc",
                     },
                 });
 
@@ -40,7 +41,7 @@ export default async (req, res) => {
         }
 
         // Return a specific nft token (e.g. 888)
-        if (String(slug) !== String("all")) {
+        if (slug) {
             // Find individual NFT token (check to see if slug is a number)
             if (slug.length === 1 && !Number.isNaN(+slug)) {
                 // res.status(200).json({ tokenId: slug });
@@ -60,6 +61,7 @@ export default async (req, res) => {
             return res.status(401);
         }
 
+        // Show NFT of current logged in user
         if (jwtToken) {
             const tokens = await prisma.NftToken.findMany({
                 where: {

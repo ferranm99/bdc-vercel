@@ -9,12 +9,8 @@ const NftCollection = ({ className, collection }) => (
         <TopSeller
             // name={collection.name}
             name={
-                collection.replace(/\w\S*/g,
-                    (txt) => {
-                        return txt.charAt(0).toUpperCase() +
-                            txt.substr(1).toLowerCase();
-                    }
-                )
+                // eslint-disable-next-line prettier/prettier
+                collection.replace(/\w\S*/g, (txt) => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); })
             }
             // name="Genesis"
             slug={collection}

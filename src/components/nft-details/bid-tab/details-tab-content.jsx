@@ -15,8 +15,8 @@ const DetailsTabContent = ({ properties, tags }) => (
             <div className="rn-pd-sm-property-wrapper">
                 <h6 className="pd-property-title">Traits</h6>
                 <div className="property-wrapper">
-                    {properties.map((property) => (
-                        <div key={property.id} className="pd-property-inner">
+                    {properties.map((property, idx) => (
+                        <div key={idx} className="pd-property-inner">
                             <span className="color-body type">
                                 {property.trait_type}
                             </span>
