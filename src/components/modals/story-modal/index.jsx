@@ -9,7 +9,7 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
     //     let response = await axios.post('/report/genesis', nftReport);
     //     return response.data;
     // }
-    const handleReportSubmit = async (event) => {
+    const handleStorySubmit = async (event) => {
         // async function handleReport(e) {
         // let response = await axios.post('/report/genesis', nftReport);
         // return response.data;
@@ -20,7 +20,7 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
         // Get data from the form.
         const data = {
             tokenId,
-            owner: name,
+            // owner: name,
             message: event.target.message.value,
             //   last: event.target.last.value,
         };
@@ -29,7 +29,7 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
         const JSONdata = JSON.stringify(data);
 
         // API endpoint where we send form data.
-        const endpoint = "/api/report/genesis";
+        const endpoint = "/api/genesis";
 
         // Form the request for sending data to the server.
         const options = {
@@ -48,9 +48,14 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
             const response = await fetch(endpoint, options);
             // const { data, errors } = await fetch(endpoint, options);
 
+            if (response.status === 403) {
+                throw new Error("403 Error");
+            }
+
             // Get the response data from server as JSON.
             // If server returns the name submitted, that means the form works.
             const result = await response.json();
+            // console.log(result);
             // alert(`Is this your full name: ${result.data}`)
 
             if (result) {
@@ -96,7 +101,7 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
                 <div className="report-form-box">
                     <h6 className="title">{name} Story</h6>
                     <p>Write a story for your dog. (max 512 characters)</p>
-                    <form onSubmit={handleReportSubmit}>
+                    <form onSubmit={handleStorySubmit}>
                         <textarea
                             name="message"
                             id="message"
