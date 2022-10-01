@@ -12,7 +12,8 @@ import NftBidTab from "@components/nft-details/bid-tab";
 import { ImageType } from "@utils/types";
 import StoryModal from "@components/modals/story-modal";
 import { useSession } from "next-auth/react";
-import useSWRImmutable from "swr/immutable";
+// import useSWRImmutable from "swr/immutable";
+import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -26,7 +27,8 @@ const NftDetailsArea = ({ space, className, slug }) => {
     // const apiUrl = `/api/${collectionName}/${nftNum}`;
     const apiUrl = collectionName == "genesis" ? `/api/genesis/${nftNum}` : `/api/genesis/${nftNum}`;
     // const { data, error } = useSWRImmutable("/api/genesis/1", fetcher);
-    const { data, error } = useSWRImmutable(apiUrl, fetcher);
+    // const { data, error } = useSWRImmutable(apiUrl, fetcher);
+    const { data, error } = useSWR(apiUrl, fetcher);
 
     // Slug from the nft/[slug]
     // console.log(`nft-details slug: ${slug}`);
@@ -63,15 +65,15 @@ const NftDetailsArea = ({ space, className, slug }) => {
                                 owner={data.owner}
                             // likeCount={product.likeCount}
                             />
-                            <span className="bid">
+                            {/* <span className="bid">
                                 <h6>Highest bid{" "}
                                     <span className="price">
-                                        0.95 Eth
-                                        {/* {product.price.amount}
+                                        0.95 Eth */}
+                            {/* {product.price.amount}
                                         {product.price.currency} */}
-                                    </span>
+                            {/* </span>
                                 </h6>
-                            </span>
+                            </span> */}
 
                             <div className="catagory-collection">
                                 {/* <NftWallet owner={product.owner} /> */}
@@ -87,13 +89,13 @@ const NftDetailsArea = ({ space, className, slug }) => {
                             <h6 className="title-name">Story</h6>
                             <div className="catagory-collection">
                                 <span className="color-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non laoreet orci. Duis vel orci non quam euismod lobortis a in mauris. Aliquam erat volutpat. Integer gravida vulputate maximus. Morbi ut elementum quam, ut imperdiet elit. Sed rutrum elit in fermentum placerat. Aenean sed turpis in lectus porttitor cursus quis vitae libero.
-                                    <br /><br />
-                                    Vivamus viverra mi eget tellus bibendum viverra. Sed sagittis lacinia laoreet. Vivamus sagittis libero sed sem feugiat eleifend. Vivamus venenatis, ex eget faucibus placerat.
+                                    {data.description.split('\n').map((item, key) => {
+                                        return <span key={key}>{item}<br /></span>
+                                    })}
                                 </span>
                             </div>
-                            {/* {(session && data.owner == session.address) ? ( */}
-                            {(session) ? (
+                            {(session && data.owner == session.address) ? (
+                                // {(session) ? (
                                 <Button
                                     color="primary-alta"
                                     type="button"

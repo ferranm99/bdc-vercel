@@ -4,9 +4,20 @@ import { ethers } from "ethers";
 // import { ethers } from "hardhat";
 // const { ethers } = require("hardhat");
 import contractABI from "./abi-genesis.json";
+const AWS = require('aws-sdk');
+import axios from "axios";
+require('dotenv').config();
+
+const s3 = new AWS.S3({
+    region: "us-east-1",
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_S3_ACCESS_KEY_ID,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_S3_ACCESS_KEY,
+    signatureVersion: "v4",
+});
+
+const _collection = "genesis"; // const tokenId = slug[1];
 
 export default async (req, res) => {
-    require('dotenv').config();
     const alchemyApiKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
     const genesisContractAddress = process.env.GENESIS_CONTRACT_ADDRESS;
     const jwtToken = await getToken({ req });
@@ -24,7 +35,7 @@ export default async (req, res) => {
                     where: {
                         // owner: jwtToken.sub,
                         // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
-                        collection: "genesis",
+                        collection: _collection,
                         contractAddress:
                             genesisContractAddress,
                         // tokenId: slug[0],
@@ -43,7 +54,7 @@ export default async (req, res) => {
                 //     tokens,
                 // });
             } catch (err) {
-                return res.json(err);
+                return res.status(401).json({ message: `Error: ${err}` });
                 // console.error(err.message);
             }
         }
@@ -55,18 +66,25 @@ export default async (req, res) => {
                 // res.status(200).json({ tokenId: slug });
                 // res.status(200);
 
-                const tokens = await prisma.NftToken.findFirst({
+                const token = await prisma.NftToken.findFirst({
                     where: {
                         // owner: jwtToken.sub,
                         // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
-                        collection: "genesis",
+                        collection: _collection,
                         tokenId: slug[0],
                     },
                 });
-                return res.status(200).json(tokens);
+
+                // Get the most up-to-date owner from the blockchain
+                const provider = new ethers.providers.AlchemyProvider(null, alchemyApiKey);
+                const contract = new ethers.Contract(genesisContractAddress, contractABI, provider);
+                token.owner = await contract.ownerOf(slug[0]);
+
+                // tokens.owner = "123";
+                return res.status(200).json(token);
             }
 
-            return res.status(401);
+            return res.status(401).json({ message: `Unauthorized` });
         }
 
         // Show NFT of current logged in user
@@ -75,7 +93,7 @@ export default async (req, res) => {
                 where: {
                     // owner: jwtToken.sub,
                     // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
-                    collection: "genesis",
+                    collection: _collection,
                     owner: jwtToken.sub,
                 },
             });
@@ -84,15 +102,14 @@ export default async (req, res) => {
             // console.log("JSON Web Token", JSON.stringify(jwtToken, null, 2));
         }
         // Not Signed in
-        return res.status(401);
+        return res.status(401).json({ message: `Unauthorized` });
     }
     if (req.method === "POST") {
         if (jwtToken) {
             // Get the signed in address from jwt
             const sender = jwtToken.sub;
 
-            // Set the collection and NFT tokenId
-            const _collection = "genesis"; // const tokenId = slug[1];
+            // Set the NFT tokenId
             const { tokenId } = req.body;
 
             // Check to see if tokenId is a number
@@ -103,6 +120,15 @@ export default async (req, res) => {
 
                 // Get the ABI for the genesis contract
                 try {
+                    // Fetch the json file from ipfs
+                    const fetchResponse = await fetch(`http://ipfs.baddogscompany.com/tokens/genesis/${tokenId}.json`);
+                    const tokenJson = await fetchResponse.json();
+                    tokenJson.description = message;
+                    console.log("tokenJson:");
+                    console.log(tokenJson);
+
+                    // Log the history
+
                     // Connect to the blockchain to query the contract via Alchemy
                     // const provider = new ethers.providers.AlchemyProvider(network = "mainnet", apiKey = NEXT_PUBLIC_ALCHEMY_API_KEY);
                     const provider = new ethers.providers.AlchemyProvider(null, alchemyApiKey);
@@ -113,28 +139,60 @@ export default async (req, res) => {
                     // const tokenOwner = await genesisContract.methods.name().call();
 
                     const tokenOwner = await contract.ownerOf(tokenId);
-                    console.log(`tokenOwner is: ${tokenOwner}`);
-                    console.log(tokenOwner);
+                    // console.log(`tokenOwner is: ${tokenOwner}`);
+                    // console.log(tokenOwner);
 
                     // TODO: Check to see if session owner is the same token owner on blockchain
                     if (sender !== tokenOwner) {
 
-                        // Update the token records in the database
-                        const updateToken = await prisma.NftToken.updateMany({
-                            where: {
-                                collection: _collection,
-                                contractAddress: genesisContractAddress,
-                                tokenId: tokenId,
-                                // owner: jwtToken.sub,
-                            },
-                            data: {
-                                description: message.substring(0, 512),
-                            },
+                        // Update the token record and create history record as a transaction
+                        const updateToken = await prisma.$transaction([
+                            prisma.NftToken.updateMany({
+                                where: {
+                                    collection: _collection,
+                                    contractAddress: genesisContractAddress,
+                                    tokenId: tokenId,
+                                    // owner: jwtToken.sub,
+                                },
+                                data: {
+                                    description: message.substring(0, 512),
+                                },
+                            }),
+                            prisma.NftTokenHistory.create({
+                                data: {
+                                    collection: _collection,
+                                    contractAddress: genesisContractAddress,
+                                    tokenId: tokenId,
+                                    owner: tokenOwner,
+                                    senderAddress: sender,
+                                    description: message.substring(0, 512),
+                                    file: tokenJson,
+                                },
+                            }),
+                        ]);
+
+                        // console.log(`updateToken: ${updateToken}`);
+
+                        // TODO: Update json file in aws ipfs folder
+                        const fileParams = {
+                            Bucket: process.env.GENESIS_BUCKET_NAME,
+                            Key: `tokens/genesis/${tokenId}.json`,
+                            // Key: `${tokenId}.test.json`,
+                            Body: JSON.stringify(tokenJson),
+                            ContentType: "application/json",
+                        };
+
+                        // Uploading files to the bucket
+                        s3.upload(fileParams, function (err, data) {
+                            if (err) {
+                                throw err;
+                            }
+                            console.log(`File uploaded successfully. ${data.Location}`);
                         });
 
-                        console.log(`updateToken: ${updateToken}`);
-
-                        // TODO: Update json file in ipfs folder
+                        // Upload file to s3 using putObject method
+                        // const result = await s3.putObject(fileParams).promise();
+                        // const url = await s3.getSignedUrlPromise("putObject", fileParams);
 
                         return res.status(200).json(updateToken);
                     } else {
@@ -145,10 +203,10 @@ export default async (req, res) => {
                     console.log(err);
                     return res
                         .status(403)
-                        .json({ err: "Error occured." });
+                        .json({ message: `Error: ${err}` });
                 }
             } else {
-                return res.status(401);
+                return res.status(401).json({ message: `Unauthorized` });
             }
 
         } else {
@@ -157,13 +215,13 @@ export default async (req, res) => {
         }
     }
     if (req.method === "PUT") {
-        return res.status(401);
+        return res.status(405).json({ message: `Method not allowed` });
     }
     if (req.method === "DELETE") {
-        return res.status(401);
+        return res.status(405).json({ message: `Method not allowed` });
     }
 
-    return res.status(401);
+    return res.status(401).json({ message: `Unauthorized` });
 
     // res.end();
 };

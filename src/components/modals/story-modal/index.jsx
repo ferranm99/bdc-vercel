@@ -48,8 +48,9 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
             const response = await fetch(endpoint, options);
             // const { data, errors } = await fetch(endpoint, options);
 
-            if (response.status === 403) {
-                throw new Error("403 Error");
+            // Catch the status error from api
+            if (response.status !== 200) {
+                throw new Error(`${response.status} Error: ${response.message}`);
             }
 
             // Get the response data from server as JSON.
@@ -59,7 +60,7 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
             // alert(`Is this your full name: ${result.data}`)
 
             if (result) {
-                toast.success("Story submitted successfully.", {
+                toast.success("Story submitted successfully. Please refresh Metadata!", {
                     position: toast.POSITION.BOTTOM_LEFT,
                 });
                 handleModal();
