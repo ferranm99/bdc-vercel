@@ -76,11 +76,11 @@ const DisconnectButton = ({ disconnect, address }) => {
                         My Account
                     </Anchor>
                 </Dropdown.Item>
-                <Dropdown.Item style={{ fontSize: "1.75em" }} eventKey="1">
+                {/* <Dropdown.Item style={{ fontSize: "1.75em" }} eventKey="1">
                     <Anchor style={{ color: "#000000" }} path="/mint">
                         Mint
                     </Anchor>
-                </Dropdown.Item>
+                </Dropdown.Item> */}
                 <Dropdown.Divider />
                 <Dropdown.Item
                     style={{ fontSize: "1.75em" }}

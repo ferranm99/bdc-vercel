@@ -50,7 +50,8 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
 
             // Catch the status error from api
             if (response.status !== 200) {
-                throw new Error(`${response.status} Error: ${response.message}`);
+                // eslint-disable-next-line prettier/prettier
+                throw new Error(`${response.status} Error: ${response.statusText}`);
             }
 
             // Get the response data from server as JSON.
@@ -60,9 +61,8 @@ const StoryModal = ({ show, tokenId, name, handleModal }) => {
             // alert(`Is this your full name: ${result.data}`)
 
             if (result) {
-                toast.success("Story submitted successfully. Please refresh Metadata!", {
-                    position: toast.POSITION.BOTTOM_LEFT,
-                });
+                // eslint-disable-next-line prettier/prettier
+                toast.success("Story submitted successfully. Please refresh Metadata!", { position: toast.POSITION.BOTTOM_LEFT });
                 handleModal();
             }
 

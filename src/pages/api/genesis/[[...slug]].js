@@ -1,12 +1,12 @@
 import { getToken } from "next-auth/jwt";
-import prisma from "../../../lib/prisma";
 import { ethers } from "ethers";
+import AWS from "aws-sdk";
+import prisma from "../../../lib/prisma";
+import contractABI from "./abi-genesis.json";
 // import { ethers } from "hardhat";
 // const { ethers } = require("hardhat");
-import contractABI from "./abi-genesis.json";
-const AWS = require('aws-sdk');
-import axios from "axios";
-require('dotenv').config();
+
+require("dotenv").config();
 
 const s3 = new AWS.S3({
     region: "us-east-1",
@@ -36,8 +36,8 @@ export default async (req, res) => {
                         // owner: jwtToken.sub,
                         // AND: [{ collection: "genesis" }, { owner: jwtToken.sub }],
                         collection: _collection,
-                        contractAddress:
-                            genesisContractAddress,
+                        // eslint-disable-next-line prettier/prettier
+                        contractAddress: genesisContractAddress,
                         // tokenId: slug[0],
                     },
                     orderBy: {
@@ -76,7 +76,9 @@ export default async (req, res) => {
                 });
 
                 // Get the most up-to-date owner from the blockchain
+                // eslint-disable-next-line prettier/prettier
                 const provider = new ethers.providers.AlchemyProvider(null, alchemyApiKey);
+                // eslint-disable-next-line prettier/prettier
                 const contract = new ethers.Contract(genesisContractAddress, contractABI, provider);
                 token.owner = await contract.ownerOf(slug[0]);
 
@@ -121,37 +123,39 @@ export default async (req, res) => {
                 // Get the ABI for the genesis contract
                 try {
                     // Fetch the json file from ipfs
+                    // eslint-disable-next-line prettier/prettier
                     const fetchResponse = await fetch(`http://ipfs.baddogscompany.com/tokens/genesis/${tokenId}.json`);
                     const tokenJson = await fetchResponse.json();
                     tokenJson.description = message;
-                    console.log("tokenJson:");
-                    console.log(tokenJson);
+                    // console.log("tokenJson:");
+                    // console.log(tokenJson);
 
                     // Log the history
 
                     // Connect to the blockchain to query the contract via Alchemy
-                    // const provider = new ethers.providers.AlchemyProvider(network = "mainnet", apiKey = NEXT_PUBLIC_ALCHEMY_API_KEY);
+                    // eslint-disable-next-line prettier/prettier
                     const provider = new ethers.providers.AlchemyProvider(null, alchemyApiKey);
-                    const contract = new ethers.Contract(genesisContractAddress, contractABI, provider);
+                    const contract = new ethers.Contract(
+                        genesisContractAddress,
+                        contractABI,
+                        provider
+                    );
 
                     // Find the owner of the token
-                    // const tokenOwner = await genesisContract.methods.ownerOf(Number(tokenId)).call();
-                    // const tokenOwner = await genesisContract.methods.name().call();
-
                     const tokenOwner = await contract.ownerOf(tokenId);
                     // console.log(`tokenOwner is: ${tokenOwner}`);
                     // console.log(tokenOwner);
 
-                    // TODO: Check to see if session owner is the same token owner on blockchain
-                    if (sender !== tokenOwner) {
-
+                    // Check to see if session owner is the same token owner on blockchain
+                    if (sender === tokenOwner) {
                         // Update the token record and create history record as a transaction
                         const updateToken = await prisma.$transaction([
                             prisma.NftToken.updateMany({
                                 where: {
                                     collection: _collection,
+                                    // eslint-disable-next-line prettier/prettier
                                     contractAddress: genesisContractAddress,
-                                    tokenId: tokenId,
+                                    tokenId,
                                     // owner: jwtToken.sub,
                                 },
                                 data: {
@@ -162,7 +166,7 @@ export default async (req, res) => {
                                 data: {
                                     collection: _collection,
                                     contractAddress: genesisContractAddress,
-                                    tokenId: tokenId,
+                                    tokenId,
                                     owner: tokenOwner,
                                     senderAddress: sender,
                                     description: message.substring(0, 512),
@@ -183,11 +187,11 @@ export default async (req, res) => {
                         };
 
                         // Uploading files to the bucket
-                        s3.upload(fileParams, function (err, data) {
+                        s3.upload(fileParams, (err, data) => {
                             if (err) {
                                 throw err;
                             }
-                            console.log(`File uploaded successfully. ${data.Location}`);
+                            // console.log(`File uploaded successfully. ${data.Location}`);
                         });
 
                         // Upload file to s3 using putObject method
@@ -195,23 +199,18 @@ export default async (req, res) => {
                         // const url = await s3.getSignedUrlPromise("putObject", fileParams);
 
                         return res.status(200).json(updateToken);
-                    } else {
-                        throw new Error("Unauthorized");
                     }
-
                 } catch (err) {
-                    console.log(err);
-                    return res
-                        .status(403)
-                        .json({ message: `Error: ${err}` });
+                    // console.log(err);
+                    // eslint-disable-next-line prettier/prettier
+                    return res.status(403).json({ message: `Error: ${err}` });
                 }
             } else {
                 return res.status(401).json({ message: `Unauthorized` });
             }
-
         } else {
             // Not Signed in
-            return res.status(401);
+            return res.status(401).json({ message: `Unauthorized` });
         }
     }
     if (req.method === "PUT") {
@@ -222,6 +221,5 @@ export default async (req, res) => {
     }
 
     return res.status(401).json({ message: `Unauthorized` });
-
     // res.end();
 };
