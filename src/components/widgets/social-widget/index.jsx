@@ -18,7 +18,7 @@ const SocialWidget = ({ socials }) => (
         {/* Custom Icons */}
         <li key="discord">
             <a
-                href="https://discord.gg/pf98svgC7N"
+                href="https://discord.gg/FypdyMEht6"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Discord"
@@ -34,7 +34,7 @@ const SocialWidget = ({ socials }) => (
         </li>
         <li key="opensea">
             <a
-                href="https://opensea.io/collection/baddogscompany-v2"
+                href="https://opensea.io/collection/baddogscompany"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Opensea"

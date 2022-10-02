@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import SectionTitle from "@components/section-title/layout-02";
-import Service from "@components/service";
-import { SectionTitleType, ItemType } from "@utils/types";
+import { useState, useContext, useEffect } from "react";
+import { useSession, getSession } from "next-auth/react";
 import NFTDisplaySection from "@containers/BDC/nft-display";
-import { useState } from "react";
+// import { useWeb3Context } from "src/context";
+import { useWallet } from "src/hooks/use-wallet";
+import { getContractValues } from "@utils/smartContractFxns";
+// import { ContractContext } from "src/pages/_app";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,21 +15,67 @@ import {
     faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import Particles from "@ui/particles";
-// import {
-//     // useMoralisWeb3Api,
-//     // useMoralisWeb3ApiCall,
-//     useMoralis,
-//     useWeb3ExecuteFunction,
-// } from "react-moralis";
-// import ABI from "./ABI.json";
-
-const contractAddress = "0xB59EB1046fe44Dc60E6E1Ce72B0a2863eb010Da5";
+// import { checkIfWalletIsConnected } from "@utils/connectWallet";
+import { WLMintNFT, mintNFT } from "@utils/smartContractFxns";
+import { contractAddress, whiteList } from "@utils/contractData.json";
+import { isWhitelisted } from "@utils/smartContractFxns";
 
 const NFTMintSection = ({ className, id, space }) => {
-    const max = 5;
-    const mintPrice = 0.1;
+    // const { web3Provider, connect, disconnect, address, balance, account } =
+    //     useWeb3Context();
+    const { provider } = useWallet();
+    // const { data: session, status } = useSession();
+
+    // const { contractValues } = useContext(ContractContext);
+    const [contractValues, setContractValues] = useState({});
+    const [onWhitelist, setOnWhitelist] = useState();
+    const [isClaiming, setIsClaiming] = useState(false);
+    const PUBLIC_PRICE = contractValues.PUBLIC_SALE_PRICE || 0;
+    const WHITELIST_PRICE = contractValues.WHITELIST_SALE_PRICE || 0;
+    const [mintPrice, setMintPrice] = useState(PUBLIC_PRICE);
+
+    //Set mintPrice if session exists and then checks if the address held in session is whitelisted using isWhitelisted function
+    useEffect(async () => {
+        let session = await getSession();
+
+        session !== null && session !== undefined
+            ? setMintPrice(
+                (await isWhitelisted(session.address))
+                    ? WHITELIST_PRICE
+                    : PUBLIC_PRICE
+            )
+            : setMintPrice(PUBLIC_PRICE);
+
+        try {
+            setContractValues(await getContractValues(provider));
+        } catch (err) {
+            console.log(err);
+        }
+        // console.log(contractValues);
+    }, []);
+
+    // useEffect(async () => {
+    //     // window is accessible here
+    //     try {
+    //         // setMintPrice(
+    //         //     !contractValues.paused && onWhitelist
+    //         //         ? contractValues.WHITELIST_SALE_PRICE
+    //         //         : contractValues.PUBLIC_SALE_PRICE
+    //         // );
+    //         //temporary log - to see contract values
+    //         // console.log(await grabConnectedContract(window));
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    //     console.log(contractValues);
+    // }, []);
+
     const [counter, setCounter] = useState(1);
-    const SALETYPE = "OFF"; //unimplemented, use this to change values for mint type
+
+    //unimplemented, use this to change values for mint type
+    //const SALETYPE = "OFF";
+
+    //if max button is pressed then set it to max else add 1 to button
     const incrementCounter = () => {
         if (counter >= 5) {
             setCounter(5);
@@ -39,11 +87,12 @@ const NFTMintSection = ({ className, id, space }) => {
     if (counter <= 1) {
         decrementCounter = () => setCounter(1);
     }
-
+    //MAX is currently hard-coded needs to be obtained from contract
     let setMax = () => {
         setCounter(5);
     };
-    // const { Moralis } = useMoralis();
+
+    /// const { Moralis } = useMoralis();
     // const contractProcessor = useWeb3ExecuteFunction();
 
     // async function changeURI(text) {
@@ -94,7 +143,7 @@ const NFTMintSection = ({ className, id, space }) => {
                         </div>
                         <hr />
                         <small className="mintPrice col-12">
-                            Price: <span>{mintPrice} ETH</span>
+                            Price: <span>{mintPrice} Ξ</span>
                         </small>
                         <div className="qty">
                             Amount:
@@ -130,7 +179,7 @@ const NFTMintSection = ({ className, id, space }) => {
                         </div>
 
                         <hr />
-                        {SALETYPE === "OFF" ? (
+                        {contractValues.paused == true ? (
                             <button
                                 className="btn btn-primary w-100 "
                                 disabled
@@ -138,15 +187,31 @@ const NFTMintSection = ({ className, id, space }) => {
                             >
                                 Coming Soon
                             </button>
+                        ) : onWhitelist == true ? (
+                            <button
+                                className="btn btn-primary w-100"
+                                type="submit"
+                                onClick={() => {
+                                    // changeURI("moralis.io");
+                                    WLMintNFT(window, counter, setIsClaiming);
+                                }}
+                            >
+                                <strong>
+                                    {!isClaiming ? "MINT" : "MINTING..."}
+                                </strong>
+                            </button>
                         ) : (
                             <button
                                 className="btn btn-primary w-100"
                                 type="submit"
                                 onClick={() => {
                                     // changeURI("moralis.io");
+                                    mintNFT(window, counter, setIsClaiming);
                                 }}
                             >
-                                Mint
+                                <strong>
+                                    {!isClaiming ? "MINT" : "MINTING..."}
+                                </strong>
                             </button>
                         )}
                     </div>

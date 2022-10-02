@@ -14,21 +14,18 @@ const BidTab = ({ className, bids, owner, properties, tags, history }) => (
             <nav className="tab-button-one">
                 <Nav as="div" className="nav-tabs">
                     <Nav.Link as="button" eventKey="nav-home">
-                        Bids
-                    </Nav.Link>
-                    <Nav.Link as="button" eventKey="nav-profile">
                         Details
                     </Nav.Link>
                     <Nav.Link as="button" eventKey="nav-contact">
                         History
                     </Nav.Link>
+                    <Nav.Link as="button" eventKey="nav-bid">
+                        Bids
+                    </Nav.Link>
                 </Nav>
             </nav>
             <TabContent className="rn-bid-content">
                 <TabPane eventKey="nav-home">
-                    <BidsTabContent bids={bids} />
-                </TabPane>
-                <TabPane eventKey="nav-profile">
                     <DetailsTabContent
                         owner={owner}
                         properties={properties}
@@ -37,6 +34,9 @@ const BidTab = ({ className, bids, owner, properties, tags, history }) => (
                 </TabPane>
                 <TabPane eventKey="nav-contact">
                     <HistoryTabContent history={history} />
+                </TabPane>
+                <TabPane eventKey="nav-bid">
+                    <BidsTabContent bids={bids} />
                 </TabPane>
             </TabContent>
         </div>

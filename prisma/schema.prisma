@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.String
+  access_token       String?  @db.String
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.String
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  firstName     String?
+  lasttName     String?
+  ethAddress    String
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  profileImage  String?
+  accounts      Account[]
+  sessions      Session[]
+  status        String
+  timezone      String?
+  followerCount Int?
+  followCount   Int?
+  friendCount   Int?
+  statusCount   Int?
+  slug          String?
+  screenName    String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model NftToken {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  collection    String    @default("genesis")
+  contractAddress    String
+  tokenId       String
+  bdcTokenId    Int
+  name          String
+  description   String
+  owner         String
+  traits        Json?
+  tags          Json?
+  imageUrl      String?
+  previewUrl    String?
+  thumbnailUrl  String?
+  osUrl         String?
+  lrUrl         String?
+  websiteUrl    String?
+  isOwnerMatch  Boolean     @default(false)
+  isStolen      Boolean     @default(false)
+  lastSyncAt    DateTime
+  lastSaleAt    DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model NftTokenReport {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  collection    String    @default("genesis")
+  contractAddress    String?
+  tokenId       String
+  owner         String
+  senderAddress String
+  message       String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model NftTokenHistory {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  collection    String    @default("genesis")
+  contractAddress    String?
+  tokenId       String
+  owner         String
+  senderAddress String
+  description   String
+  file          Json?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}

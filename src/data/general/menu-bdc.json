@@ -10,6 +10,11 @@
         "path": "/roadmap"
     },
     {
+        "id": 3,
+        "text": "Browse",
+        "path": "/browse/genesis"
+    },
+    {
         "id": 4,
         "text": "Blog",
         "path": "/blog"
@@ -27,12 +32,12 @@
             {
                 "id": 11,
                 "text": "Discord",
-                "path": "https://discord.gg/pf98svgC7N"
+                "path": "https://discord.gg/FypdyMEht6"
             },
             {
                 "id": 31,
                 "text": "OpenSea Collection",
-                "path": "https://opensea.io/collection/baddogscompany-v2"
+                "path": "https://opensea.io/collection/baddogscompany"
             },
             {
                 "id": 32,

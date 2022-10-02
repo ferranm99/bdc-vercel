@@ -1,15 +1,21 @@
 // import React from 'react';
+// import { useReducer } from "react";
 import PropTypes from "prop-types";
+import Anchor from "@ui/anchor";
 // import Button from "@ui/button";
+import { signOut, useSession } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import { truncateEthAddress } from "@utils/formatters";
-import { useWeb3Context } from "src/context";
+// import { useWeb3Context } from "src/context";
+import { useWallet } from "src/hooks/use-wallet";
 import { toast } from "react-toastify";
-import { ethers } from "ethers";
+// import { useEffect } from "react";
+// import { ethers } from "ethers";
 
 // interface ConnectProps {
 //     connect: (() => Promise<void>) | null
@@ -28,13 +34,18 @@ const ConnectButton = ({ connect }) => {
 //     disconnect: (() => Promise<void>) | null
 //   }
 
-const DisconnectButton = ({ disconnect, address, balance }) => {
+// const DisconnectButton = ({ disconnect, address, balance }) => {
+const DisconnectButton = ({ disconnect, address }) => {
     // const balanceInEth = web3Provider.getBalance(address).then((balance) => {
     //     // convert a currency unit from wei to ether
     //     // const balanceInEth = ethers.utils.formatEther(balance)
     //     return ethers.utils.formatEther(balance);
     //     //console.log(`balance: ${balanceInEth} ETH`)
     // })
+    const logoff = () => {
+        signOut();
+        disconnect();
+    };
 
     return disconnect ? (
         <ButtonGroup>
@@ -52,26 +63,29 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
                 </Button>
             </CopyToClipboard>
             <DropdownButton as={ButtonGroup} title="" id="bg-nested-dropdown">
-                <Dropdown.Item
+                {/* <Dropdown.Item
                     style={{ fontSize: "1.75em" }}
                     eventKey="1"
                     href="#"
                 >
                     Balance: {Number(balance).toFixed(4)} Ξ
                 </Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item
-                    style={{ fontSize: "1.75em" }}
-                    eventKey="1"
-                    href="/my-account"
-                >
-                    My Account
+                <Dropdown.Divider /> */}
+                <Dropdown.Item style={{ fontSize: "1.75em" }} eventKey="1">
+                    <Anchor style={{ color: "#000000" }} path="/my-account">
+                        My Account
+                    </Anchor>
                 </Dropdown.Item>
+                {/* <Dropdown.Item style={{ fontSize: "1.75em" }} eventKey="1">
+                    <Anchor style={{ color: "#000000" }} path="/mint">
+                        Mint
+                    </Anchor>
+                </Dropdown.Item> */}
                 <Dropdown.Divider />
                 <Dropdown.Item
                     style={{ fontSize: "1.75em" }}
                     eventKey="2"
-                    onClick={disconnect}
+                    onClick={logoff}
                 >
                     Logout
                 </Dropdown.Item>
@@ -83,22 +97,46 @@ const DisconnectButton = ({ disconnect, address, balance }) => {
 };
 
 const Web3Button = () => {
-    const { web3Provider, connect, disconnect, address, balance } = useWeb3Context();
+    // const { web3Provider, connect, disconnect, address, balance } =
+    // const { connect, disconnect, balance } = useWeb3Context();
+    const { connect, disconnect, balance } = useWallet();
 
-    return web3Provider ? (
-        <DisconnectButton disconnect={disconnect} address={address} balance={balance} />
+    // const { data: session, status } = useSession();
+    const { data: session } = useSession();
+
+    // useEffect(async () => {
+    //     // signOut();
+    //     // disconnect();
+    //     console.log("address changed: ", address);
+    // }, [address]);
+
+    // console.log('state in web3-button');
+    // console.log(web3Provider);
+
+    // console.log(`state: ${JSON.stringify(state)}`);
+    // const session = useSession();
+    // console.log(`session: ${JSON.stringify(session)}`);
+
+    // return web3Provider ? (
+    return session ? (
+        // return !session || session?.status !== 'authenticated' ? (
+        <DisconnectButton
+            disconnect={disconnect}
+            address={session.address || ""} // balance={Number(balance)}
+        />
     ) : (
         <ConnectButton connect={connect} />
     );
 };
 
-// ConnectButton.propTypes = {
-//     connect: PropTypes.func.isRequired,
-// };
+ConnectButton.propTypes = {
+    connect: PropTypes.func.isRequired,
+};
 
-// DisconnectButton.propTypes = {
-//     disconnect: PropTypes.func.isRequired,
-//     address: PropTypes.string,
-// };
+DisconnectButton.propTypes = {
+    disconnect: PropTypes.func.isRequired,
+    address: PropTypes.string,
+    // balance: PropTypes.number,
+};
 
 export default Web3Button;

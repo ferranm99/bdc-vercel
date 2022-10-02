@@ -1,0 +1,133 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
+import PropTypes from "prop-types";
+import Image from "next/image";
+import clsx from "clsx";
+import Anchor from "@ui/anchor";
+// import CountdownTimer from "@ui/countdown/layout-01";
+import ClientAvatar from "@ui/client-avatar";
+import ShareDropdown from "@components/share-dropdown";
+// import ProductBid from "@components/product-bid";
+// import Button from "@ui/button";
+import { ImageType } from "@utils/types";
+// import PlaceBidModal from "@components/modals/placebid-modal";
+
+const Product = ({
+    overlay,
+    title,
+    owner,
+    slug,
+    latestBid,
+    price,
+    likeCount,
+    auction_date,
+    image,
+    bitCount,
+    authors,
+    placeBid,
+    disableShareDropdown,
+}) => {
+    const [showBidModal, setShowBidModal] = useState(false);
+    const handleBidModal = () => {
+        setShowBidModal((prev) => !prev);
+    };
+
+    const router = useRouter();
+
+    const handleClick = (tokenId) => {
+        router.push(`/nft/genesis/${tokenId}`);
+        // console.log(`handleClick: ${tokenId}`);
+    };
+
+    return (
+        <>
+            <div
+                className={clsx(
+                    "product-style-one",
+                    !overlay && "no-overlay",
+                    placeBid && "with-placeBid"
+                )}
+            >
+                <div className="card-thumbnail">
+                    {image && (
+                        <Anchor path={`/nft/genesis/${slug}`}>
+                            <Image
+                                src={image}
+                                alt={title || "BDC Genesis"}
+                                width={533}
+                                height={533}
+                            />
+                        </Anchor>
+                    )}
+                    {/* {auction_date && <CountdownTimer date={auction_date} />} */}
+                    {/* {placeBid && (
+                        <Button onClick={handleBidModal} size="small">
+                            Place Bid
+                        </Button>
+                    )} */}
+                </div>
+                <div className="product-share-wrapper">
+                    <div className="profile-share">
+                        <h6 className="product-name">Genesis</h6>
+                        {/* {authors?.map((client) => (
+                            <ClientAvatar
+                                key={client.name}
+                                slug={client.slug}
+                                name={client.name}
+                                image={client.image}
+                            />
+                        ))} */}
+                        {/* <Anchor
+                            className="more-author-text"
+                            path={`/product/${slug}`}
+                        >
+                            {bitCount}+ Place Bit.
+                        </Anchor> */}
+                    </div>
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        !disableShareDropdown && <ShareDropdown tokenId={slug} owner={owner} />
+                    }
+                </div>
+                <Anchor path={`/nft/genesis/${slug}`}>
+                    <span className="product-name">{title}</span>
+                </Anchor>
+                {/* <span className="latest-bid">Highest bid {latestBid}</span>
+                <ProductBid price={price} likeCount={likeCount} /> */}
+            </div>
+            {/* <PlaceBidModal show={showBidModal} handleModal={handleBidModal} /> */}
+        </>
+    );
+};
+
+Product.propTypes = {
+    overlay: PropTypes.bool,
+    title: PropTypes.string.isRequired,
+    owner: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    latestBid: PropTypes.string,
+    price: PropTypes.shape({
+        amount: PropTypes.number.isRequired,
+        currency: PropTypes.string.isRequired,
+    }),
+    likeCount: PropTypes.number,
+    auction_date: PropTypes.string,
+    // image: ImageType.isRequired,
+    image: PropTypes.string.isRequired,
+    authors: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            slug: PropTypes.string.isRequired,
+            image: ImageType.isRequired,
+        })
+    ),
+    bitCount: PropTypes.number,
+    placeBid: PropTypes.bool,
+    disableShareDropdown: PropTypes.bool,
+};
+
+Product.defaultProps = {
+    overlay: false,
+};
+
+export default Product;

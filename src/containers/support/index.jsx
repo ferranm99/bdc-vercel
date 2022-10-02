@@ -53,34 +53,35 @@ const SupportArea = ({ className, space }) => (
                                     Due to the limited supply in the Genesis
                                     collection, there are several ways to buy
                                     a dog at the moment:
-                                    <ul>
-                                        <li>
-                                            You can purchase a BDC from the secondary
-                                            market or random drops on
-                                            <a href="https://opensea.io/collection/baddogscompany-v2"><mark className="arrow">OpenSea →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can enter our Whitelist giveaway bots
-                                            or weekly Whitelist games on our
-                                            <a href="https://discord.gg/pf98svgC7N"><mark className="arrow">Discord →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can participate in our Bounty Dog
-                                            or Adoption program that is occasionally
-                                            announced on our <a href="https://discord.gg/pf98svgC7N"><mark className="arrow">Discord →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can make private deals with BDC
-                                            members in our
-                                            <a href="https://discord.gg/pf98svgC7N"><mark className="arrow">Discord →</mark></a>
-                                        </li>
-                                        <li>
-                                            You can participate in our giveaway and
-                                            contests on
-                                            <a href="https://twitter.com/BadDogsCompany"><mark className="arrow">Twitter →</mark></a>
-                                        </li>
-                                    </ul>
                                 </p>
+                                <ul>
+                                    <li>
+                                        You can purchase a BDC from the secondary
+                                        market or random drops on
+                                        <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can enter our Whitelist giveaway bots
+                                        or weekly Whitelist games on our
+                                        <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can participate in our Bounty Dog
+                                        or Adoption program that is occasionally
+                                        announced on our <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can make private deals with BDC
+                                        members in our
+                                        <a href="https://discord.gg/FypdyMEht6"><mark className="arrow">Discord →</mark></a>
+                                    </li>
+                                    <li>
+                                        You can participate in our giveaway and
+                                        contests on
+                                        <a href="https://twitter.com/BadDogsCompany"><mark className="arrow">Twitter →</mark></a>
+                                    </li>
+                                </ul>
+
                             </div>
                         </div>
                         <div className="read-card">
@@ -154,7 +155,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 3,
                                     title: "Where can I see my purchased dogs?",
                                     description:
-                                        "<p>You can view them on <a href='https://opensea.io/collection/baddogscompany-v2'>OpenSea</a>. Once we migrate the collection to ERC721, you will be able to see them directly in your wallet (e.g. MetaMask).</p>",
+                                        "<p>You can view them on <a href='https://opensea.io/collection/baddogscompany'>OpenSea</a>. Once we migrate the collection to ERC721, you will be able to see them directly in your wallet (e.g. MetaMask).</p>",
                                 },
                                 {
                                     id: 4,
@@ -178,7 +179,7 @@ const SupportArea = ({ className, space }) => (
                                     id: 7,
                                     title: "How can I reach the team?",
                                     description:
-                                        "<p>The team is best reached through our <a href='https://discord.gg/pf98svgC7N'>Discord</a>. If you need to contact the team privately, please open a support ticket in the server. For serious inquiries, we are also available through DM on Twitter or let us know in #support if you want to connect and we will accept your friend request.</p>",
+                                        "<p>The team is best reached through our <a href='https://discord.gg/FypdyMEht6'>Discord</a>. If you need to contact the team privately, please open a support ticket in the server. For serious inquiries, we are also available through DM on Twitter or let us know in #support if you want to connect and we will accept your friend request.</p>",
                                 },
                             ]}
                         />

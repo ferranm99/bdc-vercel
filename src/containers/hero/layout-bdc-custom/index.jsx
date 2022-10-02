@@ -50,7 +50,7 @@ const HeroAreaBdcCustom = ({ data }) => (
                                 Bad Dogs <a href="#arc"><mark className="arrow">ARC → (Coming Soon)</mark></a>
                             </li>
                             <li className="dogs-info-link">
-                                Bad Dogs <a href="https://opensea.io/collection/baddogscompany-v2"><mark className="arrow">OpenSea →</mark></a>
+                                Bad Dogs <a href="https://opensea.io/collection/baddogscompany"><mark className="arrow">OpenSea →</mark></a>
                             </li>
                             {/* <li className="dogs-info-link">
                                 Bad Dogs <a href="#looksrare"><mark className="arrow">LooksRare →</mark></a>
@@ -110,7 +110,7 @@ const HeroAreaBdcCustom = ({ data }) => (
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="800"
-                        path="https://discord.gg/pf98svgC7N"
+                        path="https://discord.gg/FypdyMEht6"
                     // color="primary-alta"
                     >
                         DISCORD MEMBERS ONLY

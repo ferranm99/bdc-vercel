@@ -35,13 +35,86 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## BDC Commit prefix
 
-- build: Changes that affect the build system or external dependencies (e.g. scopes: gulp, broccoli, npm)
-- ci: Changes to our CI configuration files and scripts (e.g. scopes: Travis, Circle, BrowserStack, SauceLab)
-- docs: Documentation only changes
-- feat: A new feature
-- fix: A bug fix
-- perf: A code chagne that improves performance
-- refactor: A code change that neither fixes a bug nor adds a feature
-- style: Changes that do not affect the meaning of the code (white-sapce, formatting, missing semi-colons, etc)
-- content: Change of static content (e.g. text title, i18n, etc)
-- test: Adding missing tests or correcting existing tests
+-   build: Changes that affect the build system or external dependencies (e.g. scopes: gulp, broccoli, npm)
+-   ci: Changes to our CI configuration files and scripts (e.g. scopes: Travis, Circle, BrowserStack, SauceLab)
+-   docs: Documentation only changes
+-   feat: A new feature
+-   fix: A bug fix
+-   perf: A code chagne that improves performance
+-   refactor: A code change that neither fixes a bug nor adds a feature
+-   style: Changes that do not affect the meaning of the code (white-sapce, formatting, missing semi-colons, etc)
+-   content: Change of static content (e.g. text title, i18n, etc)
+-   test: Adding missing tests or correcting existing tests
+
+## Troubleshooting
+
+-   use "export NODE_TLS_REJECT_UNAUTHORIZED=0" in the command prompt to bypass self-signed cert error for node or nvm
+-   use "npm set strict-ssl false" in the command prompt to bypass self-signed cert error for npm
+
+# Merge 08/17/2022
+
+### \_app.jsx
+
+_TO BE Moved to Zustand_
+
+-   contractValues state
+
+### @containers/BDC/nft-mint
+
+Values:
+
+-   contractValues
+    -   [paused,PUBLIC_PRICE,WHITELIST_PRICE] obtained from ContractContext
+-   onWhitelist
+    -   Utilizes session user to check if user address is whitelisted then sets the correct minting price
+-   Counter
+    -   Number of NFTs user wants to mint. (currently hard-coded max at 5)
+
+### @utils
+
+#### **smartContractFxns.js**
+
+GETTER FUNCTIONS
+
+#### WLMintNFT / mintNFT :
+
+| Parameter     | Type    | Description                                                                        |
+| :------------ | :------ | :--------------------------------------------------------------------------------- |
+| window        | Object  | Browser Object to obtain provider (should be refactored to get provider from web3) |
+| mintQuantity  | uint256 | Number of NFTs to be minted                                                        |
+| setIsClaiming | boolean | Status of minting to change button state                                           |
+
+#### isWhitelisted:
+
+-   Uses **runProof** from generateMerkleProof.js to return proof of whitelist.
+
+#### grabConnectedContract:
+
+Requires:
+
+-   Contract ABI
+-   Contract Address
+-   Provider
+
+_@ returns ethers.Contract object._
+
+#### **generateMerkleProof.js**
+
+#### runProof:
+
+Note - The proof generation uses **keccak256**. Using other encryption types will cause failure.
+| Parameter |Type | Description |
+| :------------------------ |:-------- | :-------------|
+| leafToVerify | String | User wallet address to be verified
+| whitelist | String []|Array of addresses obtained from contractValues
+
+### Import Contract Data from Deployment
+
+#### **BDC.json**
+
+This is the ABI obtained from the artifacts folder when you deploy the contract via hardhat.
+
+#### **contractData.json**
+
+-   Contract Address
+-   Array of Whitelist addresses
