@@ -5,6 +5,7 @@ let prisma;
 
 // Check to see if we are running in prod
 if (process.env.NODE_ENV === "production") {
+    console.log("In production prisma");
     prisma = new PrismaClient();
 } else {
     // Check if there is already a connection to the database
